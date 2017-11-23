@@ -57,7 +57,7 @@ public class QCatalog extends AppCompatActivity {
     }
 
     /*public int clickedRB() {
-        boolean checked = (RadioButton).isChecked();
+        boolean checked = (RadioButton).isChecked()zuiozu;
 
     }*/
 }
