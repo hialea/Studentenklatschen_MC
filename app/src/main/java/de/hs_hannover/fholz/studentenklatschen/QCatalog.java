@@ -20,7 +20,7 @@ public class QCatalog extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.q_catalog);
 
         Fragefeld = (TextView) findViewById(R.id.Fragefeld);
         weiterFertig = (Button) findViewById(R.id.button);
