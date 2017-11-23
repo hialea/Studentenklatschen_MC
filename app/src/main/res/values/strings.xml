@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Studentenklatschen</string>
+    <string name="frage1">Dein Youtube-Feed</string>
+    <string name="aw1sn">Lets Plays</string>
+    <string name="aw1uf">Meinungsblogger zu Politik und Gesellschaft</string>
+    <string name="aw1tp">Mein Internet ist kaputt</string>
+    <string name="aw1st">Beauty und Lifestyle #blogger #ootd</string>
+    <string name="frage2">Deine Spotify-Playlist</string>
+    <string name="aw2sn">Chillige Vibes</string>
+    <string name="aw2uf">Podcasts</string>
+    <string name="aw2tp">Ich peppe zu Techno</string>
+    <string name="aw2st">Charts</string>
+    <string name="weiter">Weiter</string>
+    <string name="fertig">Fertig</string>
 </resources>
