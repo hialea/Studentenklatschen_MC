@@ -1,13 +1,13 @@
 package de.hs_hannover.fholz.studentenklatschen;
 
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
-public class QCatalog extends AppCompatActivity {
+public class QuestCat extends AppCompatActivity {
 
     private TextView Fragefeld;
     private Button weiterFertig;
@@ -20,7 +20,7 @@ public class QCatalog extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.q_catalog);
+        setContentView(R.layout.activity_quest_cat);
 
         Fragefeld = (TextView) findViewById(R.id.Fragefeld);
         weiterFertig = (Button) findViewById(R.id.button);
@@ -53,11 +53,5 @@ public class QCatalog extends AppCompatActivity {
                 }
             }
         });
-
     }
-
-    /*public int clickedRB() {
-        boolean checked = (RadioButton).isChecked()zuiozu;
-
-    }*/
 }
