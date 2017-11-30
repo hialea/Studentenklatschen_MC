@@ -37,21 +37,52 @@ public class QuestCat extends AppCompatActivity {
         tP.setText(R.string.aw1tp);
         sT.setText(R.string.aw1st);
 
-        weiterFertig.setOnClickListener (new View.OnClickListener() {
+        weiterFertig.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Klick == 1) {
-                    Fragefeld.setText(R.string.frage2);
-                    sN.setText(R.string.aw2sn);
-                    uF.setText(R.string.aw2uf);
-                    tP.setText(R.string.aw2tp);
-                    sT.setText(R.string.aw2st);
-                    Klick++;
-                    weiterFertig.setText(R.string.fertig);
-                }else {
-                    finish();
+
+                clickedRB(v);
+
+                switch (Klick) {
+                    case 1:
+                        Fragefeld.setText(R.string.frage2);
+                        sN.setText(R.string.aw2sn);
+                        uF.setText(R.string.aw2uf);
+                        tP.setText(R.string.aw2tp);
+                        sT.setText(R.string.aw2st);
+                        Klick++;
+                        weiterFertig.setText(R.string.fertig);
+                        break;
+                    case 2:
+                        finish();
+                        break;
                 }
             }
         });
+
+    }
+
+    public int clickedRB(View view) {
+        boolean checked = ((RadioButton) view).isChecked();
+
+        switch (view.getId()) {
+            case R.id.rBsn:
+                if (checked)
+                    return 1;
+                break;
+            case R.id.rBuf:
+                if (checked)
+                    return 2;
+                break;
+            case R.id.rBtp:
+                if (checked)
+                    return 3;
+                break;
+            case R.id.rBst:
+                if (checked)
+                    return 4;
+                break;
+        }
+        return 0;
     }
 }
