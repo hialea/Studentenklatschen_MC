@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         myButton2.setOnClickListener(
                 new Button.OnClickListener(){
                     public void onClick(View v){
-                        Intent I = new Intent(MainActivity.this, QCatalog.class);
+                        Intent I = new Intent(MainActivity.this, QuestCat.class);
                         startActivity(I);
                     }
                 }
