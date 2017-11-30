@@ -17,6 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".QuestCat"></activity>
+        <activity android:name=".LoadingScreen" />
+        <activity android:name=".Login.Login"></activity>
     </application>
 
 </manifest>
