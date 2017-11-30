@@ -16,6 +16,10 @@ public class QuestCat extends AppCompatActivity {
     private RadioButton uF;
     private RadioButton tP;
     private RadioButton sT;
+    private int countSn = 0;
+    private int countUf = 0;
+    private int countTp = 0;
+    private int countSt = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,27 +66,26 @@ public class QuestCat extends AppCompatActivity {
 
     }
 
-    public int clickedRB(View view) {
+    public void clickedRB(View view) {
         boolean checked = ((RadioButton) view).isChecked();
 
         switch (view.getId()) {
             case R.id.rBsn:
                 if (checked)
-                    return 1;
+                    countSn++;
                 break;
             case R.id.rBuf:
                 if (checked)
-                    return 2;
+                    countUf++;
                 break;
             case R.id.rBtp:
                 if (checked)
-                    return 3;
+                    countTp++;
                 break;
             case R.id.rBst:
                 if (checked)
-                    return 4;
+                    countSt++;
                 break;
         }
-        return 0;
     }
 }
