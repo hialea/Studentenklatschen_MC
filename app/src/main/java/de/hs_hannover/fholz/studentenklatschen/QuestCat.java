@@ -16,10 +16,6 @@ public class QuestCat extends AppCompatActivity {
     private RadioButton uF;
     private RadioButton tP;
     private RadioButton sT;
-    private int countSn = 0;
-    private int countUf = 0;
-    private int countTp = 0;
-    private int countSt = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,29 +41,59 @@ public class QuestCat extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                clickedRB(v);
+                /*clickedRB(v);*/
 
-                switch (Klick) {
-                    case 1:
-                        Fragefeld.setText(R.string.frage2);
-                        sN.setText(R.string.aw2sn);
-                        uF.setText(R.string.aw2uf);
-                        tP.setText(R.string.aw2tp);
-                        sT.setText(R.string.aw2st);
+                if (Klick == 1) {
+                    Fragefeld.setText(R.string.frage2);
+                    sN.setText(R.string.aw2sn);
+                    uF.setText(R.string.aw2uf);
+                    tP.setText(R.string.aw2tp);
+                    sT.setText(R.string.aw2st);
+                    Klick++;
+                    weiterFertig.setText(R.string.weiter);
+                } else if (Klick == 2) {
+                    Fragefeld.setText(R.string.frage3);
+                    sN.setText(R.string.aw3sn);
+                    uF.setText(R.string.aw3uf);
+                    tP.setText(R.string.aw3tp);
+                    sT.setText(R.string.aw3st);
+                    Klick++;
+                    weiterFertig.setText(R.string.weiter);
+                } else if (Klick == 3) {
+                    Fragefeld.setText(R.string.frage4);
+                    sN.setText(R.string.aw4sn);
+                    uF.setText(R.string.aw4uf);
+                    tP.setText(R.string.aw4tp);
+                    sT.setText(R.string.aw4st);
+                    Klick++;
+                    weiterFertig.setText(R.string.fertig);
+                } else {
+                    finish();
+                }
+
+                    /*case 4:
+                        Fragefeld.setText(R.string.frage5);
+                        sN.setText(R.string.aw5sn);
+                        uF.setText(R.string.aw5uf);
+                        tP.setText(R.string.aw5tp);
+                        sT.setText(R.string.aw5st);
                         Klick++;
                         weiterFertig.setText(R.string.fertig);
                         break;
-                    case 2:
-                        finish();
-                        break;
-                }
+                case 4:
+                break;*/
             }
         });
 
     }
 
+    private int countSn = 0;
+    private int countUf = 0;
+    private int countTp = 0;
+    private int countSt = 0;
+
     public void clickedRB(View view) {
-        boolean checked = ((RadioButton) view).isChecked();
+        boolean checked = ((RadioButton)view).isChecked();
 
         switch (view.getId()) {
             case R.id.rBsn:

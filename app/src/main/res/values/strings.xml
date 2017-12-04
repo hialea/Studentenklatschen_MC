@@ -10,6 +10,16 @@
     <string name="aw2uf">Podcasts</string>
     <string name="aw2tp">Ich peppe zu Techno</string>
     <string name="aw2st">Charts</string>
+    <string name="frage3">Du gehst zur Vorlesung</string>
+    <string name="aw3sn">Schnarch. Wie, heute?</string>
+    <string name="aw3uf">Ich bin vor dem Prof da.</string>
+    <string name="aw3tp">Ich hab die Bahn verpasst</string>
+    <string name="aw3st">Ich bin pünktlich, damit auch jeder mein Make-Up bewundern kann</string>
+    <string name="frage4">Gehst du zur Übung?</string>
+    <string name="aw4sn">Welche Übung? War die auch heute?</string>
+    <string name="aw4uf">Ich gehe zu jeder Übung. Die Aufgaben habe ich schon vorbereitet.</string>
+    <string name="aw4tp">Würde ich gern, wenn ich den Raum finden würde.</string>
+    <string name="aw4st">Klar, irgendwo muss ich doch den neusten Gossip austauschen.</string>
     <string name="weiter">Weiter</string>
     <string name="fertig">Fertig</string>
 </resources>
