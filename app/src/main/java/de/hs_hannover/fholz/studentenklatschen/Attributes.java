@@ -1,16 +1,49 @@
 package de.hs_hannover.fholz.studentenklatschen;
 
-/**
- * Created by efw-kz4-u1 on 23.11.17.
- */
+import static de.hs_hannover.fholz.studentenklatschen.Attributes.Attr.*;
 
 public class Attributes {
+    class Attr{
+        static final int NUMBER_ATTRS = 3,
+        STRENGTH = 0,
+        DEFENSE = 1,
+        SPECIAL = 2;
+    }
+    int[] attributes;
 
-    int strength;
-    int defense;
-    int special;
+    public Attributes(Character.Role role) {
+        attributes= new int[NUMBER_ATTRS];
+        switch(role){ // should have equal total stats
+            case PECHVOGEL:
+                attributes[STRENGTH] = -1;
+                attributes[DEFENSE] = -1;
+                attributes[SPECIAL] = -1;
+                break;
+            case SCHNARCHNASE:
+                attributes[STRENGTH] = -1;
+                attributes[DEFENSE] = -1;
+                attributes[SPECIAL] = -1;
+                break;
+            case SNAPCHAT_TUSSI:
+                attributes[STRENGTH] = -1;
+                attributes[DEFENSE] = -1;
+                attributes[SPECIAL] = -1;
+                break;
+            case UEBERFLIEGER:
+                attributes[STRENGTH] = -1;
+                attributes[DEFENSE] = -1;
+                attributes[SPECIAL] = -1;
+                break;
+            default:
+                attributes[STRENGTH] = -1;
+                attributes[DEFENSE] = -1;
+                attributes[SPECIAL] = -1;
+                break;
 
-    public Attributes(){
+        }
+    }
 
+    void increaseAtr(int which){
+        attributes[which]++;
     }
 }

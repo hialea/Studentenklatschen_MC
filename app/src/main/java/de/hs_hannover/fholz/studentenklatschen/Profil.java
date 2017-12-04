@@ -2,12 +2,8 @@ package de.hs_hannover.fholz.studentenklatschen;
 
 import android.media.Image;
 
-/**
- * Created by efw-kz4-u1 on 23.11.17.
- */
-
 public class Profil {
-
+//TODO vlt enums die in arrays als index benutzt werden mit enummap ersetzen
     private int id;
     private Character character;
     private String name;
@@ -19,9 +15,11 @@ public class Profil {
         this.name=name;
         this.image=image;
     }
-
-    public Profil(){
-
+    public Profil(int id, Character character, String name){
+        this.id=id;
+        this.character=character;
+        this.name=name;
+        this.image=null;
     }
 
     public void setId(int id){
