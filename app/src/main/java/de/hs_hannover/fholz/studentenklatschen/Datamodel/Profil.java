@@ -1,4 +1,4 @@
-package de.hs_hannover.fholz.studentenklatschen;
+package de.hs_hannover.fholz.studentenklatschen.Datamodel;
 
 import android.media.Image;
 

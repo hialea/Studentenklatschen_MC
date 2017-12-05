@@ -1,4 +1,4 @@
-package de.hs_hannover.fholz.studentenklatschen;
+package de.hs_hannover.fholz.studentenklatschen.Datamodel;
 
 class Affix {
     int[] factors;
@@ -9,4 +9,5 @@ class Affix {
         factors[Attributes.Attr.SPECIAL] = spc;
         this.name = name;
     }
+    //TODO affixe hardcoden
 }

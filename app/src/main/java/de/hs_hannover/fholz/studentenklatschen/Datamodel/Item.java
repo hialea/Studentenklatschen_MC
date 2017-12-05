@@ -1,4 +1,4 @@
-package de.hs_hannover.fholz.studentenklatschen;
+package de.hs_hannover.fholz.studentenklatschen.Datamodel;
 
 class Item {
     String name;
@@ -17,8 +17,7 @@ class Item {
         name = genName(Inventory.Slots.names[slot], affix);
 
     }
-    private int genStat(int lvl, Affix affix, int atr)
-    {
+    private int genStat(int lvl, Affix affix, int atr) {
         return (int)(lvl * Math.random() * affix.factors[atr]);
     }
     private String genName(String slot, Affix affix){

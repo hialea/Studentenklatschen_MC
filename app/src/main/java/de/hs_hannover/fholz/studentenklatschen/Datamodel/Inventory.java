@@ -1,4 +1,4 @@
-package de.hs_hannover.fholz.studentenklatschen;
+package de.hs_hannover.fholz.studentenklatschen.Datamodel;
 
 
 public class Inventory {
@@ -6,13 +6,13 @@ public class Inventory {
     static class Slots{
         static final int
             NUM_SLOTS = 4,
-            HELMET = 0,
+            HAND = 0,
             TOP = 1,
             BOOTS = 2,
             PANTS = 3;
         static final String[] names =
         {
-            "Helmet",
+            "Hand",
             "T-Shirt",
             "Boots",
             "Pants"

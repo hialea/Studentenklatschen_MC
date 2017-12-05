@@ -1,6 +1,6 @@
-package de.hs_hannover.fholz.studentenklatschen;
+package de.hs_hannover.fholz.studentenklatschen.Datamodel;
 
-import static de.hs_hannover.fholz.studentenklatschen.Attributes.Attr.*;
+import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Attributes.Attr.*;
 
 public class Attributes {
     class Attr{

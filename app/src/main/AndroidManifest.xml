@@ -16,9 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".QuestCat"></activity>
+        <activity android:name=".QuestCat" />
         <activity android:name=".LoadingScreen" />
-        <activity android:name=".Login.Login"></activity>
+        <activity android:name=".Login.LoginActivity"></activity>
     </application>
 
 </manifest>

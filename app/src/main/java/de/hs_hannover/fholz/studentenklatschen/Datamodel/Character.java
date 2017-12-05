@@ -1,7 +1,8 @@
-package de.hs_hannover.fholz.studentenklatschen;
+package de.hs_hannover.fholz.studentenklatschen.Datamodel;
 
 
 public class Character {
+
     public enum Role{
         SNAPCHAT_TUSSI,
         UEBERFLIEGER,
@@ -16,11 +17,11 @@ public class Character {
     int level;
     int exp;
 
-    public Character(Attributes attributes, Role role, Inventory inventory, String name, int level, int exp) {
+    public Character(String name, Attributes attributes, Role role, Inventory inventory, int level, int exp) {
+        this.name = name;
         this.attributes = attributes;
         this.role = role;
         this.inventory = inventory;
-        this.name = name;
         this.level = level;
         this.exp = exp;
     }
