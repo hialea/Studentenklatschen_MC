@@ -1,8 +1,6 @@
 package de.hs_hannover.fholz.studentenklatschen.Login;
 
-import android.app.ProgressDialog;
 import android.support.annotation.NonNull;
-import android.support.annotation.VisibleForTesting;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -17,14 +15,17 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
+import de.hs_hannover.fholz.studentenklatschen.Datamodel.Profile;
 import de.hs_hannover.fholz.studentenklatschen.R;
 
 public class LoginActivity extends AppCompatActivity implements
         View.OnClickListener{
 
     private static final String TAG = "EmailPassword";
-
+    DatabaseReference loginRef;
     private TextView mStatusTextView;
     private TextView mDetailTextView;
     private EditText mEmailField;
@@ -39,6 +40,7 @@ public class LoginActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        loginRef = FirebaseDatabase.getInstance().getReference().child("Profile");
         // Views
         mStatusTextView = (TextView) findViewById(R.id.status);
         mDetailTextView = (TextView) findViewById(R.id.detail);
@@ -72,7 +74,6 @@ public class LoginActivity extends AppCompatActivity implements
             return;
         }
 
-        showProgressDialog();
 
         // [START create_user_with_email]
         mAuth.createUserWithEmailAndPassword(email, password)
@@ -83,17 +84,18 @@ public class LoginActivity extends AppCompatActivity implements
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "createUserWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
+                            loginRef.push().setValue(new Profile(user.getUid()));
                             updateUI(user);
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
                             Toast.makeText(LoginActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
+
                             updateUI(null);
                         }
 
                         // [START_EXCLUDE]
-                        hideProgressDialog();
                         // [END_EXCLUDE]
                     }
                 });
@@ -105,8 +107,6 @@ public class LoginActivity extends AppCompatActivity implements
         if (!validateForm()) {
             return;
         }
-
-        showProgressDialog();
 
         // [START sign_in_with_email]
         mAuth.signInWithEmailAndPassword(email, password)
@@ -130,7 +130,6 @@ public class LoginActivity extends AppCompatActivity implements
                         if (!task.isSuccessful()) {
                             mStatusTextView.setText(R.string.auth_failed);
                         }
-                        hideProgressDialog();
                         // [END_EXCLUDE]
                     }
                 });
@@ -196,7 +195,6 @@ public class LoginActivity extends AppCompatActivity implements
     }
 
     private void updateUI(FirebaseUser user) {
-        hideProgressDialog();
         if (user != null) {
             mStatusTextView.setText(getString(R.string.emailpassword_status_fmt,
                     user.getEmail(), user.isEmailVerified()));
@@ -242,37 +240,5 @@ public class LoginActivity extends AppCompatActivity implements
         } else if (i == R.id.verify_email_button) {
             sendEmailVerification();
         }
-    }
-
-
-
-
-
-
-
-
-    @VisibleForTesting
-    public ProgressDialog mProgressDialog;
-
-    public void showProgressDialog() {
-        if (mProgressDialog == null) {
-            mProgressDialog = new ProgressDialog(this);
-            mProgressDialog.setMessage(getString(R.string.loading));
-            mProgressDialog.setIndeterminate(true);
-        }
-
-        mProgressDialog.show();
-    }
-
-    public void hideProgressDialog() {
-        if (mProgressDialog != null && mProgressDialog.isShowing()) {
-            mProgressDialog.dismiss();
-        }
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        hideProgressDialog();
     }
 }
