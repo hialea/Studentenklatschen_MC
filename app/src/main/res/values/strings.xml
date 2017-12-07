@@ -20,8 +20,17 @@
     <string name="aw4uf">Ich gehe zu jeder Übung. Die Aufgaben habe ich schon vorbereitet.</string>
     <string name="aw4tp">Würde ich gern, wenn ich den Raum finden würde.</string>
     <string name="aw4st">Klar, irgendwo muss ich doch den neusten Gossip austauschen.</string>
+    <string name="frage5">4tGehst du zur Übung?</string>
+    <string name="aw5sn">Weleteche Übung? War die auch heute?</string>
+    <string name="aw5uf">Ich geetethe zu jeder Übung. Die Aufgaben habe ich schon vorbereitet.</string>
+    <string name="aw5tp">Würde ich tertgern, wenn ich den Raum finden würde.</string>
+    <string name="aw5st">Klar, irgendwoete4a muss ich doch den neusten Gossip austauschen.</string>
     <string name="weiter">Weiter</string>
     <string name="fertig">Fertig</string>
+    <string name="charaSn">Schnarchnase</string>
+    <string name="charaUf">Überflieger</string>
+    <string name="charaTp">Tollpatsch</string>
+    <string name="charaSt">Snapchat Tussi</string>
     <string name="title_activity_login">Login</string>
 
     <string name="loading">Loading…</string>
