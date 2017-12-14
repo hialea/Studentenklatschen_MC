@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.SeekBar;
 import android.widget.TextView;
 
 public class QuestCat extends AppCompatActivity {
@@ -13,6 +14,7 @@ public class QuestCat extends AppCompatActivity {
     private TextView Fragefeld;
     private TextView klickcount;
     private Button weiterFertig;
+    private SeekBar bar;
     private int Klick = 1;
     private RadioGroup rG;
     private RadioButton sN;
@@ -32,12 +34,14 @@ public class QuestCat extends AppCompatActivity {
         Fragefeld = (TextView) findViewById(R.id.Fragefeld);
         klickcount = (TextView) findViewById(R.id.Klicks);
         weiterFertig = (Button) findViewById(R.id.button);
+        bar = (SeekBar) findViewById(R.id.Regler);
         rG = (RadioGroup) findViewById(R.id.radioGroup);
         sN = (RadioButton) findViewById(R.id.rBsn);
         uF = (RadioButton) findViewById(R.id.rBuf);
         tP = (RadioButton) findViewById(R.id.rBtp);
         sT = (RadioButton) findViewById(R.id.rBst);
 
+        bar.setVisibility(View.INVISIBLE);
         Fragefeld.setText(R.string.frage1);
         weiterFertig.setText(R.string.weiter);
         sN.setText(R.string.aw1sn);
@@ -73,7 +77,7 @@ public class QuestCat extends AppCompatActivity {
                         sT.setText(R.string.aw2st);
                         Klick++;
                         weiterFertig.setText(R.string.weiter);
-                        klickcount.setText(countSn + "" + countUf + "" + countTp + "" + countSt);
+                        klickcount.setText(countSn + " " + countUf + " " + countTp + " " + countSt);
                         break;
 
                     case 2:
@@ -84,10 +88,21 @@ public class QuestCat extends AppCompatActivity {
                         sT.setText(R.string.aw3st);
                         Klick++;
                         weiterFertig.setText(R.string.weiter);
-                        klickcount.setText(countSn + "" + countUf + "" + countTp + "" + countSt);
+                        klickcount.setText(countSn + " " + countUf + " " + countTp + " " + countSt);
                         break;
 
                     case 3:
+                        bar.setVisibility(v.VISIBLE);
+                        rG.setVisibility(v.INVISIBLE);
+                        Fragefeld.setText(R.string.schieberegler1);
+                        Klick++;
+                        weiterFertig.setText(R.string.weiter);
+                        klickcount.setText(countSn + " " + countUf + " " + countTp + " " + countSt);
+                        break;
+
+                    case 4:
+                        rG.setVisibility(v.VISIBLE);
+                        bar.setVisibility(v.INVISIBLE);
                         Fragefeld.setText(R.string.frage4);
                         sN.setText(R.string.aw4sn);
                         uF.setText(R.string.aw4uf);
@@ -95,10 +110,11 @@ public class QuestCat extends AppCompatActivity {
                         sT.setText(R.string.aw4st);
                         Klick++;
                         weiterFertig.setText(R.string.weiter);
-                        klickcount.setText(countSn + "" + countUf + "" + countTp + "" + countSt);
+                        /*int value = bar.;
+                        klickcount.setText(value);*/
                         break;
 
-                    case 4:
+                    case 5:
                         Fragefeld.setText(R.string.frage5);
                         sN.setText(R.string.aw5sn);
                         uF.setText(R.string.aw5uf);
@@ -106,10 +122,10 @@ public class QuestCat extends AppCompatActivity {
                         sT.setText(R.string.aw5st);
                         Klick++;
                         weiterFertig.setText(R.string.weiter);
-                        klickcount.setText(countSn + "" + countUf + "" + countTp + "" + countSt);
+                        klickcount.setText(countSn + " " + countUf + " " + countTp + " " + countSt);
                         break;
 
-                    case 5:
+                    case 6:
                         Fragefeld.setText(R.string.frage6);
                         sN.setText(R.string.aw6sn);
                         uF.setText(R.string.aw6uf);
@@ -117,10 +133,10 @@ public class QuestCat extends AppCompatActivity {
                         sT.setText(R.string.aw6st);
                         Klick++;
                         weiterFertig.setText(R.string.weiter);
-                        klickcount.setText(countSn + "" + countUf + "" + countTp + "" + countSt);
+                        klickcount.setText(countSn + " " + countUf + " " + countTp + " " + countSt);
                         break;
 
-                    case 6:
+                    case 7:
                         Fragefeld.setText(R.string.frage7);
                         sN.setText(R.string.aw7sn);
                         uF.setText(R.string.aw7uf);
@@ -128,10 +144,10 @@ public class QuestCat extends AppCompatActivity {
                         sT.setText(R.string.aw7st);
                         Klick++;
                         weiterFertig.setText(R.string.weiter);
-                        klickcount.setText(countSn + "" + countUf + "" + countTp + "" + countSt);
+                        klickcount.setText(countSn + " " + countUf + " " + countTp + " " + countSt);
                         break;
 
-                    case 7:
+                    case 8:
                         Fragefeld.setText(R.string.frage8);
                         sN.setText(R.string.aw8sn);
                         uF.setText(R.string.aw8uf);
@@ -139,10 +155,10 @@ public class QuestCat extends AppCompatActivity {
                         sT.setText(R.string.aw8st);
                         Klick++;
                         weiterFertig.setText(R.string.weiter);
-                        klickcount.setText(countSn + "" + countUf + "" + countTp + "" + countSt);
+                        klickcount.setText(countSn + " " + countUf + " " + countTp + " " + countSt);
                         break;
 
-                    case 8:
+                    case 9:
                         Fragefeld.setText(R.string.frage9);
                         sN.setText(R.string.aw9sn);
                         uF.setText(R.string.aw9uf);
@@ -150,10 +166,10 @@ public class QuestCat extends AppCompatActivity {
                         sT.setText(R.string.aw9st);
                         Klick++;
                         weiterFertig.setText(R.string.fertig);
-                        klickcount.setText(countSn + "" + countUf + "" + countTp + "" + countSt);
+                        klickcount.setText(countSn + " " + countUf + " " + countTp + " " + countSt);
                         break;
 
-                    case 9:
+                    case 10:
                         finish();
                     default:
                         finish();
