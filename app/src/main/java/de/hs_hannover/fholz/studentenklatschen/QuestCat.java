@@ -5,22 +5,24 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 public class QuestCat extends AppCompatActivity {
 
     private TextView Fragefeld;
-    private TextView klickcount;
+    //private TextView klickcount;
     private Button weiterFertig;
     private int Klick = 1;
+    private RadioGroup rG;
     private RadioButton sN;
     private RadioButton uF;
     private RadioButton tP;
     private RadioButton sT;
-    private int countSn = 0;
-    private int countUf = 0;
-    private int countTp = 0;
-    private int countSt = 0;
+    int countSn = 0;
+    int countUf = 0;
+    int countTp = 0;
+    int countSt = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +30,9 @@ public class QuestCat extends AppCompatActivity {
         setContentView(R.layout.activity_quest_cat);
 
         Fragefeld = (TextView) findViewById(R.id.Fragefeld);
-        klickcount = (TextView) findViewById(R.id.Klicks);
+        //klickcount = (TextView) findViewById(R.id.Klicks);
         weiterFertig = (Button) findViewById(R.id.button);
+        rG = (RadioGroup) findViewById(R.id.radioGroup)
         sN = (RadioButton) findViewById(R.id.rBsn);
         uF = (RadioButton) findViewById(R.id.rBuf);
         tP = (RadioButton) findViewById(R.id.rBtp);
@@ -46,32 +49,20 @@ public class QuestCat extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                /*boolean checked = ((RadioButton)v).isChecked();
-
-                switch (v.getId()) {
+                switch (rG.getCheckedRadioButtonId()) {
                     case R.id.rBsn:
-                        if (checked) {
-                            countSn++;
-                        }
+                        countSn++;
                         break;
                     case R.id.rBuf:
-                        if (checked) {
-                            countUf++;
-                        }
+                        countUf++;
                         break;
                     case R.id.rBtp:
-                        if (checked) {
-                            countTp++;
-                        }
+                        countTp++;
                         break;
                     case R.id.rBst:
-                        if (checked) {
-                            countSt++;
-                        }
+                        countSt++;
                         break;
-                }*/
-
-                //klickcount.setText("Hallo");
+                }
 
                 switch (Klick) {
                     case 1:
@@ -114,34 +105,49 @@ public class QuestCat extends AppCompatActivity {
                         weiterFertig.setText(R.string.fertig);
                         break;
                     case 5:
+                        Fragefeld.setText(R.string.frage6);
+                        sN.setText(R.string.aw6sn);
+                        uF.setText(R.string.aw6uf);
+                        tP.setText(R.string.aw6tp);
+                        sT.setText(R.string.aw6st);
+                        Klick++;
+                        weiterFertig.setText(R.string.fertig);
+                        break;
+                    case 6:
+                        Fragefeld.setText(R.string.frage7);
+                        sN.setText(R.string.aw7sn);
+                        uF.setText(R.string.aw7uf);
+                        tP.setText(R.string.aw7tp);
+                        sT.setText(R.string.aw7st);
+                        Klick++;
+                        weiterFertig.setText(R.string.fertig);
+                        break;
+                    case 7:
+                        Fragefeld.setText(R.string.frage8);
+                        sN.setText(R.string.aw8sn);
+                        uF.setText(R.string.aw8uf);
+                        tP.setText(R.string.aw8tp);
+                        sT.setText(R.string.aw8st);
+                        Klick++;
+                        weiterFertig.setText(R.string.fertig);
+                        break;
+                    case 8:
+                        Fragefeld.setText(R.string.frage9);
+                        sN.setText(R.string.aw9sn);
+                        uF.setText(R.string.aw9uf);
+                        tP.setText(R.string.aw9tp);
+                        sT.setText(R.string.aw9st);
+                        Klick++;
+                        weiterFertig.setText(R.string.fertig);
+                        break;
+                    case 9:
+                        finish();
+                    default:
                         finish();
                 }
+
+                rG.clearCheck();
             }
         });
-
     }
-
-   /* public void clickedRB(View view) {
-        boolean checked = ((RadioButton)view).isChecked();
-
-        switch (view.getId()) {
-            case R.id.rBsn:
-                if (checked)
-                    countSn++;
-                break;
-            case R.id.rBuf:
-                if (checked)
-                    countUf++;
-                break;
-            case R.id.rBtp:
-                if (checked)
-                    countTp++;
-                break;
-            case R.id.rBst:
-                if (checked)
-                    countSt++;
-                break;
-        }
-    }*/
-
 }
