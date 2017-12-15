@@ -12,7 +12,8 @@ import android.widget.TextView;
 public class QuestCat extends AppCompatActivity {
 
     private TextView Fragefeld;
-    private TextView klickcount;
+    private TextView max;
+    private TextView min;
     private Button weiterFertig;
     private SeekBar bar;
     private int Klick = 1;
@@ -25,6 +26,7 @@ public class QuestCat extends AppCompatActivity {
     int countUf = 0;
     int countTp = 0;
     int countSt = 0;
+    int sliderProg = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +34,8 @@ public class QuestCat extends AppCompatActivity {
         setContentView(R.layout.activity_quest_cat);
 
         Fragefeld = (TextView) findViewById(R.id.Fragefeld);
-        klickcount = (TextView) findViewById(R.id.Klicks);
+        max = (TextView) findViewById(R.id.Max);
+        min = (TextView) findViewById(R.id.Min);
         weiterFertig = (Button) findViewById(R.id.button);
         bar = (SeekBar) findViewById(R.id.Regler);
         rG = (RadioGroup) findViewById(R.id.radioGroup);
@@ -42,12 +45,33 @@ public class QuestCat extends AppCompatActivity {
         sT = (RadioButton) findViewById(R.id.rBst);
 
         bar.setVisibility(View.INVISIBLE);
+        max.setVisibility(View.INVISIBLE);
+        min.setVisibility(View.INVISIBLE);
         Fragefeld.setText(R.string.frage1);
         weiterFertig.setText(R.string.weiter);
         sN.setText(R.string.aw1sn);
         uF.setText(R.string.aw1uf);
         tP.setText(R.string.aw1tp);
         sT.setText(R.string.aw1st);
+
+        bar.setMax(3);
+
+        bar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                sliderProg = progress;
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
 
         weiterFertig.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,7 +101,6 @@ public class QuestCat extends AppCompatActivity {
                         sT.setText(R.string.aw2st);
                         Klick++;
                         weiterFertig.setText(R.string.weiter);
-                        klickcount.setText(countSn + " " + countUf + " " + countTp + " " + countSt);
                         break;
 
                     case 2:
@@ -88,21 +111,27 @@ public class QuestCat extends AppCompatActivity {
                         sT.setText(R.string.aw3st);
                         Klick++;
                         weiterFertig.setText(R.string.weiter);
-                        klickcount.setText(countSn + " " + countUf + " " + countTp + " " + countSt);
                         break;
 
                     case 3:
                         bar.setVisibility(v.VISIBLE);
+                        min.setVisibility(v.VISIBLE);
+                        max.setVisibility(v.VISIBLE);
                         rG.setVisibility(v.INVISIBLE);
                         Fragefeld.setText(R.string.schieberegler1);
+                        max.setText(R.string.srb);
+                        min.setText(R.string.sra);
                         Klick++;
                         weiterFertig.setText(R.string.weiter);
-                        klickcount.setText(countSn + " " + countUf + " " + countTp + " " + countSt);
                         break;
 
                     case 4:
-                        rG.setVisibility(v.VISIBLE);
+                        sliderProgress(sliderProg);
+                        clearSlider();
                         bar.setVisibility(v.INVISIBLE);
+                        min.setVisibility(v.INVISIBLE);
+                        max.setVisibility(v.INVISIBLE);
+                        rG.setVisibility(v.VISIBLE);
                         Fragefeld.setText(R.string.frage4);
                         sN.setText(R.string.aw4sn);
                         uF.setText(R.string.aw4uf);
@@ -110,8 +139,6 @@ public class QuestCat extends AppCompatActivity {
                         sT.setText(R.string.aw4st);
                         Klick++;
                         weiterFertig.setText(R.string.weiter);
-                        /*int value = bar.;
-                        klickcount.setText(value);*/
                         break;
 
                     case 5:
@@ -122,7 +149,6 @@ public class QuestCat extends AppCompatActivity {
                         sT.setText(R.string.aw5st);
                         Klick++;
                         weiterFertig.setText(R.string.weiter);
-                        klickcount.setText(countSn + " " + countUf + " " + countTp + " " + countSt);
                         break;
 
                     case 6:
@@ -133,10 +159,27 @@ public class QuestCat extends AppCompatActivity {
                         sT.setText(R.string.aw6st);
                         Klick++;
                         weiterFertig.setText(R.string.weiter);
-                        klickcount.setText(countSn + " " + countUf + " " + countTp + " " + countSt);
                         break;
 
                     case 7:
+                        bar.setVisibility(v.VISIBLE);
+                        min.setVisibility(v.VISIBLE);
+                        max.setVisibility(v.VISIBLE);
+                        rG.setVisibility(v.INVISIBLE);
+                        Fragefeld.setText(R.string.schieberegler2);
+                        max.setText(R.string.srb);
+                        min.setText(R.string.sra);
+                        Klick++;
+                        weiterFertig.setText(R.string.weiter);
+                        break;
+
+                    case 8:
+                        sliderProgress(sliderProg);
+                        clearSlider();
+                        bar.setVisibility(v.INVISIBLE);
+                        min.setVisibility(v.INVISIBLE);
+                        max.setVisibility(v.INVISIBLE);
+                        rG.setVisibility(v.VISIBLE);
                         Fragefeld.setText(R.string.frage7);
                         sN.setText(R.string.aw7sn);
                         uF.setText(R.string.aw7uf);
@@ -144,10 +187,9 @@ public class QuestCat extends AppCompatActivity {
                         sT.setText(R.string.aw7st);
                         Klick++;
                         weiterFertig.setText(R.string.weiter);
-                        klickcount.setText(countSn + " " + countUf + " " + countTp + " " + countSt);
                         break;
 
-                    case 8:
+                    case 9:
                         Fragefeld.setText(R.string.frage8);
                         sN.setText(R.string.aw8sn);
                         uF.setText(R.string.aw8uf);
@@ -155,22 +197,51 @@ public class QuestCat extends AppCompatActivity {
                         sT.setText(R.string.aw8st);
                         Klick++;
                         weiterFertig.setText(R.string.weiter);
-                        klickcount.setText(countSn + " " + countUf + " " + countTp + " " + countSt);
                         break;
 
-                    case 9:
+                    case 10:
                         Fragefeld.setText(R.string.frage9);
                         sN.setText(R.string.aw9sn);
                         uF.setText(R.string.aw9uf);
                         tP.setText(R.string.aw9tp);
                         sT.setText(R.string.aw9st);
                         Klick++;
-                        weiterFertig.setText(R.string.fertig);
-                        klickcount.setText(countSn + " " + countUf + " " + countTp + " " + countSt);
+                        weiterFertig.setText(R.string.weiter);
                         break;
 
-                    case 10:
+                    case 11:
+                        bar.setVisibility(v.VISIBLE);
+                        min.setVisibility(v.VISIBLE);
+                        max.setVisibility(v.VISIBLE);
+                        rG.setVisibility(v.INVISIBLE);
+                        Fragefeld.setText(R.string.schieberegler3);
+                        max.setText(R.string.srb);
+                        min.setText(R.string.sra);
+                        Klick++;
+                        weiterFertig.setText(R.string.fertig);
+                        break;
+
+                    case 12:
+                        sliderProgress(sliderProg);
+                        bar.setVisibility(v.INVISIBLE);
+                        min.setVisibility(v.INVISIBLE);
+                        max.setVisibility(v.INVISIBLE);
+                        if (countSn >= (countSt & countTp & countUf)) {
+                            Fragefeld.setText("Du bist eine Schnarchnase");
+                        } else if (countUf >= (countSt & countTp & countSn)) {
+                            Fragefeld.setText("Du bist ein Überflieger");
+                        } else if (countTp >= (countSt & countSn & countUf)) {
+                            Fragefeld.setText("Du bist ein Tollpatsch");
+                        } else {
+                            Fragefeld.setText("Du bist eine Snapchat-Tussi");
+                        }
+                        weiterFertig.setText("Danke");
+                        Klick++;
+                        break;
+
+                    case 13:
                         finish();
+
                     default:
                         finish();
                 }
@@ -178,5 +249,27 @@ public class QuestCat extends AppCompatActivity {
                 rG.clearCheck();
             }
         });
+    }
+
+    public void sliderProgress (int i) {
+        switch (i) {
+            case 0:
+                countSn ++;
+                break;
+            case 1:
+                countTp ++;
+                break;
+            case 2:
+                countSt ++;
+                break;
+            case 3:
+                countUf ++;
+                break;
+        }
+    }
+
+    public void clearSlider() {
+        bar.setProgress(0);
+        sliderProg = 0;
     }
 }

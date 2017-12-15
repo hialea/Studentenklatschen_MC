@@ -63,6 +63,8 @@
     <string name="schieberegler1">Bist du ein ordentlicher Mensch?</string>
     <string name="schieberegler2">Du gehst gern auf Leute zu.</string>
     <string name="schieberegler3">Bist du extrovertiert?</string>
+    <string name="sra">Nein.</string>
+    <string name="srb">Ja.</string>
     <string name="nichts">Nichts davon.</string>
     <string name="weiter">Weiter</string>
     <string name="fertig">Fertig</string>
