@@ -17,13 +17,13 @@ public class Character {
     int level;
     int exp;
 
-    public Character(String name, Attributes attributes, Role role, Inventory inventory, int level, int exp) {
+    public Character(String name, Role role) {
         this.name = name;
-        this.attributes = attributes;
+        this.attributes = new Attributes(role);
         this.role = role;
-        this.inventory = inventory;
-        this.level = level;
-        this.exp = exp;
+        this.inventory = new Inventory();
+        this.level = 1;
+        this.exp = 0;
     }
     public void gainXP(int xp){
         exp+=xp;
