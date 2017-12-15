@@ -3,19 +3,20 @@ package de.hs_hannover.fholz.studentenklatschen.Datamodel;
 
 public class Inventory {
     final int INV_SIZE = 10;
-    static class Slots{
-        static final int
+    public static class Slots{
+        public static final int
             NUM_SLOTS = 4,
             HAND = 0,
             TOP = 1,
             BOOTS = 2,
             PANTS = 3;
-        static final String[] names =
+
+        public static final String[] names =
         {
-            "Hand",
+            "Laptop",
             "T-Shirt",
-            "Boots",
-            "Pants"
+            "Schuhe",
+            "Hose"
         };
     }
     int cur;

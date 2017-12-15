@@ -3,8 +3,8 @@ package de.hs_hannover.fholz.studentenklatschen.Datamodel;
 import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Attributes.Attr.*;
 
 public class Attributes {
-    class Attr{
-        static final int NUMBER_ATTRS = 3,
+    public class Attr{
+        public static final int NUMBER_ATTRS = 3,
         STRENGTH = 0,
         DEFENSE = 1,
         SPECIAL = 2;

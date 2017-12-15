@@ -1,15 +1,15 @@
 package de.hs_hannover.fholz.studentenklatschen.Datamodel;
 
-class Item {
-    String name;
+public class Item {
+    public String name;
     int itemLVL;
-    int slot;
-    int[] attr;
+    public int slot;
+    public int[] attr = new int[3];
     Affix affix;
-    Item(int slot, int itmlvl, Affix affix) // use finals from Inventory.Slots for slot; create static selection of affix objects
+    public Item(int slot, int itemlvl, Affix affix) // use finals from Inventory.Slots for slot; create static selection of affix objects
     {
         this.affix = affix;
-        itemLVL = itmlvl;
+        itemLVL = itemlvl;
         attr[Attributes.Attr.STRENGTH] = genStat(itemLVL, affix, Attributes.Attr.STRENGTH);
         attr[Attributes.Attr.DEFENSE] = genStat(itemLVL, affix, Attributes.Attr.DEFENSE);
         attr[Attributes.Attr.SPECIAL] = genStat(itemLVL, affix, Attributes.Attr.SPECIAL);
@@ -17,7 +17,7 @@ class Item {
         name = genName(Inventory.Slots.names[slot], affix);
 
     }
-    private int genStat(int lvl, Affix affix, int atr) {
+    private int genStat(int lvl, Affix affix, int atr){
         return (int)(lvl * Math.random() * affix.factors[atr]);
     }
     private String genName(String slot, Affix affix){

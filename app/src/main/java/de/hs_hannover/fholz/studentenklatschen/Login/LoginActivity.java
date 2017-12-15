@@ -85,6 +85,7 @@ public class LoginActivity extends AppCompatActivity implements
                             Log.d(TAG, "createUserWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
                             loginRef.push().setValue(new Profile(user.getUid()));
+                            //loginRef.push().setValue(new Profile());
                             updateUI(user);
                         } else {
                             // If sign in fails, display a message to the user.
