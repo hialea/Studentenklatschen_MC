@@ -40,7 +40,7 @@ public class LoginActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        loginRef = FirebaseDatabase.getInstance().getReference().child("Profile");
+        loginRef = FirebaseDatabase.getInstance().getReference().child("Playerbase");
         // Views
         mStatusTextView = (TextView) findViewById(R.id.status);
         mDetailTextView = (TextView) findViewById(R.id.detail);
@@ -84,7 +84,7 @@ public class LoginActivity extends AppCompatActivity implements
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "createUserWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            loginRef.push().setValue(new Profile(user.getUid()));
+                            loginRef.child(user.getUid()).setValue(new Profile(user.getUid()));
                             //loginRef.push().setValue(new Profile());
                             updateUI(user);
                         } else {
