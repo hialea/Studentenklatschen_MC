@@ -226,14 +226,26 @@ public class QuestCat extends AppCompatActivity {
                         bar.setVisibility(v.INVISIBLE);
                         min.setVisibility(v.INVISIBLE);
                         max.setVisibility(v.INVISIBLE);
-                        if (countSn >= (countSt & countTp & countUf)) {
-                            Fragefeld.setText("Du bist eine Schnarchnase");
-                        } else if (countUf >= (countSt & countTp & countSn)) {
-                            Fragefeld.setText("Du bist ein Überflieger");
-                        } else if (countTp >= (countSt & countSn & countUf)) {
+                        if (countSn >= countSt) {
+                            if (countSn >= countUf) {
+                                if (countSn >= countTp) {
+                                    Fragefeld.setText("Du bist eine Schnarchnase");
+                                } else {
+                                    Fragefeld.setText("Du bist ein Tollpatsch");
+                                }
+                            } else {
+                                Fragefeld.setText("Du bist ein Überflieger");
+                            }
+                        } else if (countSt >= countTp) {
+                            if (countSt >= countUf) {
+                                Fragefeld.setText("Du bist eine Snapchat-Tussi");
+                            } else {
+                                Fragefeld.setText("Du bist ein Überflieger");
+                            }
+                        } else if (countTp >= countUf) {
                             Fragefeld.setText("Du bist ein Tollpatsch");
                         } else {
-                            Fragefeld.setText("Du bist eine Snapchat-Tussi");
+                            Fragefeld.setText("Du bist ein Überflieger");
                         }
                         weiterFertig.setText("Danke");
                         Klick++;
