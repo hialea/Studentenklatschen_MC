@@ -7,7 +7,7 @@ public class Character {
         SNAPCHAT_TUSSI,
         UEBERFLIEGER,
         SCHNARCHNASE,
-        PECHVOGEL
+        TOLLPATSCH
     }
 
     Attributes attributes;
@@ -24,6 +24,19 @@ public class Character {
         this.inventory = new Inventory();
         this.level = 1;
         this.exp = 0;
+    }
+
+    public Character(Role role) {
+        this.name = null;
+        this.attributes = new Attributes(role);
+        this.role = role;
+        this.inventory = new Inventory();
+        this.level = 1;
+        this.exp = 0;
+    }
+
+    public Character() {
+
     }
     public void gainXP(int xp){
         exp+=xp;

@@ -1,5 +1,6 @@
 package de.hs_hannover.fholz.studentenklatschen.Login;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,13 +20,15 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import de.hs_hannover.fholz.studentenklatschen.Datamodel.Profile;
+import de.hs_hannover.fholz.studentenklatschen.MainActivity;
+import de.hs_hannover.fholz.studentenklatschen.QuestCat;
 import de.hs_hannover.fholz.studentenklatschen.R;
 
 public class LoginActivity extends AppCompatActivity implements
         View.OnClickListener{
 
     private static final String TAG = "EmailPassword";
-    DatabaseReference loginRef;
+
     private TextView mStatusTextView;
     private TextView mDetailTextView;
     private EditText mEmailField;
@@ -33,6 +36,7 @@ public class LoginActivity extends AppCompatActivity implements
 
     // [START declare_auth]
     private FirebaseAuth mAuth;
+    private DatabaseReference loginRef;
     // [END declare_auth]
 
     @Override
@@ -52,6 +56,7 @@ public class LoginActivity extends AppCompatActivity implements
         findViewById(R.id.email_create_account_button).setOnClickListener(this);
         findViewById(R.id.sign_out_button).setOnClickListener(this);
         findViewById(R.id.verify_email_button).setOnClickListener(this);
+        findViewById(R.id.quest_button).setOnClickListener(this);
 
         // [START initialize_auth]
         mAuth = FirebaseAuth.getInstance();
@@ -203,6 +208,7 @@ public class LoginActivity extends AppCompatActivity implements
 
             findViewById(R.id.email_sign_in_button).setVisibility(View.GONE);
             findViewById(R.id.email_create_account_button).setVisibility(View.GONE);
+            findViewById(R.id.quest_button).setVisibility(View.GONE);
             mEmailField.setVisibility(View.GONE);
             mPasswordField.setVisibility(View.GONE);
             findViewById(R.id.verify_email_button).setVisibility(View.VISIBLE);
@@ -221,6 +227,7 @@ public class LoginActivity extends AppCompatActivity implements
             findViewById(R.id.email_create_account_button).setVisibility(View.VISIBLE);
             mEmailField.setVisibility(View.VISIBLE);
             mPasswordField.setVisibility(View.VISIBLE);
+            findViewById(R.id.quest_button).setVisibility(View.VISIBLE);
             findViewById(R.id.verify_email_button).setVisibility(View.GONE);
             findViewById(R.id.sign_out_button).setVisibility(View.GONE);
 
@@ -240,6 +247,9 @@ public class LoginActivity extends AppCompatActivity implements
             signOut();
         } else if (i == R.id.verify_email_button) {
             sendEmailVerification();
+        } else if (i == R.id.quest_button){
+            Intent I = new Intent(LoginActivity.this, QuestCat.class);
+            startActivity(I);
         }
     }
 }

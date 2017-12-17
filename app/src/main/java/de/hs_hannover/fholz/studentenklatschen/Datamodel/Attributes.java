@@ -16,7 +16,7 @@ public class Attributes {
     public Attributes(Character.Role role) {
         attributes= new int[NUMBER_ATTRS];
         switch(role){ // should have equal total stats
-            case PECHVOGEL:
+            case TOLLPATSCH:
                 attributes[STRENGTH] = 0;
                 attributes[DEFENSE] = 1;
                 attributes[SPECIAL] = 0;

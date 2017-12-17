@@ -9,8 +9,19 @@ import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import de.hs_hannover.fholz.studentenklatschen.Datamodel.Character;
+
+
 public class QuestCat extends AppCompatActivity {
 
+    public FirebaseAuth mAuth;
+    public FirebaseUser user;
+    public DatabaseReference loginRef;
     private TextView Fragefeld;
     private TextView max;
     private TextView min;
@@ -32,6 +43,10 @@ public class QuestCat extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quest_cat);
+
+        mAuth = FirebaseAuth.getInstance();
+        user = mAuth.getCurrentUser();
+        loginRef = FirebaseDatabase.getInstance().getReference().child("Playerbase");
 
         Fragefeld = (TextView) findViewById(R.id.Fragefeld);
         max = (TextView) findViewById(R.id.Max);
@@ -230,22 +245,29 @@ public class QuestCat extends AppCompatActivity {
                             if (countSn >= countUf) {
                                 if (countSn >= countTp) {
                                     Fragefeld.setText("Du bist eine Schnarchnase");
+                                    loginRef.child(user.getUid()).child("character").setValue(Character.Role.SCHNARCHNASE);
                                 } else {
                                     Fragefeld.setText("Du bist ein Tollpatsch");
+                                    loginRef.child(user.getUid()).child("character").setValue(Character.Role.TOLLPATSCH);
                                 }
                             } else {
                                 Fragefeld.setText("Du bist ein Überflieger");
+                                loginRef.child(user.getUid()).child("character").setValue(Character.Role.UEBERFLIEGER);
                             }
                         } else if (countSt >= countTp) {
                             if (countSt >= countUf) {
                                 Fragefeld.setText("Du bist eine Snapchat-Tussi");
+                                loginRef.child(user.getUid()).child("character").setValue(Character.Role.SNAPCHAT_TUSSI);
                             } else {
                                 Fragefeld.setText("Du bist ein Überflieger");
+                                loginRef.child(user.getUid()).child("character").setValue(Character.Role.UEBERFLIEGER);
                             }
                         } else if (countTp >= countUf) {
                             Fragefeld.setText("Du bist ein Tollpatsch");
+                            loginRef.child(user.getUid()).child("character").setValue(Character.Role.TOLLPATSCH);
                         } else {
                             Fragefeld.setText("Du bist ein Überflieger");
+                            loginRef.child(user.getUid()).child("character").setValue(Character.Role.UEBERFLIEGER);
                         }
                         weiterFertig.setText("Danke");
                         Klick++;
