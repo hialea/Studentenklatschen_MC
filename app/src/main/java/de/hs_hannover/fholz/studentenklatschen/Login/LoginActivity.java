@@ -208,9 +208,9 @@ public class LoginActivity extends AppCompatActivity implements
 
             findViewById(R.id.email_sign_in_button).setVisibility(View.GONE);
             findViewById(R.id.email_create_account_button).setVisibility(View.GONE);
-            findViewById(R.id.quest_button).setVisibility(View.GONE);
             mEmailField.setVisibility(View.GONE);
             mPasswordField.setVisibility(View.GONE);
+            findViewById(R.id.quest_button).setVisibility(View.VISIBLE);
             findViewById(R.id.verify_email_button).setVisibility(View.VISIBLE);
             findViewById(R.id.sign_out_button).setVisibility(View.VISIBLE);
 
@@ -227,7 +227,7 @@ public class LoginActivity extends AppCompatActivity implements
             findViewById(R.id.email_create_account_button).setVisibility(View.VISIBLE);
             mEmailField.setVisibility(View.VISIBLE);
             mPasswordField.setVisibility(View.VISIBLE);
-            findViewById(R.id.quest_button).setVisibility(View.VISIBLE);
+            findViewById(R.id.quest_button).setVisibility(View.GONE);
             findViewById(R.id.verify_email_button).setVisibility(View.GONE);
             findViewById(R.id.sign_out_button).setVisibility(View.GONE);
 
