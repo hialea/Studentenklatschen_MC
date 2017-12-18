@@ -19,7 +19,16 @@
         <activity android:name=".QuestCat" />
         <activity android:name=".LoadingScreen" />
         <activity android:name=".Login.LoginActivity" />
-        <activity android:name=".Shop.ItemGenerator"></activity>
+        <activity android:name=".Profil" />
+        <activity android:name=".Login.LoginActivity" />
+        <activity android:name=".Shop.ItemGenerator" />
+        <activity android:name=".Ergebnisse" />
+        <activity android:name=".Hauptmenue" />
+        <activity android:name=".Kampf" />
+        <activity android:name=".Vorlesung" />
+        <activity android:name=".Einstellungen" />
+        <activity android:name=".About" />
+        <activity android:name=".Credits"></activity>
     </application>
 
 </manifest>

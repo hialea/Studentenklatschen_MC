@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         Button myButton2 = (Button)findViewById(R.id.button2);
         Button myButton3 = (Button)findViewById(R.id.button3);
         Button myButton4 = (Button)findViewById(R.id.button4);
+        Button myButton5 = (Button)findViewById(R.id.button9);
 
         myButton2.setOnClickListener(
                 new Button.OnClickListener(){
@@ -43,6 +44,15 @@ public class MainActivity extends AppCompatActivity {
                 new Button.OnClickListener(){
                     public void onClick(View v){
                         Intent I = new Intent(MainActivity.this, ItemGenerator.class);
+                        startActivity(I);
+                    }
+                }
+        );
+
+        myButton5.setOnClickListener(
+                new Button.OnClickListener(){
+                    public void onClick(View v){
+                        Intent I = new Intent(MainActivity.this, QuestCat.class);
                         startActivity(I);
                     }
                 }
