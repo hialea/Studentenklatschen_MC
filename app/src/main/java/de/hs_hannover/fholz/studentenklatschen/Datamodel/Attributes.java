@@ -1,51 +1,80 @@
 package de.hs_hannover.fholz.studentenklatschen.Datamodel;
 
-import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Attributes.Attr.*;
+import java.util.HashMap;
+import java.util.Map;
+
 
 public class Attributes {
 
-    public class Attr{
-        public static final int NUMBER_ATTRS = 3,
-        STRENGTH = 0,
-        DEFENSE = 1,
-        SPECIAL = 2;
-    }
+    public static final int
+        STRENGTH=0,
+        DEFENSE=1,
+        SPECIAL=2;
 
-    int[] attributes;
+    public static final String[] attributeName = {
+        "STRENGTH",
+        "DEFENSE",
+        "SPECIAL"
+    };
+
+    public Map<String, Integer> charAttributes;
+    public Map<String, Integer> allAttributes;
 
     public Attributes(Character.Role role) {
-        attributes= new int[NUMBER_ATTRS];
+        charAttributes = new HashMap<>();
+        allAttributes = new HashMap<>();
+
         switch(role){ // should have equal total stats
             case TOLLPATSCH:
-                attributes[STRENGTH] = 0;
-                attributes[DEFENSE] = 1;
-                attributes[SPECIAL] = 0;
+                charAttributes.put(attributeName[STRENGTH], 1);
+                charAttributes.put(attributeName[DEFENSE], 0);
+                charAttributes.put(attributeName[SPECIAL], 0);
+
+                allAttributes.put(attributeName[STRENGTH], 1);
+                allAttributes.put(attributeName[DEFENSE], 0);
+                allAttributes.put(attributeName[SPECIAL], 0);
                 break;
             case SCHNARCHNASE:
-                attributes[STRENGTH] = 1;
-                attributes[DEFENSE] = 1;
-                attributes[SPECIAL] = 0;
+                charAttributes.put(attributeName[STRENGTH], 1);
+                charAttributes.put(attributeName[DEFENSE], 1);
+                charAttributes.put(attributeName[SPECIAL], 0);
+
+                allAttributes.put(attributeName[STRENGTH], 1);
+                allAttributes.put(attributeName[DEFENSE], 1);
+                allAttributes.put(attributeName[SPECIAL], 0);
                 break;
             case SNAPCHAT_TUSSI:
-                attributes[STRENGTH] = 0;
-                attributes[DEFENSE] = 1;
-                attributes[SPECIAL] = 1;
+                charAttributes.put(attributeName[STRENGTH], 1);
+                charAttributes.put(attributeName[DEFENSE], 0);
+                charAttributes.put(attributeName[SPECIAL], 1);
+
+                allAttributes.put(attributeName[STRENGTH], 1);
+                allAttributes.put(attributeName[DEFENSE], 0);
+                allAttributes.put(attributeName[SPECIAL], 1);
                 break;
             case UEBERFLIEGER:
-                attributes[STRENGTH] = 1;
-                attributes[DEFENSE] = 0;
-                attributes[SPECIAL] = 1;
+                charAttributes.put(attributeName[STRENGTH], 0);
+                charAttributes.put(attributeName[DEFENSE], 1);
+                charAttributes.put(attributeName[SPECIAL], 1);
+
+                allAttributes.put(attributeName[STRENGTH], 0);
+                allAttributes.put(attributeName[DEFENSE], 1);
+                allAttributes.put(attributeName[SPECIAL], 1);
                 break;
             default:
-                attributes[STRENGTH] = 0;
-                attributes[DEFENSE] = 0;
-                attributes[SPECIAL] = 0;
+                charAttributes.put(attributeName[STRENGTH], 0);
+                charAttributes.put(attributeName[DEFENSE], 0);
+                charAttributes.put(attributeName[SPECIAL], 0);
+
+                allAttributes.put(attributeName[STRENGTH], 0);
+                allAttributes.put(attributeName[DEFENSE], 0);
+                allAttributes.put(attributeName[SPECIAL], 0);
                 break;
 
         }
     }
 
-    void increaseAtr(int which){
-        attributes[which]++;
-    }
+  /*  void increaseAtr(int which){
+        charAttributes[which]++;
+    }*/
 }

@@ -1,24 +1,33 @@
 package de.hs_hannover.fholz.studentenklatschen.Datamodel;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Attributes.*;
+import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Inventory.Slots.slotName;
+
 public class Item {
     public String name;
     int itemLVL;
     public int slot;
-    public int[] attr = new int[3];
-    Affix affix;
+    public Map<String, Integer> attributes;
+    public Affix affix;
+
     public Item(int slot, int itemlvl, Affix affix) // use finals from Inventory.Slots for slot; create static selection of affix objects
     {
         this.affix = affix;
-        itemLVL = itemlvl;
-        attr[Attributes.Attr.STRENGTH] = genStat(itemLVL, affix, Attributes.Attr.STRENGTH);
-        attr[Attributes.Attr.DEFENSE] = genStat(itemLVL, affix, Attributes.Attr.DEFENSE);
-        attr[Attributes.Attr.SPECIAL] = genStat(itemLVL, affix, Attributes.Attr.SPECIAL);
         this.slot = slot;
-        name = genName(Inventory.Slots.names[slot], affix);
+        this.itemLVL = itemlvl;
+        attributes = new HashMap<>();
+        attributes.put(attributeName[STRENGTH], genStat(itemlvl, affix, STRENGTH));
+        attributes.put(attributeName[DEFENSE], genStat(itemlvl, affix, DEFENSE));
+        attributes.put(attributeName[SPECIAL], genStat(itemlvl, affix, SPECIAL));
+
+        name = genName(slotName[slot], affix);
 
     }
     private int genStat(int lvl, Affix affix, int atr){
-        return (int)(lvl * Math.random() * affix.factors[atr]);
+        return (int)(lvl * Math.random() * affix.factors.get(attributeName[atr]));
     }
     private String genName(String slot, Affix affix){
         return slot + " " + affix.name; // TODO
