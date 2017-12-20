@@ -10,18 +10,10 @@ import java.util.List;
 
 public class Profil extends AppCompatActivity {
 
-    List profilListe = new ArrayList<String>();
-    ListAdapter profilAdapter = new ArrayAdapter<String>(profilListe);
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profil);
-
-        profilListe.add("user123");
-        profilListe.add("Schnarchnase");
-        profilListe.add("Level 1");
-        profilListe.add("23 Punkte");
 
 
     }

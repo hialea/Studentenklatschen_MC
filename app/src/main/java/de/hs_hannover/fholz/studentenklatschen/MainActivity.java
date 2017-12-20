@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         myButton5.setOnClickListener(
                 new Button.OnClickListener(){
                     public void onClick(View v){
-                        Intent I = new Intent(MainActivity.this, QuestCat.class);
+                        Intent I = new Intent(MainActivity.this, Hauptmenue.class);
                         startActivity(I);
                     }
                 }
