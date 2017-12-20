@@ -9,10 +9,12 @@ import android.widget.TextView;
 import java.util.Random;
 
 import de.hs_hannover.fholz.studentenklatschen.Datamodel.Affix;
-import de.hs_hannover.fholz.studentenklatschen.Datamodel.Attributes;
 import de.hs_hannover.fholz.studentenklatschen.Datamodel.Inventory;
 import de.hs_hannover.fholz.studentenklatschen.Datamodel.Item;
 import de.hs_hannover.fholz.studentenklatschen.R;
+
+import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Attributes.*;
+import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Inventory.Slots.slotName;
 
 public class ItemGenerator extends AppCompatActivity {
 
@@ -22,6 +24,7 @@ public class ItemGenerator extends AppCompatActivity {
     private TextView slotView;
     private TextView nameView;
     private Button generateBtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,14 +41,14 @@ public class ItemGenerator extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Random rand = new Random();
-                int rndSlot = rand.nextInt(3);
+                int rndSlot = rand.nextInt(4);
                 int itemlvl = 2;
                 Affix affix = Affix.genAffix();
                 Item item = new Item(rndSlot, itemlvl, affix);
-                strengthView.setText(String.valueOf(item.attr[Attributes.Attr.STRENGTH]));
-                defenseView.setText(String.valueOf(item.attr[Attributes.Attr.DEFENSE]));
-                specialView.setText(String.valueOf(item.attr[Attributes.Attr.SPECIAL]));
-                slotView.setText(Inventory.Slots.names[item.slot]);
+                strengthView.setText(String.valueOf(item.attributes.get(attributeName[STRENGTH])));
+                defenseView.setText(String.valueOf(item.attributes.get(attributeName[DEFENSE])));
+                specialView.setText(String.valueOf(item.attributes.get(attributeName[SPECIAL])));
+                slotView.setText(slotName[item.slot]);
                 nameView.setText(item.name);
             }
         });

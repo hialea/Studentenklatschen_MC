@@ -245,29 +245,29 @@ public class QuestCat extends AppCompatActivity {
                             if (countSn >= countUf) {
                                 if (countSn >= countTp) {
                                     Fragefeld.setText("Du bist eine Schnarchnase");
-                                    loginRef.child(user.getUid()).child("character").setValue(Character.Role.SCHNARCHNASE);
+                                    loginRef.child(user.getUid()).child("character").setValue(new Character(Character.Role.SCHNARCHNASE));
                                 } else {
                                     Fragefeld.setText("Du bist ein Tollpatsch");
-                                    loginRef.child(user.getUid()).child("character").setValue(Character.Role.TOLLPATSCH);
+                                    loginRef.child(user.getUid()).child("character").setValue(new Character(Character.Role.TOLLPATSCH));
                                 }
                             } else {
                                 Fragefeld.setText("Du bist ein Überflieger");
-                                loginRef.child(user.getUid()).child("character").setValue(Character.Role.UEBERFLIEGER);
+                                loginRef.child(user.getUid()).child("character").setValue(new Character(Character.Role.UEBERFLIEGER));
                             }
                         } else if (countSt >= countTp) {
                             if (countSt >= countUf) {
                                 Fragefeld.setText("Du bist eine Snapchat-Tussi");
-                                loginRef.child(user.getUid()).child("character").setValue(Character.Role.SNAPCHAT_TUSSI);
+                                loginRef.child(user.getUid()).child("character").setValue(new Character(Character.Role.SNAPCHAT_TUSSI));
                             } else {
                                 Fragefeld.setText("Du bist ein Überflieger");
-                                loginRef.child(user.getUid()).child("character").setValue(Character.Role.UEBERFLIEGER);
+                                loginRef.child(user.getUid()).child("character").setValue(new Character(Character.Role.UEBERFLIEGER));
                             }
                         } else if (countTp >= countUf) {
                             Fragefeld.setText("Du bist ein Tollpatsch");
-                            loginRef.child(user.getUid()).child("character").setValue(Character.Role.TOLLPATSCH);
+                            loginRef.child(user.getUid()).child("character").setValue(new Character(Character.Role.TOLLPATSCH));
                         } else {
                             Fragefeld.setText("Du bist ein Überflieger");
-                            loginRef.child(user.getUid()).child("character").setValue(Character.Role.UEBERFLIEGER);
+                            loginRef.child(user.getUid()).child("character").setValue(new Character(Character.Role.UEBERFLIEGER));
                         }
                         weiterFertig.setText("Danke");
                         Klick++;
