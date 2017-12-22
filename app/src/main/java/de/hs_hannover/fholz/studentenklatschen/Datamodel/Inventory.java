@@ -6,6 +6,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Inventory.Slots.*;
+import de.hs_hannover.fholz.studentenklatschen.Datamodel.Character.*;
+import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Attributes.*;
 
 public class Inventory {
 
@@ -32,7 +34,7 @@ public class Inventory {
 
     public Inventory(){
         slotsTaken = 0;
-        equippedItems = new HashMap<String, Item>() {
+        equippedItems = new HashMap<String, Item>(){
             {
                 put(slotName[LAPTOP], null);
                 put(slotName[SHIRT], null);
@@ -42,36 +44,38 @@ public class Inventory {
         };
         invContents = new ArrayList<>();
     }
-   /* public boolean obtainItem(Item item){
-        for(int i=0; i < invContents.length; i++)
-        {
-            if(invContents[i]==null) {
-                invContents[i] = item;
-                return true;
-            }
+
+
+    public boolean obtainItem(Item item){
+        if(invContents.size()<10) {
+            invContents.add(item);
+            return true;
         }
         return false; // TODO inventar voll ausgabe
     }
-    public boolean equipItem(Item item){
-        for(int i=0; i<invContents.length; i++){
-            if(invContents[i].name.equals(item.name)){
-                removeItem(item);
-                obtainItem(equippedItems[item.slot]);
-                equippedItems[item.slot] = item;
-                return true; // item wurde ausgerüstet, altes ist im inventar.
+
+    public boolean equipItem(Item toEquip){
+        for(Item content : invContents){
+            if(toEquip.name.equals(content.name)){
+                removeItem(toEquip);
+                obtainItem(equippedItems.get(slotName[toEquip.slot]));
+                equippedItems.put(slotName[toEquip.slot], toEquip);
+                return true;
             }
         }
-        return false; // item war nicht im inventar
+        return false;
+
     }
-    public boolean removeItem(Item item)
-    {
-        for(int i=0; i< invContents.length; i++)
-        {
-            if(invContents[i].name.equals(item.name)){
-                invContents[i] = null;
-                return true; // item wurde entfernt
+
+    public boolean removeItem(Item toRemove){
+
+        for(Item content : invContents){
+            if(toRemove.name.equals(content.name)){
+                invContents.remove(content);
+                return true;
             }
         }
-        return false; // TODO item nicht gefunden ausgabe?
-    }*/
+        return false;
+    }
+
 }

@@ -1,5 +1,8 @@
 package de.hs_hannover.fholz.studentenklatschen.Datamodel;
 
+import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Attributes.attributeName;
+import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Inventory.Slots.slotName;
+
 public class Character {
 
     public enum Role{
@@ -28,30 +31,32 @@ public class Character {
     public Character() {
 
     }
-/*    public void gainXP(int xp){
+
+    public boolean gainXP(int xp){
         exp+=xp;
-        int xpreq = XPreq(level);
-        if(exp>=xpreq){
+        int xpreq = xpRequired(level);
+        if(exp>xpreq){
             exp-=xpreq;
             level++;
-            // show dialogue to choose a stat to increase
-            int atr= Attributes.Attr.STRENGTH *//*dialogue()*//*;
-            switch(atr){
-                case Attributes.Attr.STRENGTH:
-                    charAttributes.increaseAtr(Attributes.Attr.STRENGTH);
-                    break;
-                case Attributes.Attr.DEFENSE:
-                    charAttributes.increaseAtr(Attributes.Attr.DEFENSE);
-                    break;
-                case Attributes.Attr.SPECIAL:
-                    charAttributes.increaseAtr(Attributes.Attr.SPECIAL);
-                    break;
-                default:
-                    break;
-            }
+            return true;
         }
-    }*/
-    private int XPreq(int level){
+        return false;
+    }
+
+    private int xpRequired(int level){
         return (int)Math.pow(2, level);
+    }
+
+    public void updateAttributes(){
+        for(int i=0; i<attributeName.length; i++) {
+            int newAttr=0;
+            for(int j=0; j<slotName.length; j++){
+                if(inventory.equippedItems.get(slotName[j])!=null){
+                    newAttr += inventory.equippedItems.get(slotName[j]).attributes.get(attributeName[i]);
+                }
+            }
+            newAttr += attributes.charAttributes.get(attributeName[i]);
+            attributes.allAttributes.put(attributeName[i], newAttr);
+        }
     }
 }

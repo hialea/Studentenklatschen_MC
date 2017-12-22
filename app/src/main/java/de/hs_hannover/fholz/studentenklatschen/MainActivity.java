@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import de.hs_hannover.fholz.studentenklatschen.Login.LoginActivity;
+import de.hs_hannover.fholz.studentenklatschen.Menu.Hauptmenue;
 import de.hs_hannover.fholz.studentenklatschen.Shop.ItemGenerator;
 
 public class MainActivity extends AppCompatActivity {
@@ -52,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         myButton5.setOnClickListener(
                 new Button.OnClickListener(){
                     public void onClick(View v){
-                        Intent I = new Intent(MainActivity.this, QuestCat.class);
+                        Intent I = new Intent(MainActivity.this, Hauptmenue.class);
                         startActivity(I);
                     }
                 }
