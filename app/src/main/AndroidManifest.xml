@@ -28,7 +28,8 @@
         <activity android:name=".Menu.Vorlesung" />
         <activity android:name=".Menu.Einstellungen" />
         <activity android:name=".Menu.About" />
-        <activity android:name=".Menu.Credits"></activity>
+        <activity android:name=".Menu.Credits" />
+        <activity android:name=".Menu.AccelTest"></activity>
     </application>
 
 </manifest>

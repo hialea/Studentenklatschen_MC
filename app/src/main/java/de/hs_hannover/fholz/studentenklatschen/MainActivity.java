@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import de.hs_hannover.fholz.studentenklatschen.Login.LoginActivity;
+import de.hs_hannover.fholz.studentenklatschen.Menu.AccelTest;
 import de.hs_hannover.fholz.studentenklatschen.Menu.Hauptmenue;
 import de.hs_hannover.fholz.studentenklatschen.Shop.ItemGenerator;
 
@@ -22,11 +23,21 @@ public class MainActivity extends AppCompatActivity {
         Button myButton3 = (Button)findViewById(R.id.button3);
         Button myButton4 = (Button)findViewById(R.id.button4);
         Button myButton5 = (Button)findViewById(R.id.button9);
+        Button myButton6 = (Button)findViewById(R.id.button6);
 
         myButton2.setOnClickListener(
                 new Button.OnClickListener(){
                     public void onClick(View v){
                         Intent I = new Intent(MainActivity.this, QuestCat.class);
+                        startActivity(I);
+                    }
+                }
+        );
+
+        myButton6.setOnClickListener(
+                new Button.OnClickListener(){
+                    public void onClick(View v){
+                        Intent I = new Intent(MainActivity.this, AccelTest.class);
                         startActivity(I);
                     }
                 }
