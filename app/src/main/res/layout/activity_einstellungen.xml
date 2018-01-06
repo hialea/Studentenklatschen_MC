@@ -4,6 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="de.hs_hannover.fholz.studentenklatschen.Einstellungen">
+    tools:context="de.hs_hannover.fholz.studentenklatschen.Menu.Einstellungen">
 
 </android.support.constraint.ConstraintLayout>

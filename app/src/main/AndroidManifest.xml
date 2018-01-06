@@ -19,16 +19,17 @@
         <activity android:name=".QuestCat" />
         <activity android:name=".LoadingScreen" />
         <activity android:name=".Login.LoginActivity" />
-        <activity android:name=".Profil" />
+        <activity android:name=".Menu.Profil" />
         <activity android:name=".Login.LoginActivity" />
         <activity android:name=".Shop.ItemGenerator" />
-        <activity android:name=".Ergebnisse" />
-        <activity android:name=".Hauptmenue" />
-        <activity android:name=".Kampf" />
-        <activity android:name=".Vorlesung" />
-        <activity android:name=".Einstellungen" />
-        <activity android:name=".About" />
-        <activity android:name=".Credits"></activity>
+        <activity android:name=".Menu.Ergebnisse" />
+        <activity android:name=".Menu.Hauptmenue" />
+        <activity android:name=".Menu.Kampf" />
+        <activity android:name=".Menu.Vorlesung" />
+        <activity android:name=".Menu.Einstellungen" />
+        <activity android:name=".Menu.About" />
+        <activity android:name=".Menu.Credits" />
+        <activity android:name=".Menu.AccelTest"></activity>
     </application>
 
 </manifest>

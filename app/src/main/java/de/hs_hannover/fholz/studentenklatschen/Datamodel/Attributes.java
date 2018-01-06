@@ -74,7 +74,19 @@ public class Attributes {
         }
     }
 
-  /*  void increaseAtr(int which){
-        charAttributes[which]++;
-    }*/
+    void increaseAttribute(int attribute){
+        int attr;
+        switch(attribute){
+            case STRENGTH:
+                attr = charAttributes.get(attributeName[STRENGTH]);
+                charAttributes.put(attributeName[STRENGTH], ++attr);
+            case DEFENSE:
+                attr = charAttributes.get(attributeName[DEFENSE]);
+                charAttributes.put(attributeName[DEFENSE], ++attr);
+            case SPECIAL:
+                attr = charAttributes.get(attributeName[SPECIAL]);
+                charAttributes.put(attributeName[SPECIAL], ++attr);
+        }
+
+    }
 }

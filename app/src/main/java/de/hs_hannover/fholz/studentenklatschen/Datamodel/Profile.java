@@ -12,6 +12,7 @@ public class Profile {
     public Profile(){
 
     }
+
     public Profile(String id){
         this.id=id;
         this.character=null;

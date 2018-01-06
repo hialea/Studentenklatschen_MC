@@ -1,10 +1,12 @@
-package de.hs_hannover.fholz.studentenklatschen;
+package de.hs_hannover.fholz.studentenklatschen.Menu;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import de.hs_hannover.fholz.studentenklatschen.R;
 
 public class Hauptmenue extends AppCompatActivity {
 
