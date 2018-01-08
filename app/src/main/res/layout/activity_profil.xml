@@ -1,126 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="de.hs_hannover.fholz.studentenklatschen.Menu.Profil">
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="150dp"
-        android:layout_height="200dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        app:srcCompat="@color/colorPrimaryDark"
-        tools:layout_editor_absoluteX="208dp"
-        tools:layout_editor_absoluteY="16dp" />
+        android:layout_width="166dp"
+        android:layout_height="234dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintEnd_toStartOf="@+id/Typ"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@color/colorPrimaryDark" />
 
     <TextView
         android:id="@+id/Typ"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="13dp"
-        android:layout_marginTop="17dp"
-        android:layout_toEndOf="@+id/imageView"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="72dp"
         android:fontFamily="sans-serif"
         android:text="Typ: Schnarchnase"
         android:textAppearance="@style/TextAppearance.AppCompat"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="24sp"
+        android:textSize="22sp"
         android:textStyle="bold"
-        android:typeface="normal" />
+        android:typeface="normal"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/Name"
-        android:layout_width="match_parent"
+        android:layout_width="178dp"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/imageView"
-        android:layout_below="@+id/imageView"
+        android:layout_marginBottom="12dp"
         android:fontFamily="sans-serif"
         android:text="user123"
-        android:textAlignment="center"
+        android:textAlignment="viewStart"
         android:textAppearance="@style/TextAppearance.AppCompat"
         android:textColor="?attr/colorPrimaryDark"
         android:textSize="24sp"
         android:textStyle="bold"
         android:typeface="normal"
-        android:visibility="visible" />
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/Typ"
+        tools:layout_editor_absoluteX="178dp" />
 
     <Button
         android:id="@+id/button5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/button8"
-        android:layout_alignParentStart="true"
         android:layout_marginBottom="51dp"
         android:text="Ergebnisse >"
-        android:textSize="24sp" />
-
-    <Button
-        android:id="@+id/button7"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="11dp"
-        android:text="Meine Ausrüstung >"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/button8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/EXP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/Name"
-        android:layout_alignStart="@+id/Punkte"
-        android:layout_marginBottom="11dp"
         android:fontFamily="sans-serif"
         android:text="oooooo••••"
         android:textAppearance="@style/TextAppearance.AppCompat"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="22sp"
         android:textStyle="bold"
-        android:typeface="normal" />
+        android:typeface="normal"
+        app:layout_constraintStart_toStartOf="@+id/Punkte"
+        tools:layout_editor_absoluteY="196dp" />
 
     <Button
         android:id="@+id/button8"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/button7"
-        android:layout_alignParentStart="true"
         android:layout_marginBottom="51dp"
         android:text="Ausrüstung kaufen >"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/button7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button5" />
 
     <TextView
         android:id="@+id/Level"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/Typ"
-        android:layout_below="@+id/Typ"
-        android:layout_marginTop="16dp"
         android:fontFamily="sans-serif"
         android:text="Level 1"
         android:textAppearance="@style/TextAppearance.AppCompat"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:typeface="normal" />
+        android:typeface="normal"
+        tools:layout_editor_absoluteX="178dp"
+        tools:layout_editor_absoluteY="113dp" />
 
     <TextView
         android:id="@+id/Punkte"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/Level"
-        android:layout_below="@+id/Level"
-        android:layout_marginTop="18dp"
         android:fontFamily="sans-serif"
         android:text="37 Punkte"
         android:textAppearance="@style/TextAppearance.AppCompat"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:typeface="normal" />
+        android:typeface="normal"
+        tools:layout_editor_absoluteX="178dp"
+        tools:layout_editor_absoluteY="156dp" />
 
-</RelativeLayout>
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="511dp"
+        app:itemBackground="@color/colorPrimary"
+        app:itemIconTint="@drawable/nav_item_color_state"
+        app:itemTextColor="@drawable/nav_item_color_state"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button7"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:menu="@menu/bottom_navigation_main" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="64dp"
+        android:layout_marginTop="1dp"
+        android:text="Meine Ausrüstung >"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button8" />
+
+</android.support.constraint.ConstraintLayout>
