@@ -2,13 +2,11 @@ package de.hs_hannover.fholz.studentenklatschen.Menu;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.app.Activity;
 import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import android.os.Vibrator;
 import android.widget.TextView;
 import de.hs_hannover.fholz.studentenklatschen.R;
 
@@ -77,8 +75,6 @@ public class AccelTest extends AppCompatActivity implements SensorEventListener 
     @Override
     public void onSensorChanged(SensorEvent event) {
 
-        // clean current values
-        displayCleanValues();
         // display the current x,y,z accelerometer values
         displayCurrentValues();
         // display the max x,y,z accelerometer values
@@ -102,15 +98,6 @@ public class AccelTest extends AppCompatActivity implements SensorEventListener 
         lastY = event.values[1];
         lastZ = event.values[2];
 
-    }
-
-    // if the change in the accelerometer value is big enough, then vibrate!
-    // our threshold is MaxValue/2
-
-    public void displayCleanValues() {
-        currentX.setText("0.0");
-        currentY.setText("0.0");
-        currentZ.setText("0.0");
     }
 
     // display the current x,y,z accelerometer values
