@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <item
+        android:id="@+id/action_profil"
+        android:enabled="true"
+        android:icon="@drawable/ic_profil"
+        android:title="Profil"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/action_kampf"
+        android:enabled="true"
+        android:icon="@drawable/ic_kampf"
+        android:title="Kampf"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/action_reise"
+        android:enabled="true"
+        android:icon="@drawable/ic_reise"
+        android:title="Reise"
+        app:showAsAction="ifRoom"/>
+</menu>

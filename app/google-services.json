@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "129040816434",
+    "firebase_url": "https://studentenklatschen.firebaseio.com",
+    "project_id": "studentenklatschen",
+    "storage_bucket": "studentenklatschen.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:129040816434:android:3dd10505573c78d8",
+        "android_client_info": {
+          "package_name": "de.hs_hannover.fholz.studentenklatschen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "129040816434-bge9vnuch8fgjf36s7m8ivfhfnmhjftq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "de.hs_hannover.fholz.studentenklatschen",
+            "certificate_hash": "7d32531073dfd617d3121e71bfca174c4bc940be"
+          }
+        },
+        {
+          "client_id": "129040816434-qm19qvre2k396vd8gjhqbg93seqq439e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "de.hs_hannover.fholz.studentenklatschen",
+            "certificate_hash": "5076614e97f80dc1ec8c3b70abf20aebccb68440"
+          }
+        },
+        {
+          "client_id": "129040816434-s9ps364l4for3o9v3t8cufhdtak3dluh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkUf7NsELciWzmtAU0rKKVVyK_LT9L5r8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "129040816434-s9ps364l4for3o9v3t8cufhdtak3dluh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
