@@ -29,7 +29,8 @@
         <activity android:name=".Menu.Einstellungen" />
         <activity android:name=".Menu.About" />
         <activity android:name=".Menu.Credits" />
-        <activity android:name=".Menu.AccelTest"></activity>
+        <activity android:name=".Menu.AccelTest" />
+        <activity android:name=".Travel.Travel"></activity>
     </application>
 
 </manifest>

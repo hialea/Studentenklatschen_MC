@@ -66,6 +66,11 @@
     <string name="signed_in">Signed In</string>
     <string name="signed_out">Signed Out</string>
 
+    //TRAVEL
+    <string name="travelDesc">Leg Dein Handy während der Vorlesung oder Übung weg und schick Deinen Charakter auf Reisen.
+                            Je länger er unterwegs ist, desto mehr Punkte erhälst du und die Chance auf tolle Items steigt.</string>
+
+    <string name="go">"Losrennen!"</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
