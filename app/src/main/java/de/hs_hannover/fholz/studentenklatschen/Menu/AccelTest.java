@@ -74,7 +74,6 @@ public class AccelTest extends AppCompatActivity implements SensorEventListener 
 
     @Override
     public void onSensorChanged(SensorEvent event) {
-
         // display the current x,y,z accelerometer values
         displayCurrentValues();
         // display the max x,y,z accelerometer values
