@@ -9,6 +9,7 @@ import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Inventory.Slots.
 public class Item {
     public String name;
     int itemLVL;
+    int value;
     public int slot;
     public Map<String, Integer> attributes;
     public Affix affix;
@@ -18,6 +19,7 @@ public class Item {
         this.affix = affix;
         this.slot = slot;
         this.itemLVL = itemlvl;
+        this.value = itemlvl*300;
         attributes = new HashMap<>();
         attributes.put(attributeName[STRENGTH], genStat(itemlvl, affix, STRENGTH));
         attributes.put(attributeName[DEFENSE], genStat(itemlvl, affix, DEFENSE));

@@ -22,11 +22,10 @@ public class Travel extends AppCompatActivity {
 
     TextView timerTextView;
     long startTime = 0;
-    int earnedKlatschis = 0;
+    int earnedKlatschis = -1;
 
     Handler timerHandler = new Handler();
     Runnable timerRunnable = new Runnable() {
-
         @Override
         public void run() {
             long millis = System.currentTimeMillis() - startTime;
@@ -38,7 +37,7 @@ public class Travel extends AppCompatActivity {
                 Log.d("myyyyTag", String.valueOf(earnedKlatschis));
             }
             timerTextView.setText(String.format("%d:%02d", minutes, seconds));
-            timerHandler.postDelayed(this, 500);
+            timerHandler.postDelayed(this, 1000);
         }
     };
 
@@ -59,28 +58,26 @@ public class Travel extends AppCompatActivity {
                 if (viewButton.getText().equals("stop")) {
                     timerHandler.removeCallbacks(timerRunnable);
                     viewButton.setText("start");
-                    playerRef.child("character").addValueEventListener(new ValueEventListener() {
+                    playerRef.child("character").addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
-                            int k;
+                            int k, j;
                             for (DataSnapshot snap : dataSnapshot.getChildren()) {
-                                String location = snap.getValue().toString();
-                                Log.d("Locations updated", "location: " + location);
                             }
-
                             k = ((Long) dataSnapshot.child("inventory").child("klatschis").getValue()).intValue();
+                            j = ((Long) dataSnapshot.child("level").getValue()).intValue();
                             Log.d("asdfghjklö", String.valueOf(k));
-                            playerRef.child("character").child("inventory").child("klatschis").setValue(earnedKlatschis+k);
-
+                            Log.d("asdfghjklö", String.valueOf(j));
+                            Log.d("asdfghjklö", String.valueOf(earnedKlatschis));
+                            playerRef.child("character").child("inventory").child("klatschis").setValue((earnedKlatschis*j)+k);
+                            earnedKlatschis = -1;
                         }
 
                         @Override
                         public void onCancelled(DatabaseError databaseError) {
 
                         }
-
                     });
-
 
 
                 } else {
