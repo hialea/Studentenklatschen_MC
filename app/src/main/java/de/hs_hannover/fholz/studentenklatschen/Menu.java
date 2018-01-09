@@ -26,11 +26,9 @@ public class Menu extends AppCompatActivity {
                 case R.id.navigation_travel:
                     mTextMessage.setText(R.string.title_travel);
                     return true;
-
                 case R.id.navigation_shop:
                     mTextMessage.setText(R.string.title_shop);
                     return true;
-
             }
             return false;
         }
