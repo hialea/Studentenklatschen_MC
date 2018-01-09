@@ -30,6 +30,8 @@
         <activity android:name=".Menu.About" />
         <activity android:name=".Menu.Credits" />
         <activity android:name=".Menu.AccelTest" />
+        <activity android:name=".Shop.Shop"></activity>
+        <activity android:name=".Menu.AccelTest" />
         <activity android:name=".Menu.Fighting"></activity>
     </application>
 

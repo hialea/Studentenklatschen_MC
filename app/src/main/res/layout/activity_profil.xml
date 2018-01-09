@@ -54,12 +54,12 @@
         android:id="@+id/button5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="51dp"
         android:text="Ergebnisse >"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/button8"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="399dp" />
 
     <TextView
         android:id="@+id/EXP"
@@ -74,18 +74,6 @@
         android:typeface="normal"
         app:layout_constraintStart_toStartOf="@+id/Punkte"
         tools:layout_editor_absoluteY="196dp" />
-
-    <Button
-        android:id="@+id/button8"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="51dp"
-        android:text="Ausrüstung kaufen >"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/button7"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button5" />
 
     <TextView
         android:id="@+id/Level"
@@ -136,12 +124,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="64dp"
-        android:layout_marginTop="1dp"
         android:text="Meine Ausrüstung >"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button8" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
