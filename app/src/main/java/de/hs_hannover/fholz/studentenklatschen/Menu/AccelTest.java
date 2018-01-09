@@ -35,12 +35,10 @@ public class AccelTest extends AppCompatActivity implements SensorEventListener 
 
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         if (sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER) != null) {
-            // success! we have an accelerometer
 
             accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
             sensorManager.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_NORMAL);
         } else {
-            // fai! we dont have an accelerometer!
         }
 
     }
