@@ -2,6 +2,7 @@ package de.hs_hannover.fholz.studentenklatschen.Menu;
 
 import android.content.Context;
 import android.hardware.Sensor;
+import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.CountDownTimer;
@@ -12,10 +13,9 @@ import android.widget.TextView;
 
 import de.hs_hannover.fholz.studentenklatschen.R;
 
-public class Fighting extends AppCompatActivity {
+public class Fighting extends AppCompatActivity implements SensorEventListener {
 
-    TextView counter;
-    Boolean timeOut = false;
+    TextView counter, task;
     private float lastX, lastY, lastZ;
     private SensorManager sensorManager;
     private Sensor accelerometer;
@@ -32,19 +32,70 @@ public class Fighting extends AppCompatActivity {
         setContentView(R.layout.activity_fight);
 
         counter = (TextView) findViewById(R.id.timecount);
+        task = (TextView) findViewById(R.id.challenge);
+
+        task.setVisibility(View.INVISIBLE);
 
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
 
-        accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-        sensorManager.registerListener((SensorEventListener) this, accelerometer, sensorManager.SENSOR_DELAY_NORMAL);
+        if (sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER) != null) {
+
+            accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+            sensorManager.registerListener((SensorEventListener) this, accelerometer, SensorManager.SENSOR_DELAY_NORMAL);
+        } else {
+        }
 
         countDown(5, counter);
 
-        if (timeOut) { //in onfinsh rein!
-            counter.setVisibility(View.VISIBLE);
-            counter.setText("Moin Moin");
-        }
+    }
 
+    protected void onResume() {
+        super.onResume();
+        sensorManager.registerListener((SensorEventListener) this, accelerometer, SensorManager.SENSOR_DELAY_NORMAL);
+    }
+
+    protected void onPause() {
+        super.onPause();
+        sensorManager.unregisterListener((SensorEventListener) this);
+    }
+
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int accuracy) {
+
+    }
+
+    @Override
+    public void onSensorChanged(SensorEvent event) {
+
+        MaxValues();
+
+        deltaX = Math.abs(lastX - event.values[0]);
+        deltaY = Math.abs(lastY - event.values[1]);
+        deltaZ = Math.abs(lastZ - event.values[2]);
+
+        if (deltaX < 1)
+            deltaX = 0;
+        if (deltaY < 1)
+            deltaY = 0;
+        if (deltaZ < 1)
+            deltaZ = 0;
+
+        lastX = event.values[0];
+        lastY = event.values[1];
+        lastZ = event.values[2];
+
+    }
+
+    public void MaxValues() {
+        if (deltaX > deltaXMax) {
+            deltaXMax = deltaX;
+        }
+        if (deltaY > deltaYMax) {
+            deltaYMax = deltaY;
+        }
+        if (deltaZ > deltaZMax) {
+            deltaZMax = deltaZ;
+        }
     }
 
     public void countDown(int Seconds, final TextView displayTime){
@@ -58,8 +109,17 @@ public class Fighting extends AppCompatActivity {
 
             public void onFinish() {
                 displayTime.setVisibility(View.INVISIBLE);
-                timeOut = true;
+                task.setVisibility(View.VISIBLE);
+                task.setText(R.string.challengeUpsideDown);
+                challengeUpDown();
+
             }
         }.start();
+    }
+
+    public void challengeUpDown (){
+        if (deltaYMax <= (-7)) {
+            task.setText("Prima");
+        }
     }
 }
