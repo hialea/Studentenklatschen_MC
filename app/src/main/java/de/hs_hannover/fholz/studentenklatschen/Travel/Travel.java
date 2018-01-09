@@ -57,21 +57,21 @@ public class Travel extends AppCompatActivity {
             public void onClick(View v) {
                 Button viewButton = (Button) v;
                 if (viewButton.getText().equals("stop")) {
-                    final int value=0;
                     timerHandler.removeCallbacks(timerRunnable);
-
+                    viewButton.setText("start");
                     playerRef.child("character").addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
-                            int k = value;
+                            int k;
                             for (DataSnapshot snap : dataSnapshot.getChildren()) {
                                 String location = snap.getValue().toString();
                                 Log.d("Locations updated", "location: " + location);
                             }
 
                             k = ((Long) dataSnapshot.child("inventory").child("klatschis").getValue()).intValue();
-                            Log.d("asdfghjklö", String.valueOf(value));
+                            Log.d("asdfghjklö", String.valueOf(k));
                             playerRef.child("character").child("inventory").child("klatschis").setValue(earnedKlatschis+k);
+
                         }
 
                         @Override
@@ -79,11 +79,9 @@ public class Travel extends AppCompatActivity {
 
                         }
 
-
-
                     });
 
-                    viewButton.setText("start");
+
 
                 } else {
                     startTime = System.currentTimeMillis();
