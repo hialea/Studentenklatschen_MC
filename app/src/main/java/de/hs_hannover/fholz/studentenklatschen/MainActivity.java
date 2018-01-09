@@ -7,8 +7,8 @@ import android.view.View;
 import android.widget.Button;
 
 import de.hs_hannover.fholz.studentenklatschen.Login.LoginActivity;
-import de.hs_hannover.fholz.studentenklatschen.Menu.Fighting;
-import de.hs_hannover.fholz.studentenklatschen.Menu.Hauptmenue;
+import de.hs_hannover.fholz.studentenklatschen.MainMenu.Fighting;
+import de.hs_hannover.fholz.studentenklatschen.MainMenu.Hauptmenue;
 import de.hs_hannover.fholz.studentenklatschen.Shop.ItemGenerator;
 import de.hs_hannover.fholz.studentenklatschen.Travel.Travel;
 

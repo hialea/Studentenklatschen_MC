@@ -1,4 +1,4 @@
-package de.hs_hannover.fholz.studentenklatschen.Menu;
+package de.hs_hannover.fholz.studentenklatschen.MainMenu;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -9,12 +9,12 @@ import android.view.MenuItem;
 
 import de.hs_hannover.fholz.studentenklatschen.R;
 
-public class Vorlesung extends AppCompatActivity {
+public class About extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_vorlesung);
+        setContentView(R.layout.activity_about);
 
         BottomNavigationView bottomNavigationView=(BottomNavigationView)findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -23,19 +23,19 @@ public class Vorlesung extends AppCompatActivity {
                 switch (item.getItemId())
                 {
                     case R.id.action_profil:
-                        Intent intent1 = new Intent (Vorlesung.this, Profil.class);
+                        Intent intent1 = new Intent (About.this, Profil.class);
                         startActivity(intent1);
                         //Toast.makeText(Hauptmenue.this, "Action Profil Clicked", Toast.LENGTH_SHORT).show();
                         break;
 
                     case R.id.action_kampf:
-                        Intent intent2 = new Intent (Vorlesung.this, Kampf.class);
+                        Intent intent2 = new Intent (About.this, Kampf.class);
                         startActivity(intent2);
                         //Toast.makeText(Hauptmenue.this, "Action Kampf Clicked", Toast.LENGTH_SHORT).show();
                         break;
 
                     case R.id.action_reise:
-                        Intent intent3 = new Intent (Vorlesung.this, Vorlesung.class);
+                        Intent intent3 = new Intent (About.this, Vorlesung.class);
                         startActivity(intent3);
                         //Toast.makeText(Hauptmenue.this, "Action Reise Clicked", Toast.LENGTH_SHORT).show();
                         break;

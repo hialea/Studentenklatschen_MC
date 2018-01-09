@@ -9,7 +9,7 @@
     android:gravity="center"
     android:orientation="vertical"
     android:paddingTop="20dp"
-    tools:context="de.hs_hannover.fholz.studentenklatschen.Menu.AccelTest">
+    tools:context="de.hs_hannover.fholz.studentenklatschen.MainMenu.AccelTest">
 
     <TextView
         android:id="@+id/textView"

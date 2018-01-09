@@ -1,4 +1,4 @@
-package de.hs_hannover.fholz.studentenklatschen.Menu;
+package de.hs_hannover.fholz.studentenklatschen.MainMenu;
 
 import android.content.Context;
 import android.hardware.Sensor;

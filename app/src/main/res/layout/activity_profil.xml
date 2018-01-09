@@ -5,7 +5,7 @@
     android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="de.hs_hannover.fholz.studentenklatschen.Menu.Profil">
+    tools:context="de.hs_hannover.fholz.studentenklatschen.MainMenu.Profil">
 
     <ImageView
         android:id="@+id/imageView"

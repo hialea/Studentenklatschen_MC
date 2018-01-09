@@ -75,8 +75,13 @@
                             Je länger er unterwegs ist, desto mehr Punkte erhälst du und die Chance auf tolle Items steigt.</string>
 
     <string name="go">"Losrennen!"</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-
+    <string name="title_activity_menu">Menu</string>
+    <string name="title_profile">Profil</string>
+    <string name="title_shop">Shop</string>
+    <string name="title_travel">Reise</string>
+    <string name="title_fight">Kampf</string>
 
 </resources>
