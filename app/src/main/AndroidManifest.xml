@@ -20,7 +20,7 @@
         <activity android:name=".LoadingScreen" />
         <activity android:name=".Login.LoginActivity" />
         <activity android:name=".Menu.Profil" />
-        <activity android:name=".Login.LoginActivity" />
+        <activity android:name=".Travel.Travel" />
         <activity android:name=".Shop.ItemGenerator" />
         <activity android:name=".Menu.Ergebnisse" />
         <activity android:name=".Menu.Hauptmenue" />

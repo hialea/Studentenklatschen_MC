@@ -6,8 +6,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Inventory.Slots.*;
-import de.hs_hannover.fholz.studentenklatschen.Datamodel.Character.*;
-import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Attributes.*;
 
 public class Inventory {
 
@@ -31,8 +29,10 @@ public class Inventory {
     public int slotsTaken;
     public ArrayList<Item> invContents;
     public Map<String, Item> equippedItems;
+    public int klatschis;
 
     public Inventory(){
+        klatschis = 10;
         slotsTaken = 0;
         equippedItems = new HashMap<String, Item>(){
             {

@@ -50,6 +50,10 @@
     <string name="schieberegler3">Bist du extrovertiert?</string>
     <string name="sra">Nein.</string>
     <string name="srb">Ja.</string>
+    <string name="challengeLeft">Turn Phone to the left</string>
+    <string name="challengeRight">Turn Phone to the right</string>
+    <string name="challengeUpsideDown">Turn Phone upside down</string>
+    <string name="challenge">Ja.</string>
     <string name="nichts">Nichts davon.</string>
     <string name="weiter">Weiter</string>
     <string name="fertig">Fertig</string>
