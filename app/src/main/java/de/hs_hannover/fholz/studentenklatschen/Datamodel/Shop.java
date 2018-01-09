@@ -6,4 +6,5 @@ package de.hs_hannover.fholz.studentenklatschen.Datamodel;
 
 public class Shop {
 
+
 }

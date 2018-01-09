@@ -19,8 +19,10 @@ import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Attributes.attri
 
 public class Shop extends AppCompatActivity {
 
-    TreeMap<String, Integer> tm = new TreeMap<String, Integer>();
+    TreeMap<String, Integer> tm = new TreeMap<>();
 
+    /*in einer treemap hast du immer ein paar aus 1 schlüsselwort und 1 objekt. du versuchst aber da drei objekte reinzuschieben
+     */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +36,8 @@ public class Shop extends AppCompatActivity {
         Affix affix = Affix.genAffix();
 
         Item item1 = new Item(rndSlot, itemlvl, affix);
-        tm.put(hallo, item1.attributes.get(attributeName[STRENGTH]), item1.attributes.get(attributeName[DEFENSE]), item1.attributes.get(attributeName[SPECIAL]));
+
+        /*tm.put(hallo, item1.attributes.get(attributeName[STRENGTH]), item1.attributes.get(attributeName[DEFENSE]), item1.attributes.get(attributeName[SPECIAL]));
 
         Item item2 = new Item(rndSlot, itemlvl, affix);
         tm.put(ha, item2.attributes.get(attributeName[STRENGTH]), item2.attributes.get(attributeName[DEFENSE]), item2.attributes.get(attributeName[SPECIAL]));
@@ -44,6 +47,8 @@ public class Shop extends AppCompatActivity {
 
         Item item4 = new Item(rndSlot, itemlvl, affix);
         tm.put(he, item4.attributes.get(attributeName[STRENGTH]), item4.attributes.get(attributeName[DEFENSE]), item4.attributes.get(attributeName[SPECIAL]));
+
+        brauchst du nicht*/
 
 
     }
