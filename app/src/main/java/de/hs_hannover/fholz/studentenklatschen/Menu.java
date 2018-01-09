@@ -1,11 +1,15 @@
 package de.hs_hannover.fholz.studentenklatschen;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.TextView;
+
+import de.hs_hannover.fholz.studentenklatschen.MainMenu.Fighting;
+import de.hs_hannover.fholz.studentenklatschen.Travel.Travel;
 
 public class Menu extends AppCompatActivity {
 
@@ -19,6 +23,8 @@ public class Menu extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.navigation_profile:
                     mTextMessage.setText(R.string.title_profile);
+                    Intent I = new Intent(Menu.this, Travel.class);
+                    startActivity(I);
                     return true;
                 case R.id.navigation_fight:
                     mTextMessage.setText(R.string.title_fight);
