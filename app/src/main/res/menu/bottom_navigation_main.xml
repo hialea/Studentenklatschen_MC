@@ -23,4 +23,11 @@
         android:icon="@drawable/ic_reise"
         android:title="Reise"
         app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/action_shop"
+        android:enabled="true"
+        android:icon="@drawable/ic_shop"
+        android:title="Ausrüstung"
+        app:showAsAction="ifRoom"/>
 </menu>
