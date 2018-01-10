@@ -8,7 +8,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import de.hs_hannover.fholz.studentenklatschen.MainMenu.Fighting;
 import de.hs_hannover.fholz.studentenklatschen.Travel.Travel;
 
 public class Menu extends AppCompatActivity {

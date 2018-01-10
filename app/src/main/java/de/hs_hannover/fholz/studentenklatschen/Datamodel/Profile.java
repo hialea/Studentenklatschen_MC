@@ -8,6 +8,7 @@ public class Profile {
     public Character character;
     public String name;
     public Image image;
+    public History history;
 
     public Profile(){
 
