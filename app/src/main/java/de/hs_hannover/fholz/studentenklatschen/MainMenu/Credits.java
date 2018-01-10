@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import de.hs_hannover.fholz.studentenklatschen.R;
+import de.hs_hannover.fholz.studentenklatschen.Shop.Shop;
 
 public class Credits extends AppCompatActivity {
 
@@ -38,6 +39,11 @@ public class Credits extends AppCompatActivity {
                         Intent intent3 = new Intent (Credits.this, Vorlesung.class);
                         startActivity(intent3);
                         //Toast.makeText(Hauptmenue.this, "Action Reise Clicked", Toast.LENGTH_SHORT).show();
+                        break;
+
+                    case R.id.action_shop:
+                        Intent intent4 = new Intent (Credits.this, Shop.class);
+                        startActivity(intent4);
                         break;
                 }
                 return false;

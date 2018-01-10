@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 
 import de.hs_hannover.fholz.studentenklatschen.R;
+import de.hs_hannover.fholz.studentenklatschen.Shop.Shop;
 
 public class Hauptmenue extends AppCompatActivity {
 
@@ -40,6 +41,11 @@ public class Hauptmenue extends AppCompatActivity {
                         Intent intent3 = new Intent (Hauptmenue.this, Vorlesung.class);
                         startActivity(intent3);
                         //Toast.makeText(Hauptmenue.this, "Action Reise Clicked", Toast.LENGTH_SHORT).show();
+                        break;
+
+                    case R.id.action_shop:
+                        Intent intent4 = new Intent (Hauptmenue.this, Shop.class);
+                        startActivity(intent4);
                         break;
                 }
                 return false;
