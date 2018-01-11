@@ -55,7 +55,9 @@
     <string name="challengeUpsideDown">Turn device upside down</string>
     <string name="challengeShake">Shake</string>
     <string name="challengeHold">Do not move</string>
-    <string name="challenge">Ja.</string>
+    <string name="challengeSwipeLeft">Swipe Left</string>
+    <string name="challengeSwipeRight">Swipe Right</string>
+    <string name="challengeSwipeUp">Swipe Up</string>
     <string name="nichts">Nichts davon.</string>
     <string name="weiter">Weiter</string>
     <string name="fertig">Fertig</string>

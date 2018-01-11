@@ -9,26 +9,40 @@ import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
-
 import java.util.Random;
 
 import de.hs_hannover.fholz.studentenklatschen.R;
 
 public class Fighting extends AppCompatActivity implements SensorEventListener {
 
-    TextView counter, task, lp, x, y, z, mx, my, mz;
+    TextView counter, task, lp, swipe;
     private SensorManager sensorManager;
     float xAccel, yAccel, zAccel = 0.0f;
     float xMax, xMin, yMax, yMin, zMax, zMin;
     int lifepoints = 100;
     Random rn = new Random();
-    int chosenChallenge, ax, ay, az, rchallenge;
+    int chosenChallenge, rchallenge;
+    boolean right, left, up, down;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fight);;
         initializeView();
+        swipe.setOnTouchListener(new OnSwipeTouchListener(Fighting.this) {
+            public void onSwipeTop() {
+                up = true;
+            }
+            public void onSwipeRight() {
+                right = true;
+            }
+            public void onSwipeLeft() {
+                left = true;
+            }
+            public void onSwipeBottom() {
+                down = true;
+            }
+        });
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         task.setText("Follow the instructions in:");
         countDownPause(3, counter);
@@ -61,16 +75,6 @@ public class Fighting extends AppCompatActivity implements SensorEventListener {
             zAccel = sensorEvent.values[2];
         }
         maxValues();
-        /*ax = (int) xAccel;
-        ay = (int) yAccel;
-        az = (int) zAccel;
-
-        x.setText("x: " + ax);
-        y.setText("y: " + ay);
-        z.setText("z: " + az);
-        mx.setText("Max x: " + xMax + "Min x: " + xMin);
-        my.setText("Max y: " + yMax + "Min y: " + yMin);
-        mz.setText("Max z: " + zMax + "Min z: " + zMin);*/
     }
 
     public void countDown(int Seconds, final TextView displayTime){
@@ -111,11 +115,10 @@ public class Fighting extends AppCompatActivity implements SensorEventListener {
     }
 
     public void challengetxt() {
-        rchallenge = rn.nextInt(5);
+        rchallenge = rn.nextInt(7);
         if (rchallenge == chosenChallenge) {
             rchallenge = rn.nextInt(5);
         } else {
-            my.setText("n: " + rchallenge);
             switch (rchallenge) {
                 case 0:
                     task.setText(R.string.challengeUpsideDown);
@@ -131,6 +134,12 @@ public class Fighting extends AppCompatActivity implements SensorEventListener {
                     break;
                 case 4:
                     task.setText(R.string.challengeHold);
+                    break;
+                case 5:
+                    task.setText(R.string.challengeSwipeLeft);
+                    break;
+                case 6:
+                    task.setText(R.string.challengeSwipeRight);
                     break;
                 default:
                     task.setText(R.string.challengeUpsideDown);
@@ -157,6 +166,12 @@ public class Fighting extends AppCompatActivity implements SensorEventListener {
             case 4:
                 challengeHold();
                 break;
+            case 5:
+                challengeSwipeLeft();
+                break;
+            case 6:
+                challengeSwipeRight();
+                break;
             default:
                 challengeUpDown();
                 break;
@@ -164,7 +179,6 @@ public class Fighting extends AppCompatActivity implements SensorEventListener {
     }
 
     public void challengeUpDown () {
-        task.setText(R.string.challengeUpsideDown);
         if (yMin < -8) {
             task.setText("Prima.");
             lifepoints = lifepoints - 10;
@@ -175,7 +189,6 @@ public class Fighting extends AppCompatActivity implements SensorEventListener {
     }
 
     public void challengeLeft () {
-        task.setText(R.string.challengeLeft);
         if (xMax > 3) {
             task.setText("Prima.");
             lifepoints = lifepoints - 10;
@@ -186,7 +199,6 @@ public class Fighting extends AppCompatActivity implements SensorEventListener {
     }
 
     public void challengeRight () {
-        task.setText(R.string.challengeRight);
         if (xMin < -3) {
             task.setText("Prima.");
             lifepoints = lifepoints - 10;
@@ -197,7 +209,6 @@ public class Fighting extends AppCompatActivity implements SensorEventListener {
     }
 
     public void challengeShake () {
-        task.setText(R.string.challengeShake);
         if (xMax > 25 && xMin < -25 && yMax > 25 && yMin < -25 && zMax > 20 && zMin < -20) {
             task.setText("Prima.");
             lifepoints = lifepoints - 10;
@@ -208,8 +219,27 @@ public class Fighting extends AppCompatActivity implements SensorEventListener {
     }
 
     public void challengeHold () {
-        task.setText(R.string.challengeHold);
         if (xMax > xAccel -2 && xAccel + 2 > xMax && yMax > yAccel -2 && yAccel + 2 > yMax) {
+            task.setText("Prima.");
+            lifepoints = lifepoints - 10;
+            lp.setText("lifepoints: " + lifepoints);
+        } else {
+            task.setText("Fail.");
+        }
+    }
+
+    public void challengeSwipeLeft () {
+        if (left == true) {
+            task.setText("Prima.");
+            lifepoints = lifepoints - 10;
+            lp.setText("lifepoints: " + lifepoints);
+        } else {
+            task.setText("Fail.");
+        }
+    }
+
+    public void challengeSwipeRight () {
+        if (right == true) {
             task.setText("Prima.");
             lifepoints = lifepoints - 10;
             lp.setText("lifepoints: " + lifepoints);
@@ -222,12 +252,7 @@ public class Fighting extends AppCompatActivity implements SensorEventListener {
         counter = (TextView) findViewById(R.id.timecount);
         task = (TextView) findViewById(R.id.challenge);
         lp = (TextView) findViewById(R.id.lp);
-        x = (TextView) findViewById(R.id.x);
-        y = (TextView) findViewById(R.id.y);
-        z = (TextView) findViewById(R.id.z);
-        mx = (TextView) findViewById(R.id.mx);
-        my = (TextView) findViewById(R.id.my);
-        mz = (TextView) findViewById(R.id.mz);
+        swipe =(TextView) findViewById(R.id.swipe);
     }
 
     public void maxValues() {
@@ -258,5 +283,9 @@ public class Fighting extends AppCompatActivity implements SensorEventListener {
         yMin = 0;
         zMin= 0;
         zMin = 0;
+        right = false;
+        left = false;
+        up = false;
+        down = false;
     }
 }
