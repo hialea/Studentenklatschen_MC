@@ -22,7 +22,7 @@ public class Fighting extends AppCompatActivity implements SensorEventListener {
     float xMax, xMin, yMax, yMin, zMax, zMin;
     int lifepoints = 100;
     Random rn = new Random();
-    int chosenChallenge, ax, ay, az;
+    int chosenChallenge, ax, ay, az, rchallenge;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,10 +83,9 @@ public class Fighting extends AppCompatActivity implements SensorEventListener {
             }
 
             public void onFinish() {
-                displayTime.setText("0");
                 challenge(chosenChallenge);
                 if (lifepoints > 0) {
-                    countDownPause(1, counter);
+                    countDownPause(2, counter);
                 } else {
                     task.setText("Gewonnen");
                 }
@@ -104,36 +103,39 @@ public class Fighting extends AppCompatActivity implements SensorEventListener {
             }
 
             public void onFinish() {
-                displayTime.setText("0");
                 challengetxt();
-                countDown(2, counter);
+                countDown(1, counter);
                 clearValues();
             }
         }.start();
     }
 
     public void challengetxt() {
-        int rchallenge = rn.nextInt(5);
-        my.setText("n: " + rchallenge);
-        switch (rchallenge) {
-            case 0:
-                task.setText(R.string.challengeUpsideDown);
-                break;
-            case 1:
-                task.setText(R.string.challengeLeft);
-                break;
-            case 2:
-                task.setText(R.string.challengeRight);
-                break;
-            case 3:
-                task.setText(R.string.challengeShake);
-                break;
-            case 4:
-                task.setText(R.string.challengeHold);
-                break;
-            default:
-                task.setText(R.string.challengeUpsideDown);
-                break;
+        rchallenge = rn.nextInt(5);
+        if (rchallenge == chosenChallenge) {
+            rchallenge = rn.nextInt(5);
+        } else {
+            my.setText("n: " + rchallenge);
+            switch (rchallenge) {
+                case 0:
+                    task.setText(R.string.challengeUpsideDown);
+                    break;
+                case 1:
+                    task.setText(R.string.challengeLeft);
+                    break;
+                case 2:
+                    task.setText(R.string.challengeRight);
+                    break;
+                case 3:
+                    task.setText(R.string.challengeShake);
+                    break;
+                case 4:
+                    task.setText(R.string.challengeHold);
+                    break;
+                default:
+                    task.setText(R.string.challengeUpsideDown);
+                    break;
+            }
         }
         chosenChallenge = rchallenge;
     }
