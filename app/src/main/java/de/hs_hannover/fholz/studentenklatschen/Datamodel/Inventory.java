@@ -32,7 +32,7 @@ public class Inventory {
     public int klatschis;
 
     public Inventory(){
-        klatschis = 10;
+        klatschis = INV_SIZE;
         slotsTaken = 0;
         equippedItems = new HashMap<String, Item>(){
             {
@@ -51,7 +51,7 @@ public class Inventory {
             invContents.add(item);
             return true;
         }
-        return false; // TODO inventar voll ausgabe
+        return false;
     }
 
     public boolean equipItem(Item toEquip){

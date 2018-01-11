@@ -3,7 +3,7 @@ package de.hs_hannover.fholz.studentenklatschen.Datamodel;
 import android.media.Image;
 
 public class Profile {
-//TODO vlt enums die in arrays als index benutzt werden mit enummap ersetzen
+
     public String id;
     public Character character;
     public String name;
@@ -19,6 +19,7 @@ public class Profile {
         this.character=null;
         this.name=null;
         this.image=null;
+        this.history=null;
     }
 
 }

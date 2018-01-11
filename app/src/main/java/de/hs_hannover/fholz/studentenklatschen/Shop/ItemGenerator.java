@@ -40,11 +40,8 @@ public class ItemGenerator extends AppCompatActivity {
         generateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Random rand = new Random();
-                int rndSlot = rand.nextInt(4);
                 int itemlvl = 2;
-                Affix affix = Affix.genAffix();
-                Item item = new Item(rndSlot, itemlvl, affix);
+                Item item = new Item(itemlvl);
                 strengthView.setText(String.valueOf(item.attributes.get(attributeName[STRENGTH])));
                 defenseView.setText(String.valueOf(item.attributes.get(attributeName[DEFENSE])));
                 specialView.setText(String.valueOf(item.attributes.get(attributeName[SPECIAL])));
