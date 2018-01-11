@@ -68,12 +68,11 @@ public class Shop extends AppCompatActivity {
             }
         });
 
-        Random rand = new Random();
-        int rndSlot = rand.nextInt(4);
-        int itemlvl = 2;
-        Affix affix = Affix.genAffix();
 
-        Item item1 = new Item(rndSlot, itemlvl, affix);
+        int itemlvl = 2;
+
+
+        Item item1 = new Item(itemlvl);
 
         /*tm.put(hallo, item1.attributes.get(attributeName[STRENGTH]), item1.attributes.get(attributeName[DEFENSE]), item1.attributes.get(attributeName[SPECIAL]));
 

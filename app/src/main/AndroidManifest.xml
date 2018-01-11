@@ -12,6 +12,7 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -23,9 +24,9 @@
         <activity android:name=".Shop.ItemGenerator" />
         <activity android:name=".MainMenu.Ergebnisse" />
         <activity android:name=".MainMenu.Hauptmenue">
-        <intent-filter>
-            <category android:name="android.intent.category.DEFAULT" />
-        </intent-filter>
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
         <activity android:name=".MainMenu.Kampf" />
         <activity android:name=".MainMenu.Vorlesung" />
@@ -37,7 +38,8 @@
         <activity android:name=".MainMenu.Fighting" />
         <activity
             android:name=".Menu"
-            android:label="@string/title_activity_menu"></activity>
+            android:label="@string/title_activity_menu" />
+        <activity android:name=".Travel.SensorTest"></activity>
     </application>
 
 </manifest>

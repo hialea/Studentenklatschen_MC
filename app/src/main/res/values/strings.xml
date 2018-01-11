@@ -50,10 +50,14 @@
     <string name="schieberegler3">Bist du extrovertiert?</string>
     <string name="sra">Nein.</string>
     <string name="srb">Ja.</string>
-    <string name="challengeLeft">Turn Phone to the left</string>
-    <string name="challengeRight">Turn Phone to the right</string>
-    <string name="challengeUpsideDown">Turn Phone upside down</string>
-    <string name="challenge">Ja.</string>
+    <string name="challengeLeft">Tilt device to the left</string>
+    <string name="challengeRight">Tilt device to the right</string>
+    <string name="challengeUpsideDown">Turn device upside down</string>
+    <string name="challengeShake">Shake</string>
+    <string name="challengeHold">Do not move</string>
+    <string name="challengeSwipeLeft">Swipe Left</string>
+    <string name="challengeSwipeRight">Swipe Right</string>
+    <string name="challengeSwipeUp">Swipe Up</string>
     <string name="nichts">Nichts davon.</string>
     <string name="weiter">Weiter</string>
     <string name="fertig">Fertig</string>
@@ -76,7 +80,6 @@
 
     <string name="go">"Losrennen!"</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_menu">Menu</string>
     <string name="title_profile">Profil</string>

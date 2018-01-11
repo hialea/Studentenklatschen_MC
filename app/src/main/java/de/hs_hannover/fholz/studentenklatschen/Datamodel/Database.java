@@ -20,5 +20,6 @@ public class Database {
     public static final DatabaseReference playerbaseRef = FirebaseDatabase.getInstance().getReference().child("Playerbase");
     public static final DatabaseReference playerRef = FirebaseDatabase.getInstance().getReference().child("Playerbase").child(playerID);
     public static final DatabaseReference charRef = FirebaseDatabase.getInstance().getReference().child("Playerbase").child(playerID).child("character");
+    public static final DatabaseReference sessionRef = FirebaseDatabase.getInstance().getReference().child("Session");
 
 }

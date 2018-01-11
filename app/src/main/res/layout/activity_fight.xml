@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="de.hs_hannover.fholz.studentenklatschen.MainMenu.Fighting">
+    android:screenOrientation="portrait"
+    tools:context="de.hs_hannover.fholz.studentenklatschen.Menu.Fighting">
 
     <TextView
         android:id="@+id/timecount"
@@ -24,4 +25,20 @@
         android:layout_marginTop="111dp"
         android:text="TextView"
         android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/lp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/swipe"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" />
+
 </RelativeLayout>

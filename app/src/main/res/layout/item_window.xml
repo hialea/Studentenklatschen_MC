@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="95dp"
+        android:text="NAME" />
+
+    <TextView
+        android:id="@+id/strength_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/defense_text"
+        android:layout_alignEnd="@+id/defense_text"
+        android:layout_marginBottom="25dp"
+        android:text="Stärke" />
+
+    <TextView
+        android:id="@+id/defense_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/item_name"
+        android:layout_marginTop="45dp"
+        android:layout_toStartOf="@+id/item_name"
+        android:text="Verteidigung" />
+
+    <TextView
+        android:id="@+id/special_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/defense_text"
+        android:layout_below="@+id/defense_text"
+        android:layout_marginTop="5dp"
+        android:text="Spezial" />
+
+    <TextView
+        android:id="@+id/special_stat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/special_text"
+        android:layout_alignBottom="@+id/special_text"
+        android:layout_alignEnd="@+id/item_name"
+        android:text="00" />
+
+    <TextView
+        android:id="@+id/defense_stat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/defense_text"
+        android:layout_alignBottom="@+id/defense_text"
+        android:layout_alignEnd="@+id/item_name"
+        android:text="00" />
+
+    <TextView
+        android:id="@+id/strength_stat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/strength_text"
+        android:layout_alignBottom="@+id/strength_text"
+        android:layout_alignEnd="@+id/item_name"
+        android:text="00" />
+
+    <TextView
+        android:id="@+id/special_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/special_stat"
+        android:layout_alignBottom="@+id/special_stat"
+        android:layout_marginStart="28dp"
+        android:layout_toEndOf="@+id/special_stat"
+        android:text="00" />
+
+    <TextView
+        android:id="@+id/defense_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/defense_stat"
+        android:layout_alignBottom="@+id/defense_stat"
+        android:layout_alignStart="@+id/special_add"
+        android:text="00" />
+
+    <TextView
+        android:id="@+id/strength_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/strength_stat"
+        android:layout_alignBottom="@+id/strength_stat"
+        android:layout_alignStart="@+id/defense_add"
+        android:text="00" />
+</RelativeLayout>
