@@ -1,0 +1,85 @@
+<resources>
+    <string name="app_name">Studentenklatschen</string>
+    <string name="frage1">your Youtube feed?</string>
+    <string name="aw1sn">Lets Plays</string>
+    <string name="aw1uf">videos about politics and society</string>
+    <string name="aw1tp">internet is not working&#8230;</string>
+    <string name="aw1st">beauty and lifestyle #blogger #ootd</string>
+    <string name="frage2">your Spotify playlist?</string>
+    <string name="aw2sn">easy vibes bro</string>
+    <string name="aw2uf">podcasts</string>
+    <string name="aw2tp">hardstyle techno</string>
+    <string name="aw2st">charts</string>
+    <string name="frage3">you\'re going to class?</string>
+    <string name="aw3sn">Zzzzz&#8230;what? Today?</string>
+    <string name="aw3uf">of course, I\'m there before the prof!</string>
+    <string name="aw3tp">I missed the train/bus...</string>
+    <string name="aw3st">I\'m on time so that everyone can admire my makeup</string>
+    <string name="frage4">Are you going to the exercise course?</string>
+    <string name="aw4sn">What course? That was today?</string>
+    <string name="aw4uf">I go to every one of those. I prepared everything.</string>
+    <string name="aw4tp">I\'d love to! If I just found the room&#8230;</string>
+    <string name="aw4st">Sure! I mean I need to get the latest gossip, right?</string>
+    <string name="frage5">Do you like to go clubbing?</string>
+    <string name="aw5sn">No way, I have Netflix.</string>
+    <string name="aw5uf">Only if there aren\'t any classes the next day!</string>
+    <string name="aw5tp">To risky! I\'d just end in the ditch again.</string>
+    <string name="aw5st">As much as possible! I need to present myself somewhere!</string>
+    <string name="frage6"> What do you eat at the cafeteria?</string>
+    <string name="aw6sn">Currywurst and french fries</string>
+    <string name="aw6uf">nutrient-rich dishes - only the best!</string>
+    <string name="aw6tp">nothing that contains any sauce - risk reduction!</string>
+    <string name="aw6st">salad #hashtag #foodporn</string>
+    <string name="frage7">You gotta give a presentation tomorrow. How will it go?</string>
+    <string name="aw7sn">I\'ll start tonight, I promise!</string>
+    <string name="aw7uf">Great! I\'m finished the work 2 weeks ago.</string>
+    <string name="aw7tp">I had already finished it and now I can\'t open the file&#8230;</string>
+    <string name="aw7st">my outfit is already thought-out. #prepared</string>
+    <string name="frage8">Group exercise.</string>
+    <string name="aw8sn">I missed which group I got assigned to&#8230;</string>
+    <string name="aw8uf">I\'ve already planned out everything and arranged duties.</string>
+    <string name="aw8tp">I\'m sick and get the task I would\'ve wanted least.</string>
+    <string name="aw8st">I\'ll do anything as long as my gel nails don\'t get damaged.</string>
+    <string name="frage9">In class.</string>
+    <string name="aw9sn">I already slept in so I don\'t need to turn up anyway.</string>
+    <string name="aw9uf">I write down everything the professor says.</string>
+    <string name="aw9tp">I need to use the bathroom&#8230;of all things, why do I sit exactly in the middle of the line?</string>
+    <string name="aw9st">#selfie #coffeefirst #qualitytime</string>
+    <string name="schieberegler1">Are you a tidy person?</string>
+    <string name="schieberegler2">You are an outgoing person.</string>
+    <string name="schieberegler3">Are you an extrovert?</string>
+    <string name="sra">No.</string>
+    <string name="srb">Yes.</string>
+    <string name="challengeLeft">Turn Phone to the left</string>
+    <string name="challengeRight">Turn Phone to the right</string>
+    <string name="challengeUpsideDown">Turn Phone upside down</string>
+    <string name="challenge">Yes.</string>
+    <string name="nichts">None of that.</string>
+    <string name="weiter">continue</string>
+    <string name="fertig">complete</string>
+    <string name="charaSn">sleepyhead</string>
+    <string name="charaUf">genius</string>
+    <string name="charaTp">blunderer</string>
+    <string name="charaSt">Snapchat queen</string>
+    <string name="title_activity_login">Login</string>
+
+    <string name="loading">Loading…</string>
+    <string name="auth_failed">Authentication failed</string>
+    <string name="firebase_status_fmt">Firebase User: %s</string>
+    <string name="emailpassword_status_fmt">Email User: %1$s (verified: %2$b)</string>
+    <string name="signed_in">Signed In</string>
+    <string name="signed_out">Signed Out</string>
+
+    //TRAVEL
+    <string name="travelDesc">Put your phone away while you\'re in class and put your character on a journey! The longer you are on the way, the more points you get and the higher chance of finding great items is!</string>
+
+    <string name="go">"Start the journey!"</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_menu">menu</string>
+    <string name="title_profile">profile</string>
+    <string name="title_shop">shop</string>
+    <string name="title_travel">journey</string>
+    <string name="title_fight">fight</string>
+
+</resources>
