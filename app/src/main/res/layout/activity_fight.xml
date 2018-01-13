@@ -11,9 +11,9 @@
         android:id="@+id/timecount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="Hallo"
+        android:layout_marginBottom="150dp"
         android:textSize="80sp" />
 
     <TextView
@@ -40,5 +40,13 @@
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true" />
+
+    <TextView
+        android:id="@+id/ownLp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="TextView" />
 
 </RelativeLayout>

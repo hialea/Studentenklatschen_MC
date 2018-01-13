@@ -6,8 +6,10 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.CountDownTimer;
+import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 import java.util.Random;
 
@@ -15,20 +17,23 @@ import de.hs_hannover.fholz.studentenklatschen.R;
 
 public class Fighting extends AppCompatActivity implements SensorEventListener {
 
-    TextView counter, task, lp, swipe;
+    private TextView counter, task, lp, swipe;
     private SensorManager sensorManager;
-    float xAccel, yAccel, zAccel = 0.0f;
-    float xMax, xMin, yMax, yMin, zMax, zMin;
-    int lifepoints = 100;
+    private float xAccel, yAccel, zAccel = 0.0f;
+    private float xMax, xMin, yMax, yMin, zMax, zMin;
+    private int lifepoints = 100;
     Random rn = new Random();
-    int chosenChallenge, rchallenge;
-    boolean right, left, up, down;
+    private int chosenChallenge, rchallenge;
+    private boolean right, left, up, down;
+    public Vibrator v;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fight);;
         initializeView();
+        v = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
         swipe.setOnTouchListener(new OnSwipeTouchListener(Fighting.this) {
             public void onSwipeTop() {
                 up = true;
@@ -83,16 +88,20 @@ public class Fighting extends AppCompatActivity implements SensorEventListener {
 
             public void onTick(long millisUntilFinished) {
                 int seconds = (int) (millisUntilFinished / 1000);
-                displayTime.setText(String.format("%d", seconds));
+                displayTime.setVisibility(View.INVISIBLE);
+                //displayTime.setText(String.format("%d", seconds));
             }
 
             public void onFinish() {
                 challenge(chosenChallenge);
                 if (lifepoints > 0) {
-                    countDownPause(2, counter);
+                    challengetxt();
+                    clearValues();
+                    countDown(2, counter);
                 } else {
                     task.setText("Gewonnen");
                 }
+
             }
         }.start();
     }
@@ -108,7 +117,7 @@ public class Fighting extends AppCompatActivity implements SensorEventListener {
 
             public void onFinish() {
                 challengetxt();
-                countDown(1, counter);
+                countDown(3, counter);
                 clearValues();
             }
         }.start();
@@ -117,7 +126,7 @@ public class Fighting extends AppCompatActivity implements SensorEventListener {
     public void challengetxt() {
         rchallenge = rn.nextInt(7);
         if (rchallenge == chosenChallenge) {
-            rchallenge = rn.nextInt(5);
+            rchallenge = rn.nextInt(7);
         } else {
             switch (rchallenge) {
                 case 0:
@@ -192,6 +201,7 @@ public class Fighting extends AppCompatActivity implements SensorEventListener {
         if (xMax > 3) {
             task.setText("Prima.");
             lifepoints = lifepoints - 10;
+            v.vibrate(100);
             lp.setText("lifepoints: " + lifepoints);
         } else {
             task.setText("Fail.");
@@ -202,6 +212,7 @@ public class Fighting extends AppCompatActivity implements SensorEventListener {
         if (xMin < -3) {
             task.setText("Prima.");
             lifepoints = lifepoints - 10;
+            v.vibrate(100);
             lp.setText("lifepoints: " + lifepoints);
         } else {
             task.setText("Fail.");
@@ -212,6 +223,7 @@ public class Fighting extends AppCompatActivity implements SensorEventListener {
         if (xMax > 25 && xMin < -25 && yMax > 25 && yMin < -25 && zMax > 20 && zMin < -20) {
             task.setText("Prima.");
             lifepoints = lifepoints - 10;
+            v.vibrate(100);
             lp.setText("lifepoints: " + lifepoints);
         } else {
             task.setText("Fail.");
@@ -222,6 +234,7 @@ public class Fighting extends AppCompatActivity implements SensorEventListener {
         if (xMax > xAccel -2 && xAccel + 2 > xMax && yMax > yAccel -2 && yAccel + 2 > yMax) {
             task.setText("Prima.");
             lifepoints = lifepoints - 10;
+            v.vibrate(100);
             lp.setText("lifepoints: " + lifepoints);
         } else {
             task.setText("Fail.");
@@ -232,6 +245,7 @@ public class Fighting extends AppCompatActivity implements SensorEventListener {
         if (left == true) {
             task.setText("Prima.");
             lifepoints = lifepoints - 10;
+            v.vibrate(100);
             lp.setText("lifepoints: " + lifepoints);
         } else {
             task.setText("Fail.");
@@ -242,6 +256,7 @@ public class Fighting extends AppCompatActivity implements SensorEventListener {
         if (right == true) {
             task.setText("Prima.");
             lifepoints = lifepoints - 10;
+            v.vibrate(100);
             lp.setText("lifepoints: " + lifepoints);
         } else {
             task.setText("Fail.");

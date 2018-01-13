@@ -18,6 +18,7 @@ public class Character {
     public String name;
     public int level;
     public int exp;
+    public int lifepoints;
 
     public Character(Role role) {
         this.name = null;
@@ -26,6 +27,7 @@ public class Character {
         this.inventory = new Inventory();
         this.level = 1;
         this.exp = 0;
+        this.lifepoints = 1000;
     }
 
     public Character() {

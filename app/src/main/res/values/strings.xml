@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Studentenklatschen</string>
+
+    //Questioncataloge
     <string name="frage1">Dein Youtube-Feed</string>
     <string name="aw1sn">Lets Plays</string>
     <string name="aw1uf">Meinungsblogger zu Politik und Gesellschaft</string>
@@ -50,6 +52,11 @@
     <string name="schieberegler3">Bist du extrovertiert?</string>
     <string name="sra">Nein.</string>
     <string name="srb">Ja.</string>
+    <string name="nichts">Nichts davon.</string>
+    <string name="weiter">Weiter</string>
+    <string name="fertig">Fertig</string>
+
+    //Fight
     <string name="challengeLeft">Tilt device to the left</string>
     <string name="challengeRight">Tilt device to the right</string>
     <string name="challengeUpsideDown">Turn device upside down</string>
@@ -58,13 +65,15 @@
     <string name="challengeSwipeLeft">Swipe Left</string>
     <string name="challengeSwipeRight">Swipe Right</string>
     <string name="challengeSwipeUp">Swipe Up</string>
-    <string name="nichts">Nichts davon.</string>
-    <string name="weiter">Weiter</string>
-    <string name="fertig">Fertig</string>
+    <string name="success">Du hast einen Treffe gelandet. Dein Gegner erleidet Schaden in Höhe von </string>
+    <string name="miss">Das ging leider daneben.</string>
+
+
     <string name="charaSn">Schnarchnase</string>
     <string name="charaUf">Überflieger</string>
     <string name="charaTp">Tollpatsch</string>
     <string name="charaSt">Snapchat Tussi</string>
+
     <string name="title_activity_login">Login</string>
 
     <string name="loading">Loading…</string>
