@@ -32,7 +32,7 @@ public class Hauptmenue extends AppCompatActivity {
                         break;
 
                     case R.id.action_kampf:
-                        Intent intent2 = new Intent (Hauptmenue.this, Kampf.class);
+                        Intent intent2 = new Intent (Hauptmenue.this, Fighting.class);
                         startActivity(intent2);
                         //Toast.makeText(Hauptmenue.this, "Action Kampf Clicked", Toast.LENGTH_SHORT).show();
                         break;

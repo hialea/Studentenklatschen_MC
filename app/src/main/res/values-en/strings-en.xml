@@ -50,13 +50,23 @@
     <string name="schieberegler3">Are you an extrovert?</string>
     <string name="sra">No.</string>
     <string name="srb">Yes.</string>
-    <string name="challengeLeft">Turn Phone to the left</string>
-    <string name="challengeRight">Turn Phone to the right</string>
-    <string name="challengeUpsideDown">Turn Phone upside down</string>
     <string name="challenge">Yes.</string>
     <string name="nichts">None of that.</string>
     <string name="weiter">continue</string>
     <string name="fertig">complete</string>
+
+    //Fight
+    <string name="challengeLeft">Tilt device to the left</string>
+    <string name="challengeRight">Tilt device to the right</string>
+    <string name="challengeUpsideDown">Turn device upside down</string>
+    <string name="challengeShake">Shake</string>
+    <string name="challengeHold">Do not move</string>
+    <string name="challengeSwipeLeft">Swipe Left</string>
+    <string name="challengeSwipeRight">Swipe Right</string>
+    <string name="challengeSwipeUp">Swipe Up</string>
+    <string name="success">You hit the target. \n Your opponent suffers a loss of </string>
+    <string name="miss">You missed the target.</string>
+
     <string name="charaSn">sleepyhead</string>
     <string name="charaUf">genius</string>
     <string name="charaTp">blunderer</string>
@@ -71,7 +81,7 @@
     <string name="signed_out">Signed Out</string>
 
     //TRAVEL
-    <string name="travelDesc">Put your phone away while you\'re in class and put your character on a journey! The longer you are on the way, the more points you get and the higher chance of finding great items is!</string>
+    <string name="travelDesc">Put your phone away while you\'re in class \n and put your character on a journey! \n The longer you are on the way, \n the more points you get \n and the higher the chance of finding great items is!</string>
 
     <string name="go">"Start the journey!"</string>
 

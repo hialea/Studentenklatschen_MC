@@ -65,7 +65,7 @@
     <string name="challengeSwipeLeft">Swipe Left</string>
     <string name="challengeSwipeRight">Swipe Right</string>
     <string name="challengeSwipeUp">Swipe Up</string>
-    <string name="success">Du hast einen Treffe gelandet. Dein Gegner erleidet Schaden in Höhe von </string>
+    <string name="success">Du hast einen Treffer gelandet. \n Dein Gegner erleidet Schaden in Höhe von </string>
     <string name="miss">Das ging leider daneben.</string>
 
 
@@ -84,8 +84,8 @@
     <string name="signed_out">Signed Out</string>
 
     //TRAVEL
-    <string name="travelDesc">Leg Dein Handy während der Vorlesung oder Übung weg und schick Deinen Charakter auf Reisen.
-                            Je länger er unterwegs ist, desto mehr Punkte erhälst du und die Chance auf tolle Items steigt.</string>
+    <string name="travelDesc">Leg Dein Handy während der Vorlesung oder Übung weg \n und schick Deinen Charakter auf Reisen. \n
+                            Je länger er unterwegs ist, desto mehr Punkte erhältst du \n und die Chance auf tolle Items steigt.</string>
 
     <string name="go">"Losrennen!"</string>
 
