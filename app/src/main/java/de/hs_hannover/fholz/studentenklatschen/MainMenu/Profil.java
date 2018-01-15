@@ -6,20 +6,33 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import de.hs_hannover.fholz.studentenklatschen.R;
 import de.hs_hannover.fholz.studentenklatschen.Shop.Shop;
 import de.hs_hannover.fholz.studentenklatschen.Travel.Travel;
+import de.hs_hannover.fholz.studentenklatschen.Travel.TravelLog;
+
+import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Database.mAuth;
 
 public class Profil extends AppCompatActivity {
 
-    /*List profilListe = new ArrayList<String>();
-    ListAdapter profilAdapter = new ArrayAdapter<String>(profilListe);*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profil);
+
+        Button signout = (Button) findViewById(R.id.profil_signout_button);
+        signout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mAuth.signOut();
+                Intent intent = new Intent (Profil.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
 
         BottomNavigationView bottomNavigationView=(BottomNavigationView)findViewById(R.id.bottom_navigation_profil);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {

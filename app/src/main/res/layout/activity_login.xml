@@ -6,6 +6,60 @@
     android:layout_height="match_parent"
     tools:context="de.hs_hannover.fholz.studentenklatschen.MainMenu.LoginActivity">
 
+    <RelativeLayout
+        android:id="@+id/profil_create_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/button5"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="67dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Name" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="54dp"
+            android:text="Button" />
+
+        <ImageView
+            android:id="@+id/profil_picture"
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="96dp"
+            android:src="@drawable/ic_profile" />
+
+        <Button
+            android:id="@+id/login_galery_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/editText"
+            android:layout_below="@+id/profil_picture"
+            android:layout_marginEnd="17dp"
+            android:text="g" />
+
+        <Button
+            android:id="@+id/login_camera_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/login_galery_button"
+            android:layout_toStartOf="@+id/login_galery_button"
+            android:text="k" />
+
+    </RelativeLayout>
+
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -18,56 +72,63 @@
 
     </android.support.v7.widget.Toolbar>
 
-    <Button
-        android:id="@+id/login_signin_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/login_field_password"
-        android:layout_below="@+id/login_field_password"
-        android:layout_marginTop="35dp"
-        android:text="sign in"
-        android:visibility="visible" />
+    <RelativeLayout
+        android:id="@+id/login_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
 
-    <EditText
-        android:id="@+id/login_field_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/toolbar"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="85dp"
-        android:ems="10"
-        android:hint="E-Mail"
-        android:inputType="textEmailAddress"
-        android:visibility="visible" />
+        <EditText
+            android:id="@+id/login_field_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/login_field_email"
+            android:layout_below="@+id/login_field_email"
+            android:ems="10"
+            android:hint="Passwort"
+            android:inputType="textPassword"
+            android:visibility="visible" />
 
-    <Button
-        android:id="@+id/login_create_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/login_signin_button"
-        android:layout_alignBottom="@+id/login_signin_button"
-        android:layout_alignEnd="@+id/login_field_password"
-        android:text="Create"
-        android:visibility="visible" />
+        <EditText
+            android:id="@+id/login_field_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="85dp"
+            android:ems="10"
+            android:hint="E-Mail"
+            android:inputType="textEmailAddress"
+            android:visibility="visible" />
 
-    <EditText
-        android:id="@+id/login_field_password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/login_field_email"
-        android:layout_below="@+id/login_field_email"
-        android:ems="10"
-        android:hint="Passwort"
-        android:inputType="textPassword"
-        android:visibility="visible" />
+        <TextView
+            android:id="@+id/login_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/login_signin_button"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp"
+            android:text="TextView" />
 
-    <TextView
-        android:id="@+id/login_info"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/login_signin_button"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="60dp"
-        android:text="TextView" />
+        <Button
+            android:id="@+id/login_create_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/login_signin_button"
+            android:layout_alignBottom="@+id/login_signin_button"
+            android:layout_alignEnd="@+id/login_field_password"
+            android:text="Create"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/login_signin_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/login_field_password"
+            android:layout_below="@+id/login_field_password"
+            android:layout_marginTop="35dp"
+            android:text="sign in"
+            android:visibility="visible" />
+
+    </RelativeLayout>
 
 </RelativeLayout>
