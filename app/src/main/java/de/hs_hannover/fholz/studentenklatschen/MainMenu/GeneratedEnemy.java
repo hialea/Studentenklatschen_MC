@@ -309,7 +309,7 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
     }
 
     public void strike() {
-        //final MediaPlayer screamStrike = MediaPlayer.create(this, R.raw.screamstrike);
+        //final MediaPlayer screamStrike = MediaPlayer.create(this, R.raw.screamStrike);
         //screamStrike.start();
         geDamage = (rn.nextInt(10) + 1 + rn.nextInt(spLevel));
         task.setText(" " + geDamage);

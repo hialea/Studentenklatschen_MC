@@ -40,7 +40,8 @@
         <activity
             android:name=".Menu"
             android:label="@string/title_activity_menu" />
-        <activity android:name=".MainMenu.GeneratedEnemy" />
+        <activity android:name=".MainMenu.GeneratedEnemy"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Travel.TravelActivity"
             android:label="@string/title_activity_travel"
