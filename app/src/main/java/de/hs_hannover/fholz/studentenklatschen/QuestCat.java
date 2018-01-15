@@ -16,6 +16,8 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import de.hs_hannover.fholz.studentenklatschen.Datamodel.Character;
 
+import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Database.*;
+
 
 public class QuestCat extends AppCompatActivity {
 
@@ -38,10 +40,6 @@ public class QuestCat extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quest_cat);
-
-        mAuth = FirebaseAuth.getInstance();
-        user = mAuth.getCurrentUser();
-        loginRef = FirebaseDatabase.getInstance().getReference().child("Playerbase");
 
         Fragefeld = (TextView) findViewById(R.id.Fragefeld);
         max = (TextView) findViewById(R.id.Max);
@@ -240,29 +238,29 @@ public class QuestCat extends AppCompatActivity {
                             if (countSn >= countUf) {
                                 if (countSn >= countTp) {
                                     Fragefeld.setText("Du bist eine Schnarchnase");
-                                    loginRef.child(user.getUid()).child("character").setValue(new Character(Character.Role.SCHNARCHNASE));
+                                    charRef.setValue(new Character(Character.Role.SCHNARCHNASE));
                                 } else {
                                     Fragefeld.setText("Du bist ein Tollpatsch");
-                                    loginRef.child(user.getUid()).child("character").setValue(new Character(Character.Role.TOLLPATSCH));
+                                    charRef.setValue(new Character(Character.Role.TOLLPATSCH));
                                 }
                             } else {
                                 Fragefeld.setText("Du bist ein Überflieger");
-                                loginRef.child(user.getUid()).child("character").setValue(new Character(Character.Role.UEBERFLIEGER));
+                                charRef.setValue(new Character(Character.Role.UEBERFLIEGER));
                             }
                         } else if (countSt >= countTp) {
                             if (countSt >= countUf) {
                                 Fragefeld.setText("Du bist eine Snapchat-Tussi");
-                                loginRef.child(user.getUid()).child("character").setValue(new Character(Character.Role.SNAPCHAT_TUSSI));
+                                charRef.setValue(new Character(Character.Role.SNAPCHAT_TUSSI));
                             } else {
                                 Fragefeld.setText("Du bist ein Überflieger");
-                                loginRef.child(user.getUid()).child("character").setValue(new Character(Character.Role.UEBERFLIEGER));
+                                charRef.setValue(new Character(Character.Role.UEBERFLIEGER));
                             }
                         } else if (countTp >= countUf) {
                             Fragefeld.setText("Du bist ein Tollpatsch");
-                            loginRef.child(user.getUid()).child("character").setValue(new Character(Character.Role.TOLLPATSCH));
+                            charRef.setValue(new Character(Character.Role.TOLLPATSCH));
                         } else {
                             Fragefeld.setText("Du bist ein Überflieger");
-                            loginRef.child(user.getUid()).child("character").setValue(new Character(Character.Role.UEBERFLIEGER));
+                            charRef.setValue(new Character(Character.Role.UEBERFLIEGER));
                         }
                         weiterFertig.setText("Danke");
                         Klick++;

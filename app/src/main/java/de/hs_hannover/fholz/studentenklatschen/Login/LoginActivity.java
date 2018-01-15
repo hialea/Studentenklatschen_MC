@@ -26,6 +26,7 @@ import de.hs_hannover.fholz.studentenklatschen.R;
 
 import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Database.mAuth;
 import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Database.player;
+import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Database.playerID;
 import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Database.playerRef;
 
 public class LoginActivity extends AppCompatActivity implements
@@ -70,9 +71,8 @@ public class LoginActivity extends AppCompatActivity implements
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            playerRef.setValue(new Profile(user.getUid()));
-                            updateUI(user);
+                            playerRef.setValue(new Profile(playerID));
+                            updateUI(player);
                         } else {
                             Toast.makeText(LoginActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
@@ -159,7 +159,7 @@ public class LoginActivity extends AppCompatActivity implements
         if (user != null) {
             mStatusTextView.setText(getString(R.string.emailpassword_status_fmt,
                     user.getEmail(), user.isEmailVerified()));
-            mDetailTextView.setText(getString(R.string.firebase_status_fmt, user.getUid()));
+            mDetailTextView.setText(getString(R.string.firebase_status_fmt, playerID));
 
             findViewById(R.id.email_sign_in_button).setVisibility(View.GONE);
             findViewById(R.id.email_create_account_button).setVisibility(View.GONE);
