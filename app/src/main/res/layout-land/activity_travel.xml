@@ -11,7 +11,7 @@
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
         android:background="?attr/colorPrimary"
         app:layout_scrollFlags="scroll|enterAlways"
@@ -28,35 +28,36 @@
 
         <TextView
             android:id="@+id/travel_description"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="64dp"
+            android:layout_marginTop="55dp"
             android:text="@string/travelDesc"
             android:textAlignment="center"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="23sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <Button
             android:id="@+id/travel_go_button"
+            style="@style/Widget.AppCompat.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/travel_description"
+            android:layout_above="@+id/travel_log_button"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="18dp"
+            android:layout_marginBottom="84dp"
             android:background="@color/colorPrimary"
             android:text="@string/go"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textSize="24sp" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
         <TextView
             android:id="@+id/travel_timer_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/travel_go_button"
+            android:layout_above="@+id/travel_log_button"
             android:layout_centerHorizontal="true"
+            android:layout_marginBottom="16dp"
             android:text="0:00"
             android:textSize="36sp" />
 
@@ -65,8 +66,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="59dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="21dp"
             android:background="@color/colorPrimary"
             android:text="Log"
             android:textSize="24sp" />
