@@ -6,111 +6,17 @@
     android:layout_height="match_parent"
     tools:context="de.hs_hannover.fholz.studentenklatschen.MainMenu.Hauptmenue">
 
-    <Button
-        android:id="@+id/profil"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="368dp"
-        android:layout_height="85dp"
-        android:backgroundTint="@color/colorPrimary"
-        android:elevation="0dp"
-        android:fontFamily="sans-serif"
-        android:text="Mein Profil"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:typeface="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_weight="1"
+        android:background="?attr/colorPrimary"
+        app:layout_scrollFlags="scroll|enterAlways"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        app:title="@string/app_name">
 
-    <Button
-        android:id="@+id/kampf"
-        android:layout_width="368dp"
-        android:layout_height="85dp"
-        android:backgroundTint="@color/colorPrimary"
-        android:fontFamily="sans-serif"
-        android:text="Kampf"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:typeface="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.159" />
-
-    <Button
-        android:id="@+id/vl"
-        android:layout_width="368dp"
-        android:layout_height="85dp"
-        android:backgroundTint="@color/colorPrimary"
-        android:fontFamily="sans-serif"
-        android:text="Während der VL"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:typeface="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.336" />
-
-    <Button
-        android:id="@+id/einstellungen"
-        android:layout_width="368dp"
-        android:layout_height="85dp"
-        android:backgroundTint="@color/colorPrimary"
-        android:fontFamily="sans-serif"
-        android:text="Einstellungen"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:typeface="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.512" />
-
-    <Button
-        android:id="@+id/about"
-        android:layout_width="368dp"
-        android:layout_height="85dp"
-        android:backgroundTint="@color/colorPrimary"
-        android:fontFamily="sans-serif"
-        android:text="Über die App"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:typeface="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.688" />
-
-    <Button
-        android:id="@+id/credits"
-        android:layout_width="368dp"
-        android:layout_height="85dp"
-        android:layout_marginBottom="8dp"
-        android:backgroundTint="@color/colorPrimary"
-        android:fontFamily="sans-serif"
-        android:text="Credits"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:typeface="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.879" />
-
+    </android.support.v7.widget.Toolbar>
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/bottom_navigation_menu"

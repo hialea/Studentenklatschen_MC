@@ -7,131 +7,27 @@
     android:layout_height="match_parent"
     tools:context="de.hs_hannover.fholz.studentenklatschen.MainMenu.Profil">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_weight="1"
+        android:background="?attr/colorPrimary"
+        app:layout_scrollFlags="scroll|enterAlways"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        app:title="@string/app_name">
+
+    </android.support.v7.widget.Toolbar>
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="166dp"
         android:layout_height="234dp"
-        android:layout_marginBottom="165dp"
-        android:layout_marginEnd="12dp"
-        app:layout_constraintBottom_toTopOf="@+id/button5"
-        app:layout_constraintEnd_toStartOf="@+id/Typ"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="112dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@color/colorPrimaryDark" />
-
-    <TextView
-        android:id="@+id/Typ"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="11dp"
-        android:layout_marginEnd="19dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="72dp"
-        android:fontFamily="sans-serif"
-        android:text="Typ: Schnarchnase"
-        android:textAppearance="@style/TextAppearance.AppCompat"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:typeface="normal"
-        app:layout_constraintBottom_toTopOf="@+id/Level"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/Name"
-        android:layout_width="178dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
-        android:layout_marginEnd="29dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="29dp"
-        android:fontFamily="sans-serif"
-        android:text="user123"
-        android:textAlignment="viewStart"
-        android:textAppearance="@style/TextAppearance.AppCompat"
-        android:textColor="?attr/colorPrimaryDark"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:typeface="normal"
-        android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/Typ"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="165dp"
-        android:text="Ergebnisse >"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/button7"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-    <TextView
-        android:id="@+id/EXP"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="173dp"
-        android:layout_marginEnd="102dp"
-        android:layout_marginTop="9dp"
-        android:fontFamily="sans-serif"
-        android:text="oooooo••••"
-        android:textAppearance="@style/TextAppearance.AppCompat"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:typeface="normal"
-        app:layout_constraintBottom_toTopOf="@+id/button5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/Punkte"
-        app:layout_constraintTop_toBottomOf="@+id/Punkte" />
-
-    <TextView
-        android:id="@+id/Level"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="11dp"
-        android:layout_marginEnd="129dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="10dp"
-        android:fontFamily="sans-serif"
-        android:text="Level 1"
-        android:textAppearance="@style/TextAppearance.AppCompat"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:typeface="normal"
-        app:layout_constraintBottom_toTopOf="@+id/Punkte"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/Typ" />
-
-    <TextView
-        android:id="@+id/Punkte"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="9dp"
-        android:layout_marginEnd="96dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="11dp"
-        android:fontFamily="sans-serif"
-        android:text="37 Punkte"
-        android:textAppearance="@style/TextAppearance.AppCompat"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:typeface="normal"
-        app:layout_constraintBottom_toTopOf="@+id/EXP"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/Level" />
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/bottom_navigation_profil"
@@ -142,24 +38,9 @@
         app:itemIconTint="@drawable/nav_item_color_state"
         app:itemTextColor="@drawable/nav_item_color_state"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button7"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         app:menu="@menu/bottom_navigation_main" />
-
-    <Button
-        android:id="@+id/button7"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="64dp"
-        android:text="Meine Ausrüstung >"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button5" />
 
 </android.support.constraint.ConstraintLayout>
