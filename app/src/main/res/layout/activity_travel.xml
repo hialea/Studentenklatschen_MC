@@ -68,7 +68,7 @@
     </RelativeLayout>
 
     <android.support.design.widget.BottomNavigationView
-        android:id="@+id/bottom_navigation_menutravel"
+        android:id="@+id/bottom_navigation_travel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
