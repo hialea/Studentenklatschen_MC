@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Studentenklatsche</string>
 
-    //Questioncataloge
+    //Questionnaire
     <string name="frage1">Dein Youtube-Feed</string>
     <string name="aw1sn">Lets Plays</string>
     <string name="aw1uf">Meinungsblogger zu Politik und Gesellschaft</string>
@@ -55,11 +55,8 @@
     <string name="nichts">Nichts davon.</string>
     <string name="weiter">Weiter</string>
     <string name="fertig">Fertig</string>
-    //Neu
     <string name="eine">Du bist eine </string>
     <string name="ein">Du bist ein </string>
-
-
 
     //Fight
     <string name="challengeLeft">Tilt device to the left</string>
@@ -71,7 +68,7 @@
     <string name="challengeSwipeRight">Swipe Right</string>
     <string name="challengeSwipeUp">Swipe Up</string>
     <string name="challengeSwipeDown">Swipe Down</string>
-    <string name="success">Du hast einen Treffe gelandet. Dein Gegner erleidet Schaden in Höhe von </string>
+    <string name="success">Du hast einen Treffer gelandet. Dein Gegner erleidet Schaden in Höhe von </string>
     <string name="miss">Das ging leider daneben</string>
     <string name="lose">Du hast verloren</string>
     <string name="won">Du hast gewonnen</string>
@@ -100,11 +97,11 @@
     <string name="travelDesc">Leg Dein Handy während der Vorlesung oder Übung weg \n und schick deinen Charakter auf Reisen. \n
                             Je länger er unterwegs ist, desto mehr Punkte erhältst du \n und die Chance auf tolle Items steigt.</string>
 
-    <string name="go">"Losrennen!"</string>
-    <string name="stop">"Ende"</string>
+    <string name="go">Losrennen!</string>
+    <string name="stop">Ende</string>
 
-    <string name="signin">"einloggen"</string>
-    <string name="create">"erstellen"</string>
+    <string name="signin">einloggen</string>
+    <string name="create">erstellen</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_menu">Menu</string>
@@ -151,8 +148,4 @@
     <string name="en4b">Item 1</string>
     <string name="en4c">Item 1</string>
 
-
-    <string name="title_activity_travel">TravelActivity</string>
-    <string name="travel_tab_text_1">Reisen</string>
-    <string name="travel_tab_text_2">Logbuch</string>
 ></resources>
