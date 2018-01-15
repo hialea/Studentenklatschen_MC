@@ -20,7 +20,7 @@ public class History {
     public static class HistoryType {
 
         public static String fight = "Fight";
-        public static String travel = "Travel2";
+        public static String travel = "Travel";
         public Profile opponent;
         public boolean won;
         public int exp;
@@ -37,9 +37,8 @@ public class History {
 
         public int duration;
 
-        public HistoryType(int duration, int exp, int klatschies, Date date) {
+        public HistoryType(int duration, int klatschies, Date date) {
             this.duration = duration;
-            this.exp = exp;
             this.klatschis = klatschies;
             this.date = date;
         }

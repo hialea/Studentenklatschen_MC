@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Studentenklatschen</string>
+    <string name="app_name">Studentenklatsche</string>
     <string name="frage1">your Youtube feed?</string>
     <string name="aw1sn">Lets Plays</string>
     <string name="aw1uf">videos about politics and society</string>
@@ -84,6 +84,7 @@
     <string name="travelDesc">Put your phone away while you\'re in class \n and put your character on a journey! \n The longer you are on the way, \n the more points you get \n and the higher the chance of finding great items is!</string>
 
     <string name="go">"Start the journey!"</string>
+    <string name="stop">"Stop"</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_menu">menu</string>

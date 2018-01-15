@@ -12,23 +12,32 @@
         android:id="@+id/Inhalt"
         android:layout_width="576dp"
         android:layout_height="287dp"
+        android:layout_marginBottom="3dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:text="@string/about_text"
         android:textAlignment="viewStart"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="19sp"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="40dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Ueberschrift" />
 
     <TextView
         android:id="@+id/Ueberschrift"
         android:layout_width="576dp"
         android:layout_height="45dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:text="@string/about_title"
         android:textAlignment="textStart"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="8dp" />
+        app:layout_constraintBottom_toTopOf="@+id/Inhalt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

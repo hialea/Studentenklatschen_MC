@@ -24,7 +24,7 @@ import de.hs_hannover.fholz.studentenklatschen.MainMenu.Profil;
 import de.hs_hannover.fholz.studentenklatschen.R;
 import de.hs_hannover.fholz.studentenklatschen.Shop.Shop;
 
-public class Travel2 extends AppCompatActivity {
+public class Travel extends AppCompatActivity {
 
     TextView timerTextView;
     long startTime = 0;
@@ -50,7 +50,7 @@ public class Travel2 extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_travel2);
+        setContentView(R.layout.activity_travel);
 
         timerTextView = (TextView) findViewById(R.id.travel_timer_view);
 
@@ -61,26 +61,35 @@ public class Travel2 extends AppCompatActivity {
                 switch (item.getItemId())
                 {
                     case R.id.action_profil:
-                        Intent intent1 = new Intent (Travel2.this, Profil.class);
+                        Intent intent1 = new Intent (Travel.this, Profil.class);
                         startActivity(intent1);
                         break;
 
                     case R.id.action_fight:
-                        Intent intent2 = new Intent (Travel2.this, Fighting.class);
+                        Intent intent2 = new Intent (Travel.this, Fighting.class);
                         startActivity(intent2);
                         break;
 
                     case R.id.action_travel:
-                        Intent intent3 = new Intent (Travel2.this, Travel2.class);
+                        Intent intent3 = new Intent (Travel.this, Travel.class);
                         startActivity(intent3);
                         break;
 
                     case R.id.action_shop:
-                        Intent intent4 = new Intent (Travel2.this, Shop.class);
+                        Intent intent4 = new Intent (Travel.this, Shop.class);
                         startActivity(intent4);
                         break;
                 }
                 return false;
+            }
+        });
+
+        Button travelLogButton = (Button) findViewById(R.id.travel_log_button);
+        travelLogButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent5 = new Intent (Travel.this, TravelLog.class);
+                startActivity(intent5);
             }
         });
 

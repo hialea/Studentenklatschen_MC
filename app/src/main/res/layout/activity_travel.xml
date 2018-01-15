@@ -1,58 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/layout_travel"
+    android:id="@+id/layout_travel2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
+    tools:context="de.hs_hannover.fholz.studentenklatschen.Travel.Travel">
 
-    tools:context="de.hs_hannover.fholz.studentenklatschen.Travel.TravelActivity">
-
-    <android.support.design.widget.AppBarLayout
-        android:id="@+id/appbar"
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="@dimen/appbar_padding_top"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:layout_height="?attr/actionBarSize"
+        android:layout_weight="1"
+        android:background="?attr/colorPrimary"
+        app:layout_scrollFlags="scroll|enterAlways"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        app:title="@string/app_name">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:layout_weight="1"
-            android:background="?attr/colorPrimary"
-            app:layout_scrollFlags="scroll|enterAlways"
-            app:popupTheme="@style/AppTheme.PopupOverlay"
-            app:title="@string/app_name">
+    </android.support.v7.widget.Toolbar>
 
-        </android.support.v7.widget.Toolbar>
-
-        <android.support.design.widget.TabLayout
-            android:id="@+id/travelTabs"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <android.support.design.widget.TabItem
-                android:id="@+id/travelTabItem"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/travel_tab_text_1" />
-
-            <android.support.design.widget.TabItem
-                android:id="@+id/travelTabItem2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/travel_tab_text_2" />
-
-        </android.support.design.widget.TabLayout>
-    </android.support.design.widget.AppBarLayout>
-
-    <android.support.v4.view.ViewPager
-        android:id="@+id/container"
+    <RelativeLayout
+        android:id="@+id/travel_tab"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/travel_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="132dp"
+            android:text="@string/travelDesc"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/travel_go_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/travel_description"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="18dp"
+            android:text="@string/go" />
+
+        <TextView
+            android:id="@+id/travel_timer_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/travel_go_button"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="29dp"
+            android:text="0:00"
+            android:textSize="36sp" />
+
+        <Button
+            android:id="@+id/travel_log_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="59dp"
+            android:text="Log" />
+
+    </RelativeLayout>
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/bottom_navigation_menutravel"
@@ -69,4 +82,4 @@
         app:layout_constraintTop_toTopOf="parent"
         app:menu="@menu/bottom_navigation_travel" />
 
-</android.support.design.widget.CoordinatorLayout>
+</RelativeLayout>
