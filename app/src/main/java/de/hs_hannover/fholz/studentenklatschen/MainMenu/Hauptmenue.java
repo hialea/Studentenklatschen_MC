@@ -29,19 +29,16 @@ public class Hauptmenue extends AppCompatActivity {
                     case R.id.action_profil:
                         Intent intent1 = new Intent (Hauptmenue.this, Profil.class);
                         startActivity(intent1);
-                        //Toast.makeText(Hauptmenue.this, "Action Profil Clicked", Toast.LENGTH_SHORT).show();
                         break;
 
                     case R.id.action_fight:
-                        Intent intent2 = new Intent (Hauptmenue.this, Fighting.class);
+                        Intent intent2 = new Intent (Hauptmenue.this, GeneratedEnemy.class);
                         startActivity(intent2);
-                        //Toast.makeText(Hauptmenue.this, "Action Kampf Clicked", Toast.LENGTH_SHORT).show();
                         break;
 
                     case R.id.action_travel:
                         Intent intent3 = new Intent (Hauptmenue.this, Travel.class);
                         startActivity(intent3);
-                        //Toast.makeText(Hauptmenue.this, "Action Reise Clicked", Toast.LENGTH_SHORT).show();
                         break;
 
                     case R.id.action_shop:
@@ -72,7 +69,7 @@ public class Hauptmenue extends AppCompatActivity {
         kampf.setOnClickListener(
                 new Button.OnClickListener(){
                     public void onClick(View v){
-                        Intent I = new Intent(Hauptmenue.this, Fighting.class);
+                        Intent I = new Intent(Hauptmenue.this, GeneratedEnemy.class);
                         startActivity(I);
                     }
                 }

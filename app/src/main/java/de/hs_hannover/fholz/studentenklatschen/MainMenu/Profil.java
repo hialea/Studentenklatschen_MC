@@ -30,19 +30,16 @@ public class Profil extends AppCompatActivity {
                     case R.id.action_profil:
                         Intent intent1 = new Intent (Profil.this, Profil.class);
                         startActivity(intent1);
-                        //Toast.makeText(Hauptmenue.this, "Action Profil Clicked", Toast.LENGTH_SHORT).show();
                         break;
 
                     case R.id.action_fight:
-                        Intent intent2 = new Intent (Profil.this, Fighting.class);
+                        Intent intent2 = new Intent (Profil.this, GeneratedEnemy.class);
                         startActivity(intent2);
-                        //Toast.makeText(Hauptmenue.this, "Action Kampf Clicked", Toast.LENGTH_SHORT).show();
                         break;
 
                     case R.id.action_travel:
                         Intent intent3 = new Intent (Profil.this, Travel.class);
                         startActivity(intent3);
-                        //Toast.makeText(Hauptmenue.this, "Action Reise Clicked", Toast.LENGTH_SHORT).show();
                         break;
 
                     case R.id.action_shop:

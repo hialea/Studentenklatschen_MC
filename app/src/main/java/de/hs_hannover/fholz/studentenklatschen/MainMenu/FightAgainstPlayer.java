@@ -1,4 +1,3 @@
-/*
 package de.hs_hannover.fholz.studentenklatschen.MainMenu;
 
 import android.content.Context;
@@ -16,7 +15,7 @@ import java.util.Random;
 
 import de.hs_hannover.fholz.studentenklatschen.R;
 
-public class FightAgainstPlayer implements SensorEventListener {
+/*public class FightAgainstPlayer implements SensorEventListener {
     private TextView counter, task, enemylp, swipe, ownLp;
     private SensorManager sensorManager;
     private float xAccel, yAccel, zAccel = 0.0f;
@@ -96,7 +95,7 @@ public class FightAgainstPlayer implements SensorEventListener {
                 if (sp = true) {
                     challengetxt();
                 } else {
-                    task.setText("Your enemys turn");
+                    task.setText("Your enemys turn")
                 }
             }
 
@@ -140,7 +139,7 @@ public class FightAgainstPlayer implements SensorEventListener {
                     clearValues();
                     countDownSp(2, counter);
                 } else {
-                    task.setText("Your enemys turn");
+                    task.setText("Your enemys turn")
                 }
             }
         }.start();

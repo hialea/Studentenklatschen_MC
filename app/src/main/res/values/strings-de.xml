@@ -107,4 +107,25 @@
                                 \n\nAlso, worauf wartest du noch?
                                 \nLos geht's! :)</string>
 
+    //Shop
+    <string name="en1">Item 1</string>
+    <string name="en1a">Item 1</string>
+    <string name="en1b">Item 1</string>
+    <string name="en1c">Item 1</string>
+
+    <string name="en2">Item 1</string>
+    <string name="en2a">Item 1</string>
+    <string name="en2b">Item 1</string>
+    <string name="en2c">Item 1</string>
+
+    <string name="en3">Item 1</string>
+    <string name="en3a">Item 1</string>
+    <string name="en3b">Item 1</string>
+    <string name="en3c">Item 1</string>
+
+    <string name="en4">Item 1</string>
+    <string name="en4a">Item 1</string>
+    <string name="en4b">Item 1</string>
+    <string name="en4c">Item 1</string>
+
 ></resources>
