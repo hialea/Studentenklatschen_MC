@@ -6,9 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import de.hs_hannover.fholz.studentenklatschen.Login.LoginActivity;
 import de.hs_hannover.fholz.studentenklatschen.MainMenu.GeneratedEnemy;
 import de.hs_hannover.fholz.studentenklatschen.MainMenu.Hauptmenue;
+import de.hs_hannover.fholz.studentenklatschen.MainMenu.LoginActivity;
 import de.hs_hannover.fholz.studentenklatschen.Shop.ItemGenerator;
 import de.hs_hannover.fholz.studentenklatschen.Travel.Travel;
 

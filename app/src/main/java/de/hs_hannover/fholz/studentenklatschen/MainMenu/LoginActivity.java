@@ -1,4 +1,4 @@
-package de.hs_hannover.fholz.studentenklatschen;
+package de.hs_hannover.fholz.studentenklatschen.MainMenu;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -16,13 +16,13 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import de.hs_hannover.fholz.studentenklatschen.Datamodel.Profile;
-import de.hs_hannover.fholz.studentenklatschen.Login.LoginActivity;
-import de.hs_hannover.fholz.studentenklatschen.MainMenu.Profil;
+import de.hs_hannover.fholz.studentenklatschen.QuestCat;
+import de.hs_hannover.fholz.studentenklatschen.R;
 
 import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Database.playerID;
 import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Database.playerRef;
 
-public class StartScreen extends AppCompatActivity implements View.OnClickListener {
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText emailField;
     private EditText passwordField;
@@ -33,7 +33,7 @@ public class StartScreen extends AppCompatActivity implements View.OnClickListen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_start_screen);
+        setContentView(R.layout.activity_login);
 
         mAuth = FirebaseAuth.getInstance();
         player = mAuth.getCurrentUser();
@@ -48,11 +48,16 @@ public class StartScreen extends AppCompatActivity implements View.OnClickListen
     @Override
     public void onStart() {
         super.onStart();
+        if(player!=null){
+
+            Intent I = new Intent(LoginActivity.this, Profil.class);
+            startActivity(I);
+        }
     }
 
     private void createAccount(String email, String password) {
         if (!validateForm()) {
-            Toast.makeText(StartScreen.this, R.string.auth_failed,
+            Toast.makeText(LoginActivity.this, R.string.auth_failed,
                     Toast.LENGTH_SHORT).show();
             return;
         }
@@ -61,11 +66,11 @@ public class StartScreen extends AppCompatActivity implements View.OnClickListen
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (!task.isSuccessful()) {
-                        Toast.makeText(StartScreen.this, R.string.auth_failed,
+                        Toast.makeText(LoginActivity.this, R.string.auth_failed,
                                 Toast.LENGTH_SHORT).show();
                     } else {
                         playerRef.setValue(new Profile(playerID));
-                        Intent I = new Intent(StartScreen.this, QuestCat.class);
+                        Intent I = new Intent(LoginActivity.this, QuestCat.class);
                         startActivity(I);
                     }
                 }
@@ -88,7 +93,7 @@ public class StartScreen extends AppCompatActivity implements View.OnClickListen
 
     private void signIn(String email, String password) {
         if (!validateForm()) {
-            Toast.makeText(StartScreen.this, R.string.auth_failed,
+            Toast.makeText(LoginActivity.this, R.string.auth_failed,
                     Toast.LENGTH_SHORT).show();
             return;
         }
@@ -98,10 +103,10 @@ public class StartScreen extends AppCompatActivity implements View.OnClickListen
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (!task.isSuccessful()) {
-                        Toast.makeText(StartScreen.this, R.string.auth_failed,
+                        Toast.makeText(LoginActivity.this, R.string.auth_failed,
                                 Toast.LENGTH_SHORT).show();
                     } else {
-                        Intent I = new Intent(StartScreen.this, Profil.class);
+                        Intent I = new Intent(LoginActivity.this, Profil.class);
                         startActivity(I);
                     }
                 }

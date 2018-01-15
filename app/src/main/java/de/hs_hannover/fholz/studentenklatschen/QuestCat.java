@@ -1,5 +1,6 @@
 package de.hs_hannover.fholz.studentenklatschen;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +16,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import de.hs_hannover.fholz.studentenklatschen.Datamodel.Character;
+import de.hs_hannover.fholz.studentenklatschen.MainMenu.LoginActivity;
+import de.hs_hannover.fholz.studentenklatschen.MainMenu.Profil;
 
 import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Database.*;
 
@@ -267,7 +270,8 @@ public class QuestCat extends AppCompatActivity {
                         break;
 
                     case 13:
-                        finish();
+                        Intent I = new Intent(QuestCat.this, Profil.class);
+                        startActivity(I);
 
                     default:
                         finish();
