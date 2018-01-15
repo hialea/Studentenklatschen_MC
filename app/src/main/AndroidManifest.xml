@@ -22,7 +22,7 @@
         <activity android:name=".LoadingScreen" />
         <activity android:name=".Login.LoginActivity" />
         <activity android:name=".MainMenu.Profil" />
-        <activity android:name=".Travel.Travel" />
+        <activity android:name=".Travel.Travel2" />
         <activity android:name=".Shop.ItemGenerator" />
         <activity android:name=".MainMenu.Ergebnisse" />
         <activity android:name=".MainMenu.Hauptmenue">
@@ -41,7 +41,11 @@
         <activity
             android:name=".Menu"
             android:label="@string/title_activity_menu" />
-        <activity android:name=".MainMenu.GeneratedEnemy"></activity>
+        <activity android:name=".MainMenu.GeneratedEnemy" />
+        <activity
+            android:name=".Travel.TravelActivity"
+            android:label="@string/title_activity_travel"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

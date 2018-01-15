@@ -7,12 +7,12 @@ import android.view.View;
 import android.widget.Button;
 
 import de.hs_hannover.fholz.studentenklatschen.Login.LoginActivity;
-import de.hs_hannover.fholz.studentenklatschen.MainMenu.Fighting;
 import de.hs_hannover.fholz.studentenklatschen.MainMenu.GeneratedEnemy;
 import de.hs_hannover.fholz.studentenklatschen.MainMenu.Hauptmenue;
 import de.hs_hannover.fholz.studentenklatschen.Shop.ItemGenerator;
-//import de.hs_hannover.fholz.studentenklatschen.Travel.SensorTest;
-import de.hs_hannover.fholz.studentenklatschen.Travel.Travel;
+//import de.hs_hannover.fholz.studentenklatschen.Travel2.SensorTest;
+import de.hs_hannover.fholz.studentenklatschen.Travel.Travel2;
+import de.hs_hannover.fholz.studentenklatschen.Travel.TravelActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -78,20 +78,11 @@ public class MainActivity extends AppCompatActivity {
         myButton7.setOnClickListener(
                 new Button.OnClickListener(){
                     public void onClick(View v){
-                        Intent I = new Intent(MainActivity.this, Travel.class);
+                        Intent I = new Intent(MainActivity.this, TravelActivity.class);
                         startActivity(I);
                     }
                 }
         );
-
-        /*myButton8.setOnClickListener(
-                new Button.OnClickListener(){
-                    public void onClick(View v){
-                        Intent I = new Intent(MainActivity.this, SensorTest.class);
-                        startActivity(I);
-                    }
-                }
-        );*/
     }
 
 }

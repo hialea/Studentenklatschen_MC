@@ -9,7 +9,7 @@ import android.view.MenuItem;
 
 import de.hs_hannover.fholz.studentenklatschen.R;
 import de.hs_hannover.fholz.studentenklatschen.Shop.Shop;
-import de.hs_hannover.fholz.studentenklatschen.Travel.Travel;
+import de.hs_hannover.fholz.studentenklatschen.Travel.Travel2;
 
 public class Credits extends AppCompatActivity {
 
@@ -37,7 +37,7 @@ public class Credits extends AppCompatActivity {
                         break;
 
                     case R.id.action_travel:
-                        Intent intent3 = new Intent (Credits.this, Travel.class);
+                        Intent intent3 = new Intent (Credits.this, Travel2.class);
                         startActivity(intent3);
                         //Toast.makeText(Hauptmenue.this, "Action Reise Clicked", Toast.LENGTH_SHORT).show();
                         break;

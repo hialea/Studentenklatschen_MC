@@ -7,37 +7,24 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.PopupWindow;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.Random;
-
 import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Database.*;
 
-import de.hs_hannover.fholz.studentenklatschen.Datamodel.Affix;
-import de.hs_hannover.fholz.studentenklatschen.Datamodel.Character;
-import de.hs_hannover.fholz.studentenklatschen.Datamodel.Inventory;
 import de.hs_hannover.fholz.studentenklatschen.Datamodel.Item;
 import de.hs_hannover.fholz.studentenklatschen.MainMenu.Fighting;
-import de.hs_hannover.fholz.studentenklatschen.MainMenu.Kampf;
 import de.hs_hannover.fholz.studentenklatschen.MainMenu.Profil;
-import de.hs_hannover.fholz.studentenklatschen.MainMenu.Vorlesung;
 import de.hs_hannover.fholz.studentenklatschen.R;
 import de.hs_hannover.fholz.studentenklatschen.Shop.Shop;
 
-public class Travel extends AppCompatActivity {
+public class Travel2 extends AppCompatActivity {
 
     TextView timerTextView;
     long startTime = 0;
@@ -63,7 +50,7 @@ public class Travel extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_travel);
+        setContentView(R.layout.activity_travel2);
 
         timerTextView = (TextView) findViewById(R.id.travel_timer_view);
 
@@ -74,22 +61,22 @@ public class Travel extends AppCompatActivity {
                 switch (item.getItemId())
                 {
                     case R.id.action_profil:
-                        Intent intent1 = new Intent (Travel.this, Profil.class);
+                        Intent intent1 = new Intent (Travel2.this, Profil.class);
                         startActivity(intent1);
                         break;
 
                     case R.id.action_fight:
-                        Intent intent2 = new Intent (Travel.this, Fighting.class);
+                        Intent intent2 = new Intent (Travel2.this, Fighting.class);
                         startActivity(intent2);
                         break;
 
                     case R.id.action_travel:
-                        Intent intent3 = new Intent (Travel.this, Travel.class);
+                        Intent intent3 = new Intent (Travel2.this, Travel2.class);
                         startActivity(intent3);
                         break;
 
                     case R.id.action_shop:
-                        Intent intent4 = new Intent (Travel.this, Shop.class);
+                        Intent intent4 = new Intent (Travel2.this, Shop.class);
                         startActivity(intent4);
                         break;
                 }
@@ -117,17 +104,17 @@ public class Travel extends AppCompatActivity {
                             Log.d("asdfghjklö", String.valueOf(level));
                             Log.d("asdfghjklö", String.valueOf(earnedKlatschis));
                             charRef.child("inventory").child("klatschis").setValue((earnedKlatschis*level)+klatschis);
-                            if(earnedKlatschis >= 2){
+                            if(earnedKlatschis >= 1){
                                 Item item = new Item(level);
 
-                                RelativeLayout mainLayout = (RelativeLayout)
+                                /*RelativeLayout mainLayout = (RelativeLayout)
                                         findViewById(R.id.layout_travel);
                                 LayoutInflater inflater = (LayoutInflater)
                                         getSystemService(LAYOUT_INFLATER_SERVICE);
                                 View popupView = inflater.inflate(R.layout.item_window, null);
 
-                                boolean focusable = true; // lets taps outside the popup also dismiss it
-                                final PopupWindow popupWindow = new PopupWindow(popupView, 200, 200, focusable);
+                                boolean focusable = true;
+                                final PopupWindow popupWindow = new PopupWindow(popupView, 600, 600, focusable);
 
                                 popupWindow.showAtLocation(mainLayout, Gravity.CENTER, 0, 0);
 
@@ -137,7 +124,7 @@ public class Travel extends AppCompatActivity {
                                         popupWindow.dismiss();
                                         return true;
                                     }
-                                });
+                                });*/
                             }
                             earnedKlatschis = -1;
                         }
