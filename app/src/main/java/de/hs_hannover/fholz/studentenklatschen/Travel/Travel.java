@@ -19,6 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Database.*;
 
 import de.hs_hannover.fholz.studentenklatschen.Datamodel.Item;
+import de.hs_hannover.fholz.studentenklatschen.MainMenu.GeneratedEnemy;
 import de.hs_hannover.fholz.studentenklatschen.MainMenu.Profil;
 import de.hs_hannover.fholz.studentenklatschen.R;
 import de.hs_hannover.fholz.studentenklatschen.Shop.Shop;
@@ -65,7 +66,7 @@ public class Travel extends AppCompatActivity {
                         break;
 
                     case R.id.action_fight:
-                        Intent intent2 = new Intent (Travel.this, Fighting.class);
+                        Intent intent2 = new Intent (Travel.this, GeneratedEnemy.class);
                         startActivity(intent2);
                         break;
 
