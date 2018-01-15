@@ -65,6 +65,7 @@
     <string name="challengeSwipeLeft">Swipe Left</string>
     <string name="challengeSwipeRight">Swipe Right</string>
     <string name="challengeSwipeUp">Swipe Up</string>
+    <string name="challengeSwipeDown">Swipe Down</string>
     <string name="success">Du hast einen Treffe gelandet. Dein Gegner erleidet Schaden in Höhe von </string>
     <string name="miss">Das ging leider daneben.</string>
 
