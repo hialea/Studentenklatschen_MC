@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import de.hs_hannover.fholz.studentenklatschen.R;
 import de.hs_hannover.fholz.studentenklatschen.Shop.Shop;
 import de.hs_hannover.fholz.studentenklatschen.Travel.Travel;
+import de.hs_hannover.fholz.studentenklatschen.Travel.Travel;
 
 public class Kampf extends AppCompatActivity {
 

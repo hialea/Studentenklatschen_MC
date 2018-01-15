@@ -67,7 +67,13 @@
     <string name="challengeSwipeUp">Swipe Up</string>
     <string name="challengeSwipeDown">Swipe Down</string>
     <string name="success">Du hast einen Treffe gelandet. Dein Gegner erleidet Schaden in Höhe von </string>
-    <string name="miss">Das ging leider daneben.</string>
+    <string name="miss">Das ging leider daneben</string>
+    <string name="lose">Du hast verloren</string>
+    <string name="won">Du hast gewonnen</string>
+    <string name="enemyLpStr">LP: </string>
+    <string name="ownLpStr">Deine LP: </string>
+    <string name="enemyLevelStr">Level: </string>
+    <string name="ownLevelStr">Dein Level: </string>
 
 
     <string name="charaSn">Schnarchnase</string>

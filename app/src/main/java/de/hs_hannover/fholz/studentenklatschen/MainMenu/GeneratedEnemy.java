@@ -31,13 +31,9 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
     private int geLifepoints = 100;
     Random rn = new Random();
     private int chosenChallenge, rchallenge, geDamage, spDamage, geLevel;
-    private boolean right, left, up, down;
+    private boolean right, left;
     public Vibrator v;
     private int spLevel = 1;
-    MediaPlayer screamLost = MediaPlayer.create(this, R.raw.ScreamLost);
-    MediaPlayer fightsound = MediaPlayer.create(this, R.raw.KampfSound);
-    MediaPlayer screamStrike = MediaPlayer.create(this, R.raw.ScreamStrike);
-    MediaPlayer screamWon = MediaPlayer.create(this, R.raw.ScreamWon);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,17 +75,11 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
         });
 
         swipe.setOnTouchListener(new OnSwipeTouchListener(GeneratedEnemy.this) {
-            public void onSwipeTop() {
-                up = true;
-            }
             public void onSwipeRight() {
                 right = true;
             }
             public void onSwipeLeft() {
                 left = true;
-            }
-            public void onSwipeBottom() {
-                down = true;
             }
         });
 
@@ -128,28 +118,34 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
 
     public void countDown(int Seconds, final TextView displayTime){
 
+        //final MediaPlayer screamWon = MediaPlayer.create(this, R.raw.screamwon);
+        //final MediaPlayer fightsound = MediaPlayer.create(this, R.raw.fightsound);
+
         new CountDownTimer(Seconds* 1000+1000, 1000) {
 
             public void onTick(long millisUntilFinished) {
                 displayTime.setVisibility(View.INVISIBLE);
                 challengetxt();
+                //fightsound.start();
             }
 
             public void onFinish() {
                 challenge(chosenChallenge);
                 if (geLifepoints > 0) {
                     clearValues();
-                    countDownEnemy(3, counter);
+                    countDownEnemy(3);
                 } else {
-                    task.setText("You won");
-                    screamWon.start();
+                    task.setText(" ");
+                    //screamWon.start();
                 }
 
             }
         }.start();
     }
 
-    public void countDownEnemy(int Seconds, final TextView displayTime){
+    public void countDownEnemy(int Seconds){
+
+        //final MediaPlayer screamLost = MediaPlayer.create(this, R.raw.screamlost);
 
         new CountDownTimer(Seconds* 1000+1000, 1000) {
 
@@ -164,8 +160,8 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
                     clearValues();
                     countDown(3, counter);
                 } else {
-                    task.setText("You lost");
-                    screamLost.start();
+                    task.setText(" ");
+                    //screamLost.start();
                 }
 
             }
@@ -313,21 +309,22 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
     }
 
     public void strike() {
+        //final MediaPlayer screamStrike = MediaPlayer.create(this, R.raw.screamstrike);
+        //screamStrike.start();
         geDamage = (rn.nextInt(10) + 1 + rn.nextInt(spLevel));
-        task.setText("Schaden: " + geDamage);
+        task.setText(" " + geDamage);
         geLifepoints = geLifepoints - geDamage;
-        lp.setText("enemy lifepoints: " + geLifepoints);
-        fightsound.start();
+        lp.setText(" " + geLifepoints);
     }
 
-    public void generateLevel () {
+    public void generateLevel() {
         geLevel = (rn.nextInt(4) + spLevel);
     }
 
     public void generateAttack () {
         spDamage = (rn.nextInt(10) + rn.nextInt(geLevel));
         spLifepoints = spLifepoints - spDamage;
-        ownLp.setText("your lifepoints: " + spLifepoints);
+        ownLp.setText(" " + spLifepoints);
         if (spDamage > 0) {
             v.vibrate(100);
         }
@@ -337,9 +334,9 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
         counter = (TextView) findViewById(R.id.timecount);
         task = (TextView) findViewById(R.id.challenge);
         lp = (TextView) findViewById(R.id.lp);
-        lp.setText("enemy lifepoints: " + geLifepoints + " Level: " + geLevel);
+        lp.setText(" " + geLifepoints);
         ownLp = (TextView) findViewById(R.id.ownLp);
-        ownLp.setText("your lifepoints: " + spLifepoints + " Level: " + spLevel);
+        ownLp.setText(" " + spLifepoints);
         swipe =(TextView) findViewById(R.id.swipe);
     }
 
@@ -373,7 +370,5 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
         zMin = 0;
         right = false;
         left = false;
-        up = false;
-        down = false;
     }
 }
