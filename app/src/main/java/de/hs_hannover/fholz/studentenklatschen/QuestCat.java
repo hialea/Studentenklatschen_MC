@@ -274,8 +274,8 @@ public class QuestCat extends AppCompatActivity {
                         startActivity(I);
 
                     default:
-                        Intent I = new Intent(QuestCat.this, Profil.class);
-                        startActivity(I);
+                        Intent J = new Intent(QuestCat.this, Profil.class);
+                        startActivity(J);
                 }
 
                 rG.clearCheck();
