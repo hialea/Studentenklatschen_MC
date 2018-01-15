@@ -9,6 +9,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import de.hs_hannover.fholz.studentenklatschen.MainActivity;
+import de.hs_hannover.fholz.studentenklatschen.QuestCat;
 import de.hs_hannover.fholz.studentenklatschen.R;
 import de.hs_hannover.fholz.studentenklatschen.Shop.Shop;
 import de.hs_hannover.fholz.studentenklatschen.Travel.Travel;
@@ -19,6 +21,18 @@ public class Hauptmenue extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hauptmenue);
+
+        Button lol = (Button)findViewById(R.id.about);
+
+        lol.setOnClickListener(
+                new Button.OnClickListener(){
+                    public void onClick(View v){
+                        Intent I = new Intent(Hauptmenue.this, About.class);
+                        startActivity(I);
+                    }
+                }
+        );
+
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView)findViewById(R.id.bottom_navigation_menu);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
