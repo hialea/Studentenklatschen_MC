@@ -9,13 +9,13 @@
         android:title="@string/title_profile"/>
 
     <item
-        android:id="@+id/action_kampf"
+        android:id="@+id/action_fight"
         android:enabled="true"
         android:icon="@drawable/ic_kampf"
         android:title="@string/title_fight"/>
 
     <item
-        android:id="@+id/action_reise"
+        android:id="@+id/action_travel"
         android:enabled="true"
         android:icon="@drawable/ic_reise"
         android:title="@string/title_travel"/>

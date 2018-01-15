@@ -92,4 +92,14 @@
     <string name="title_travel">journey</string>
     <string name="title_fight">fight</string>
 
+    //Credits etc.
+    <string name="credits">An app by\n\nFranziska Holz\nPia Kaschel\nHelena Trojanowska\nSvenja Forstner</string>
+    <string name="about_title">About the App</string>
+    <string name="about_text">Our app "Studiklatschen" was designed to make your everyday college life more interesting and enjoyable.
+                                \n\nEspecially if you\'re a freshman, this app can help you to get to know new people!
+                                \nYou can have thrilling battles with your fellow students, collect EXP and level up.
+                                \nIt is also possible to collect points while you\'re in class. You can redeem those points in the shop for new gear or for upgrades of your weapon!
+                                \n\nWhat are you waiting for?
+                                \nLet\'s go! :)</string>
+
 </resources>

@@ -9,6 +9,7 @@ import android.view.MenuItem;
 
 import de.hs_hannover.fholz.studentenklatschen.R;
 import de.hs_hannover.fholz.studentenklatschen.Shop.Shop;
+import de.hs_hannover.fholz.studentenklatschen.Travel.Travel;
 
 public class About extends AppCompatActivity {
 
@@ -29,14 +30,14 @@ public class About extends AppCompatActivity {
                         //Toast.makeText(Hauptmenue.this, "Action Profil Clicked", Toast.LENGTH_SHORT).show();
                         break;
 
-                    case R.id.action_kampf:
-                        Intent intent2 = new Intent (About.this, Kampf.class);
+                    case R.id.action_fight:
+                        Intent intent2 = new Intent (About.this, Fighting.class);
                         startActivity(intent2);
                         //Toast.makeText(Hauptmenue.this, "Action Kampf Clicked", Toast.LENGTH_SHORT).show();
                         break;
 
-                    case R.id.action_reise:
-                        Intent intent3 = new Intent (About.this, Vorlesung.class);
+                    case R.id.action_travel:
+                        Intent intent3 = new Intent (About.this, Travel.class);
                         startActivity(intent3);
                         //Toast.makeText(Hauptmenue.this, "Action Reise Clicked", Toast.LENGTH_SHORT).show();
                         break;

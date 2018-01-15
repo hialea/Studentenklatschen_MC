@@ -15,11 +15,13 @@ import java.util.TreeMap;
 
 import de.hs_hannover.fholz.studentenklatschen.Datamodel.Affix;
 import de.hs_hannover.fholz.studentenklatschen.Datamodel.Item;
+import de.hs_hannover.fholz.studentenklatschen.MainMenu.Fighting;
 import de.hs_hannover.fholz.studentenklatschen.MainMenu.Hauptmenue;
 import de.hs_hannover.fholz.studentenklatschen.MainMenu.Kampf;
 import de.hs_hannover.fholz.studentenklatschen.MainMenu.Profil;
 import de.hs_hannover.fholz.studentenklatschen.MainMenu.Vorlesung;
 import de.hs_hannover.fholz.studentenklatschen.R;
+import de.hs_hannover.fholz.studentenklatschen.Travel.Travel;
 
 import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Attributes.DEFENSE;
 import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Attributes.SPECIAL;
@@ -49,13 +51,13 @@ public class Shop extends AppCompatActivity {
                         startActivity(intent1);
                         break;
 
-                    case R.id.action_kampf:
-                        Intent intent2 = new Intent (Shop.this, Kampf.class);
+                    case R.id.action_fight:
+                        Intent intent2 = new Intent (Shop.this, Fighting.class);
                         startActivity(intent2);
                         break;
 
-                    case R.id.action_reise:
-                        Intent intent3 = new Intent (Shop.this, Vorlesung.class);
+                    case R.id.action_travel:
+                        Intent intent3 = new Intent (Shop.this, Travel.class);
                         startActivity(intent3);
                         break;
 
