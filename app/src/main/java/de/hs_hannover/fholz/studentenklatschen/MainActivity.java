@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
         Button myButton5 = (Button)findViewById(R.id.button9);
         Button myButton6 = (Button)findViewById(R.id.button6);
         Button myButton7 = (Button)findViewById(R.id.button10);
-        Button myButton8 = (Button)findViewById(R.id.button8);
 
         myButton2.setOnClickListener(
                 new Button.OnClickListener(){
