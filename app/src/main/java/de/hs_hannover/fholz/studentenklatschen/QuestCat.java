@@ -240,32 +240,32 @@ public class QuestCat extends AppCompatActivity {
                         if (countSn >= countSt) {
                             if (countSn >= countUf) {
                                 if (countSn >= countTp) {
-                                    Fragefeld.setText("Du bist eine Schnarchnase");
+                                    Fragefeld.setText(R.string.eine + R.string.charaSn);
                                     charRef.setValue(new Character(Character.Role.SCHNARCHNASE));
                                 } else {
-                                    Fragefeld.setText("Du bist ein Tollpatsch");
+                                    Fragefeld.setText(R.string.ein + R.string.charaTp);
                                     charRef.setValue(new Character(Character.Role.TOLLPATSCH));
                                 }
                             } else {
-                                Fragefeld.setText("Du bist ein Überflieger");
+                                Fragefeld.setText(R.string.ein + R.string.charaUf);
                                 charRef.setValue(new Character(Character.Role.UEBERFLIEGER));
                             }
                         } else if (countSt >= countTp) {
                             if (countSt >= countUf) {
-                                Fragefeld.setText("Du bist eine Snapchat-Tussi");
+                                Fragefeld.setText(R.string.eine + R.string.charaSt);
                                 charRef.setValue(new Character(Character.Role.SNAPCHAT_TUSSI));
                             } else {
-                                Fragefeld.setText("Du bist ein Überflieger");
+                                Fragefeld.setText(R.string.ein + R.string.charaUf);
                                 charRef.setValue(new Character(Character.Role.UEBERFLIEGER));
                             }
                         } else if (countTp >= countUf) {
-                            Fragefeld.setText("Du bist ein Tollpatsch");
+                            Fragefeld.setText(R.string.ein + R.string.charaTp);
                             charRef.setValue(new Character(Character.Role.TOLLPATSCH));
                         } else {
-                            Fragefeld.setText("Du bist ein Überflieger");
+                            Fragefeld.setText(R.string.ein + R.string.charaUf);
                             charRef.setValue(new Character(Character.Role.UEBERFLIEGER));
                         }
-                        weiterFertig.setText("Danke");
+                        weiterFertig.setText(R.string.fertig);
                         Klick++;
                         break;
 
@@ -274,7 +274,8 @@ public class QuestCat extends AppCompatActivity {
                         startActivity(I);
 
                     default:
-                        finish();
+                        Intent I = new Intent(QuestCat.this, Profil.class);
+                        startActivity(I);
                 }
 
                 rG.clearCheck();

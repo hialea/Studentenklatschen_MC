@@ -55,6 +55,11 @@
     <string name="nichts">Nichts davon.</string>
     <string name="weiter">Weiter</string>
     <string name="fertig">Fertig</string>
+    //Neu
+    <string name="eine">Du bist eine </string>
+    <string name="ein">Du bist ein </string>
+
+
 
     //Fight
     <string name="challengeLeft">Tilt device to the left</string>
@@ -75,7 +80,7 @@
     <string name="enemyLevelStr">Level: </string>
     <string name="ownLevelStr">Dein Level: </string>
 
-
+    //Charakter
     <string name="charaSn">Schnarchnase</string>
     <string name="charaUf">Überflieger</string>
     <string name="charaTp">Tollpatsch</string>
