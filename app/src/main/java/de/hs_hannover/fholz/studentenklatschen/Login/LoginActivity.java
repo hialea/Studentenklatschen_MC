@@ -16,18 +16,13 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-
 import de.hs_hannover.fholz.studentenklatschen.Datamodel.Profile;
-import de.hs_hannover.fholz.studentenklatschen.MainActivity;
 import de.hs_hannover.fholz.studentenklatschen.QuestCat;
 import de.hs_hannover.fholz.studentenklatschen.R;
 
-import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Database.mAuth;
-import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Database.player;
 import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Database.playerID;
 import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Database.playerRef;
+
 
 public class LoginActivity extends AppCompatActivity implements
         View.OnClickListener{
@@ -37,10 +32,16 @@ public class LoginActivity extends AppCompatActivity implements
     private EditText mEmailField;
     private EditText mPasswordField;
 
+    private FirebaseUser player;
+    private FirebaseAuth mAuth;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        mAuth = FirebaseAuth.getInstance();
+        player = mAuth.getCurrentUser();
 
         mStatusTextView = (TextView) findViewById(R.id.status);
         mDetailTextView = (TextView) findViewById(R.id.detail);

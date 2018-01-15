@@ -116,7 +116,7 @@ public class Travel extends AppCompatActivity {
                             Log.d("asdfghjklö", String.valueOf(klatschis));
                             Log.d("asdfghjklö", String.valueOf(level));
                             Log.d("asdfghjklö", String.valueOf(earnedKlatschis));
-                            playerRef.child("character").child("inventory").child("klatschis").setValue((earnedKlatschis*level)+klatschis);
+                            charRef.child("inventory").child("klatschis").setValue((earnedKlatschis*level)+klatschis);
                             if(earnedKlatschis >= 2){
                                 Item item = new Item(level);
 
@@ -126,10 +126,8 @@ public class Travel extends AppCompatActivity {
                                         getSystemService(LAYOUT_INFLATER_SERVICE);
                                 View popupView = inflater.inflate(R.layout.item_window, null);
 
-                                int width = RelativeLayout.LayoutParams.WRAP_CONTENT;
-                                int height = RelativeLayout.LayoutParams.WRAP_CONTENT;
                                 boolean focusable = true; // lets taps outside the popup also dismiss it
-                                final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
+                                final PopupWindow popupWindow = new PopupWindow(popupView, 200, 200, focusable);
 
                                 popupWindow.showAtLocation(mainLayout, Gravity.CENTER, 0, 0);
 
