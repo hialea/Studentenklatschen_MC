@@ -25,7 +25,7 @@ import de.hs_hannover.fholz.studentenklatschen.MainMenu.Kampf;
 import de.hs_hannover.fholz.studentenklatschen.MainMenu.Profil;
 import de.hs_hannover.fholz.studentenklatschen.MainMenu.Vorlesung;
 import de.hs_hannover.fholz.studentenklatschen.R;
-import de.hs_hannover.fholz.studentenklatschen.Travel.Travel;
+import de.hs_hannover.fholz.studentenklatschen.Travel.TravelActivity;
 
 import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Attributes.DEFENSE;
 import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Attributes.SPECIAL;
@@ -58,7 +58,7 @@ public class Shop extends AppCompatActivity {
                         break;
 
                     case R.id.action_travel:
-                        Intent intent3 = new Intent (Shop.this, Travel.class);
+                        Intent intent3 = new Intent (Shop.this, TravelActivity.class);
                         startActivity(intent3);
                         break;
 
