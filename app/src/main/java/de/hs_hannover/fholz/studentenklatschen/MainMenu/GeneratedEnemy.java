@@ -21,7 +21,6 @@ import java.util.Random;
 
 import de.hs_hannover.fholz.studentenklatschen.R;
 import de.hs_hannover.fholz.studentenklatschen.Shop.Shop;
-import de.hs_hannover.fholz.studentenklatschen.Travel.TravelActivity;
 
 public class GeneratedEnemy extends AppCompatActivity  implements SensorEventListener {
     private TextView counter, task, lp, swipe, ownLp;
