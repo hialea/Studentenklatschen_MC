@@ -96,7 +96,7 @@ import de.hs_hannover.fholz.studentenklatschen.R;
                 if (sp = true) {
                     challengetxt();
                 } else {
-                    task.setText("Your enemys turn");
+                    task.setText("Your enemys turn")
                 }
             }
 
@@ -140,7 +140,7 @@ import de.hs_hannover.fholz.studentenklatschen.R;
                     clearValues();
                     countDownSp(2, counter);
                 } else {
-                    task.setText("Your enemys turn");
+                    task.setText("Your enemys turn")
                 }
             }
         }.start();

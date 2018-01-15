@@ -8,14 +8,18 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.animation.AnticipateOvershootInterpolator;
 import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import java.util.TreeMap;
 
 import de.hs_hannover.fholz.studentenklatschen.Datamodel.Affix;
 import de.hs_hannover.fholz.studentenklatschen.Datamodel.Item;
 import de.hs_hannover.fholz.studentenklatschen.MainMenu.Fighting;
+import de.hs_hannover.fholz.studentenklatschen.MainMenu.GeneratedEnemy;
 import de.hs_hannover.fholz.studentenklatschen.MainMenu.Hauptmenue;
 import de.hs_hannover.fholz.studentenklatschen.MainMenu.Kampf;
 import de.hs_hannover.fholz.studentenklatschen.MainMenu.Profil;
@@ -30,10 +34,7 @@ import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Attributes.attri
 
 public class Shop extends AppCompatActivity {
 
-    TreeMap<String, Integer> tm = new TreeMap<>();
 
-    /*in einer treemap hast du immer ein paar aus 1 schlüsselwort und 1 objekt. du versuchst aber da drei objekte reinzuschieben
-     */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +53,7 @@ public class Shop extends AppCompatActivity {
                         break;
 
                     case R.id.action_fight:
-                        Intent intent2 = new Intent (Shop.this, Fighting.class);
+                        Intent intent2 = new Intent (Shop.this, GeneratedEnemy.class);
                         startActivity(intent2);
                         break;
 
@@ -71,26 +72,11 @@ public class Shop extends AppCompatActivity {
         });
 
 
-        int itemlvl = 2;
-
-
-        Item item1 = new Item(itemlvl);
-
-        /*tm.put(hallo, item1.attributes.get(attributeName[STRENGTH]), item1.attributes.get(attributeName[DEFENSE]), item1.attributes.get(attributeName[SPECIAL]));
-
-        Item item2 = new Item(rndSlot, itemlvl, affix);
-        tm.put(ha, item2.attributes.get(attributeName[STRENGTH]), item2.attributes.get(attributeName[DEFENSE]), item2.attributes.get(attributeName[SPECIAL]));
-
-        Item item3 = new Item(rndSlot, itemlvl, affix);
-        tm.put(hu, item3.attributes.get(attributeName[STRENGTH]), item3.attributes.get(attributeName[DEFENSE]), item3.attributes.get(attributeName[SPECIAL]));
-
-        Item item4 = new Item(rndSlot, itemlvl, affix);
-        tm.put(he, item4.attributes.get(attributeName[STRENGTH]), item4.attributes.get(attributeName[DEFENSE]), item4.attributes.get(attributeName[SPECIAL]));
-
-        brauchst du nicht*/
-
-
     }
 
 
 }
+
+
+//List ItemListe = new ArrayList<String>();
+//ListAdapter profilAdapter = new ArrayAdapter<String>(ItemListe);

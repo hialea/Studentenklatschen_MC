@@ -31,7 +31,7 @@ public class Credits extends AppCompatActivity {
                         break;
 
                     case R.id.action_fight:
-                        Intent intent2 = new Intent (Credits.this, Fighting.class);
+                        Intent intent2 = new Intent (Credits.this, GeneratedEnemy.class);
                         startActivity(intent2);
                         //Toast.makeText(Hauptmenue.this, "Action Kampf Clicked", Toast.LENGTH_SHORT).show();
                         break;
