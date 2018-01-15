@@ -23,7 +23,7 @@ public class Hauptmenue extends AppCompatActivity {
         setContentView(R.layout.activity_hauptmenue);
 
         Button lol = (Button)findViewById(R.id.about);
-
+//dss
         lol.setOnClickListener(
                 new Button.OnClickListener(){
                     public void onClick(View v){
