@@ -8,35 +8,17 @@
     android:visibility="visible"
     tools:context="de.hs_hannover.fholz.studentenklatschen.MainMenu.About">
 
-    <android.support.design.widget.BottomNavigationView
-        android:id="@+id/bottom_navigation_about"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="2dp"
-        app:itemBackground="@color/colorPrimary"
-        app:itemIconTint="@drawable/nav_item_color_state"
-        app:itemTextColor="@drawable/nav_item_color_state"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Inhalt"
-        app:menu="@menu/bottom_navigation_main" />
-
     <TextView
         android:id="@+id/Inhalt"
         android:layout_width="344dp"
-        android:layout_height="465dp"
-        android:layout_marginBottom="4dp"
+        android:layout_height="519dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/about_text"
         android:textAlignment="viewStart"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="21sp"
-        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation_about"
+        android:textSize="23sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Ueberschrift" />
