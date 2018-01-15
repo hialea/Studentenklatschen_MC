@@ -11,6 +11,7 @@ import android.widget.Button;
 
 import de.hs_hannover.fholz.studentenklatschen.R;
 import de.hs_hannover.fholz.studentenklatschen.Shop.Shop;
+import de.hs_hannover.fholz.studentenklatschen.Travel.Travel;
 
 public class Hauptmenue extends AppCompatActivity {
 
@@ -31,14 +32,14 @@ public class Hauptmenue extends AppCompatActivity {
                         //Toast.makeText(Hauptmenue.this, "Action Profil Clicked", Toast.LENGTH_SHORT).show();
                         break;
 
-                    case R.id.action_kampf:
-                        Intent intent2 = new Intent (Hauptmenue.this, Kampf.class);
+                    case R.id.action_fight:
+                        Intent intent2 = new Intent (Hauptmenue.this, Fighting.class);
                         startActivity(intent2);
                         //Toast.makeText(Hauptmenue.this, "Action Kampf Clicked", Toast.LENGTH_SHORT).show();
                         break;
 
-                    case R.id.action_reise:
-                        Intent intent3 = new Intent (Hauptmenue.this, Vorlesung.class);
+                    case R.id.action_travel:
+                        Intent intent3 = new Intent (Hauptmenue.this, Travel.class);
                         startActivity(intent3);
                         //Toast.makeText(Hauptmenue.this, "Action Reise Clicked", Toast.LENGTH_SHORT).show();
                         break;
@@ -71,7 +72,7 @@ public class Hauptmenue extends AppCompatActivity {
         kampf.setOnClickListener(
                 new Button.OnClickListener(){
                     public void onClick(View v){
-                        Intent I = new Intent(Hauptmenue.this, Kampf.class);
+                        Intent I = new Intent(Hauptmenue.this, Fighting.class);
                         startActivity(I);
                     }
                 }
@@ -80,7 +81,7 @@ public class Hauptmenue extends AppCompatActivity {
         vl.setOnClickListener(
                 new Button.OnClickListener(){
                     public void onClick(View v){
-                        Intent I = new Intent(Hauptmenue.this, Vorlesung.class);
+                        Intent I = new Intent(Hauptmenue.this, Travel.class);
                         startActivity(I);
                     }
                 }

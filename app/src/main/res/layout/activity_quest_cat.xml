@@ -89,6 +89,7 @@
 
     <SeekBar
         android:id="@+id/Regler"
+        style="@android:style/Widget.DeviceDefault.SeekBar"
         android:layout_width="383dp"
         android:layout_height="63dp"
         android:layout_marginBottom="8dp"

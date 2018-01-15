@@ -50,13 +50,23 @@
     <string name="schieberegler3">Are you an extrovert?</string>
     <string name="sra">No.</string>
     <string name="srb">Yes.</string>
-    <string name="challengeLeft">Turn Phone to the left</string>
-    <string name="challengeRight">Turn Phone to the right</string>
-    <string name="challengeUpsideDown">Turn Phone upside down</string>
     <string name="challenge">Yes.</string>
     <string name="nichts">None of that.</string>
     <string name="weiter">continue</string>
     <string name="fertig">complete</string>
+
+    //Fight
+    <string name="challengeLeft">Tilt device to the left</string>
+    <string name="challengeRight">Tilt device to the right</string>
+    <string name="challengeUpsideDown">Turn device upside down</string>
+    <string name="challengeShake">Shake</string>
+    <string name="challengeHold">Do not move</string>
+    <string name="challengeSwipeLeft">Swipe Left</string>
+    <string name="challengeSwipeRight">Swipe Right</string>
+    <string name="challengeSwipeUp">Swipe Up</string>
+    <string name="success">You hit the target. \n Your opponent suffers a loss of </string>
+    <string name="miss">You missed the target.</string>
+
     <string name="charaSn">sleepyhead</string>
     <string name="charaUf">genius</string>
     <string name="charaTp">blunderer</string>
@@ -71,7 +81,7 @@
     <string name="signed_out">Signed Out</string>
 
     //TRAVEL
-    <string name="travelDesc">Put your phone away while you\'re in class and put your character on a journey! The longer you are on the way, the more points you get and the higher chance of finding great items is!</string>
+    <string name="travelDesc">Put your phone away while you\'re in class \n and put your character on a journey! \n The longer you are on the way, \n the more points you get \n and the higher the chance of finding great items is!</string>
 
     <string name="go">"Start the journey!"</string>
 
@@ -81,5 +91,15 @@
     <string name="title_shop">shop</string>
     <string name="title_travel">journey</string>
     <string name="title_fight">fight</string>
+
+    //Credits etc.
+    <string name="credits">An app by\n\nFranziska Holz\nPia Kaschel\nHelena Trojanowska\nSvenja Forstner</string>
+    <string name="about_title">About the App</string>
+    <string name="about_text">Our app "Studiklatschen" was designed to make your everyday college life more interesting and enjoyable.
+                                \n\nEspecially if you\'re a freshman, this app can help you to get to know new people!
+                                \nYou can have thrilling battles with your fellow students, collect EXP and level up.
+                                \nIt is also possible to collect points while you\'re in class. You can redeem those points in the shop for new gear or for upgrades of your weapon!
+                                \n\nWhat are you waiting for?
+                                \nLet\'s go! :)</string>
 
 </resources>

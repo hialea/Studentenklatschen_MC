@@ -1,19 +1,25 @@
 package de.hs_hannover.fholz.studentenklatschen.MainMenu;
 
 import android.content.Context;
+import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.CountDownTimer;
 import android.os.Vibrator;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import java.util.Random;
 
 import de.hs_hannover.fholz.studentenklatschen.R;
+import de.hs_hannover.fholz.studentenklatschen.Shop.Shop;
+import de.hs_hannover.fholz.studentenklatschen.Travel.Travel;
 
 public class Fighting extends AppCompatActivity implements SensorEventListener {
 
@@ -31,9 +37,41 @@ public class Fighting extends AppCompatActivity implements SensorEventListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fight);;
-        initializeView();
+        setContentView(R.layout.activity_fight);
+        //initializeView();
         v = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
+
+        BottomNavigationView bottomNavigationView=(BottomNavigationView)findViewById(R.id.bottom_navigation_menu);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId())
+                {
+                    case R.id.action_profil:
+                        Intent intent1 = new Intent (Fighting.this, Profil.class);
+                        startActivity(intent1);
+                        break;
+
+                    case R.id.action_fight:
+                        Intent intent2 = new Intent (Fighting.this, Fighting.class);
+                        startActivity(intent2);
+                        break;
+
+                    case R.id.action_travel:
+                        Intent intent3 = new Intent (Fighting.this, Travel.class);
+                        startActivity(intent3);
+                        break;
+
+                    case R.id.action_shop:
+                        Intent intent4 = new Intent (Fighting.this, Shop.class);
+                        startActivity(intent4);
+                        break;
+                }
+                return false;
+            }
+        });
+
+
         swipe.setOnTouchListener(new OnSwipeTouchListener(Fighting.this) {
             public void onSwipeTop() {
                 up = true;

@@ -12,14 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/travel_timer_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="191dp"
-            android:text="TextView" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -32,10 +24,14 @@
             android:id="@+id/travel_description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
             android:layout_marginTop="68dp"
-            android:text="@string/travelDesc" />
+            android:text="@string/travelDesc"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/travel_go_button"
@@ -43,9 +39,33 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/travel_description"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="74dp"
+            android:layout_marginTop="12dp"
             android:text="@string/go" />
 
+        <TextView
+            android:id="@+id/travel_timer_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/travel_go_button"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:text="TextView" />
+
     </RelativeLayout>
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/bottom_navigation_travel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="511dp"
+        app:itemBackground="@color/colorPrimary"
+        app:itemIconTint="@drawable/nav_item_color_state"
+        app:itemTextColor="@drawable/nav_item_color_state"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/bottom_navigation_travel" />
 
 </RelativeLayout>

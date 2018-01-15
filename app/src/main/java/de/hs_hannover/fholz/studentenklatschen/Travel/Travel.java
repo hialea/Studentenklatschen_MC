@@ -1,11 +1,15 @@
 package de.hs_hannover.fholz.studentenklatschen.Travel;
 
+import android.content.Intent;
 import android.os.Handler;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -26,7 +30,12 @@ import de.hs_hannover.fholz.studentenklatschen.Datamodel.Affix;
 import de.hs_hannover.fholz.studentenklatschen.Datamodel.Character;
 import de.hs_hannover.fholz.studentenklatschen.Datamodel.Inventory;
 import de.hs_hannover.fholz.studentenklatschen.Datamodel.Item;
+import de.hs_hannover.fholz.studentenklatschen.MainMenu.Fighting;
+import de.hs_hannover.fholz.studentenklatschen.MainMenu.Kampf;
+import de.hs_hannover.fholz.studentenklatschen.MainMenu.Profil;
+import de.hs_hannover.fholz.studentenklatschen.MainMenu.Vorlesung;
 import de.hs_hannover.fholz.studentenklatschen.R;
+import de.hs_hannover.fholz.studentenklatschen.Shop.Shop;
 
 public class Travel extends AppCompatActivity {
 
@@ -57,6 +66,36 @@ public class Travel extends AppCompatActivity {
         setContentView(R.layout.activity_travel);
 
         timerTextView = (TextView) findViewById(R.id.travel_timer_view);
+
+        BottomNavigationView bottomNavigationView=(BottomNavigationView)findViewById(R.id.bottom_navigation_travel);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId())
+                {
+                    case R.id.action_profil:
+                        Intent intent1 = new Intent (Travel.this, Profil.class);
+                        startActivity(intent1);
+                        break;
+
+                    case R.id.action_fight:
+                        Intent intent2 = new Intent (Travel.this, Fighting.class);
+                        startActivity(intent2);
+                        break;
+
+                    case R.id.action_travel:
+                        Intent intent3 = new Intent (Travel.this, Travel.class);
+                        startActivity(intent3);
+                        break;
+
+                    case R.id.action_shop:
+                        Intent intent4 = new Intent (Travel.this, Shop.class);
+                        startActivity(intent4);
+                        break;
+                }
+                return false;
+            }
+        });
 
         Button travelToggleButton = (Button) findViewById(R.id.travel_go_button);
         travelToggleButton.setText("start");
