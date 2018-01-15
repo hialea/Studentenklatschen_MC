@@ -19,7 +19,7 @@ import java.util.Random;
 
 import de.hs_hannover.fholz.studentenklatschen.R;
 import de.hs_hannover.fholz.studentenklatschen.Shop.Shop;
-import de.hs_hannover.fholz.studentenklatschen.Travel.Travel;
+import de.hs_hannover.fholz.studentenklatschen.Travel.Travel2;
 
 public class Fighting extends AppCompatActivity implements SensorEventListener {
 
@@ -58,7 +58,7 @@ public class Fighting extends AppCompatActivity implements SensorEventListener {
                         break;
 
                     case R.id.action_travel:
-                        Intent intent3 = new Intent (Fighting.this, Travel.class);
+                        Intent intent3 = new Intent (Fighting.this, Travel2.class);
                         startActivity(intent3);
                         break;
 

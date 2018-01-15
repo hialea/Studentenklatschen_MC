@@ -20,7 +20,7 @@ public class History {
     public static class HistoryType {
 
         public static String fight = "Fight";
-        public static String travel = "Travel";
+        public static String travel = "Travel2";
         public Profile opponent;
         public boolean won;
         public int exp;

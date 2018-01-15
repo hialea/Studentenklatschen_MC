@@ -128,4 +128,8 @@
     <string name="en4b">Item 1</string>
     <string name="en4c">Item 1</string>
 
+
+    <string name="title_activity_travel">TravelActivity</string>
+    <string name="travel_tab_text_1">Reisen</string>
+    <string name="travel_tab_text_2">Logbuch</string>
 ></resources>

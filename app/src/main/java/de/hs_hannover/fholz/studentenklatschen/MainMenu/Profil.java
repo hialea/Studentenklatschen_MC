@@ -9,7 +9,7 @@ import android.view.MenuItem;
 
 import de.hs_hannover.fholz.studentenklatschen.R;
 import de.hs_hannover.fholz.studentenklatschen.Shop.Shop;
-import de.hs_hannover.fholz.studentenklatschen.Travel.Travel;
+import de.hs_hannover.fholz.studentenklatschen.Travel.Travel2;
 
 public class Profil extends AppCompatActivity {
 
@@ -38,7 +38,7 @@ public class Profil extends AppCompatActivity {
                         break;
 
                     case R.id.action_travel:
-                        Intent intent3 = new Intent (Profil.this, Travel.class);
+                        Intent intent3 = new Intent (Profil.this, Travel2.class);
                         startActivity(intent3);
                         break;
 

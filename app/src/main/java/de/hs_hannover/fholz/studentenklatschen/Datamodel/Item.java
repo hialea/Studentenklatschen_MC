@@ -16,8 +16,6 @@ public class Item {
     public Map<String, Integer> attributes;
     public Affix affix;
 
-
-
     public Item(int itemlvl) {
         Random rand = new Random();
         this.slot = rand.nextInt(4);
@@ -28,7 +26,6 @@ public class Item {
         attributes.put(attributeName[STRENGTH], genStat(itemlvl, affix, STRENGTH));
         attributes.put(attributeName[DEFENSE], genStat(itemlvl, affix, DEFENSE));
         attributes.put(attributeName[SPECIAL], genStat(itemlvl, affix, SPECIAL));
-
         name = genName(slotName[slot], affix);
     }
 
