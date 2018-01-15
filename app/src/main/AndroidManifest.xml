@@ -31,7 +31,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainMenu.Kampf" />
-        <activity android:name=".MainMenu.Vorlesung" />
         <activity android:name=".MainMenu.Einstellungen" />
         <activity android:name=".MainMenu.About" />
         <activity android:name=".MainMenu.Credits" />

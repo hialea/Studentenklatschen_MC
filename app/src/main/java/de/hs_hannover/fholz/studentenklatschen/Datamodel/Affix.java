@@ -4,13 +4,15 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
+import de.hs_hannover.fholz.studentenklatschen.R;
+
 import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Attributes.*;
 
 public class Affix {
 
     public Map<String, Integer> factors;
     public String name;
-    public static String[] affixName = {"des Kaffeetrinkers", "des Bücherwurms", "vong 1 Lauch", "der Mensafrau"};
+    public static String[] affixName = {String.valueOf(R.string.affix1), String.valueOf(R.string.affix2), String.valueOf(R.string.affix3), String.valueOf(R.string.affix4)};
     public static int[][] affixAttribute = {{2,0,0},{0,2,0},{-10,-10,-10},{0,0,2}};
 
     public Affix(String name, int str, int def, int spc){

@@ -95,11 +95,17 @@
     //Credits etc.
     <string name="credits">An app by\n\nFranziska Holz\nPia Kaschel\nHelena Trojanowska\nSvenja Forstner</string>
     <string name="about_title">About the App</string>
-    <string name="about_text">Our app "Studiklatschen" was designed to make your everyday college life more interesting and enjoyable.
+    <string name="about_text">Our app \"Studiklatschen\" was designed to make your everyday college life more interesting and enjoyable.
                                 \n\nEspecially if you\'re a freshman, this app can help you to get to know new people!
                                 \nYou can have thrilling battles with your fellow students, collect EXP and level up.
                                 \nIt is also possible to collect points while you\'re in class. You can redeem those points in the shop for new gear or for upgrades of your weapon!
                                 \n\nWhat are you waiting for?
                                 \nLet\'s go! :)</string>
+
+    //Items
+    <string name="affix1">of the daredevil</string>
+    <string name="affix2">of the bookworm</string>
+    <string name="affix3">of the necromancer</string>
+    <string name="affix4">of the whippersnapper</string>
 
 </resources>
