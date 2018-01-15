@@ -6,31 +6,11 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.animation.AnticipateOvershootInterpolator;
-import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
-import android.widget.ListView;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-import java.util.TreeMap;
-
-import de.hs_hannover.fholz.studentenklatschen.Datamodel.Affix;
-import de.hs_hannover.fholz.studentenklatschen.Datamodel.Item;
-import de.hs_hannover.fholz.studentenklatschen.MainMenu.Fighting;
 import de.hs_hannover.fholz.studentenklatschen.MainMenu.GeneratedEnemy;
-import de.hs_hannover.fholz.studentenklatschen.MainMenu.Hauptmenue;
-import de.hs_hannover.fholz.studentenklatschen.MainMenu.Kampf;
 import de.hs_hannover.fholz.studentenklatschen.MainMenu.Profil;
-import de.hs_hannover.fholz.studentenklatschen.MainMenu.Vorlesung;
 import de.hs_hannover.fholz.studentenklatschen.R;
 import de.hs_hannover.fholz.studentenklatschen.Travel.TravelActivity;
-
-import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Attributes.DEFENSE;
-import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Attributes.SPECIAL;
-import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Attributes.STRENGTH;
-import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Attributes.attributeName;
 
 public class Shop extends AppCompatActivity {
 

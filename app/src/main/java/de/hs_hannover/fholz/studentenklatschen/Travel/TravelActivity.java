@@ -1,5 +1,8 @@
 package de.hs_hannover.fholz.studentenklatschen.Travel;
 
+import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -19,7 +22,10 @@ import android.view.ViewGroup;
 
 import android.widget.TextView;
 
+import de.hs_hannover.fholz.studentenklatschen.MainMenu.Fighting;
+import de.hs_hannover.fholz.studentenklatschen.MainMenu.Profil;
 import de.hs_hannover.fholz.studentenklatschen.R;
+import de.hs_hannover.fholz.studentenklatschen.Shop.Shop;
 
 public class TravelActivity extends AppCompatActivity {
 
@@ -31,6 +37,36 @@ public class TravelActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_travel);
+
+        BottomNavigationView bottomNavigationView=(BottomNavigationView)findViewById(R.id.bottom_navigation_menutravel);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId())
+                {
+                    case R.id.action_profil:
+                        Intent intent1 = new Intent (TravelActivity.this, Profil.class);
+                        startActivity(intent1);
+                        break;
+
+                    case R.id.action_fight:
+                        Intent intent2 = new Intent (TravelActivity.this, Fighting.class);
+                        startActivity(intent2);
+                        break;
+
+                    case R.id.action_travel:
+                        Intent intent3 = new Intent (TravelActivity.this, TravelActivity.class);
+                        startActivity(intent3);
+                        break;
+
+                    case R.id.action_shop:
+                        Intent intent4 = new Intent (TravelActivity.this, Shop.class);
+                        startActivity(intent4);
+                        break;
+                }
+                return false;
+            }
+        });
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
