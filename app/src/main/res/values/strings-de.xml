@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Studentenklatschen</string>
+    <string name="app_name">Studentenklatsche</string>
 
     //Questioncataloge
     <string name="frage1">Dein Youtube-Feed</string>
@@ -89,6 +89,7 @@
                             Je länger er unterwegs ist, desto mehr Punkte erhältst du \n und die Chance auf tolle Items steigt.</string>
 
     <string name="go">"Losrennen!"</string>
+    <string name="stop">"Ende"</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_menu">Menu</string>

@@ -11,7 +11,7 @@ import android.widget.Button;
 
 import de.hs_hannover.fholz.studentenklatschen.R;
 import de.hs_hannover.fholz.studentenklatschen.Shop.Shop;
-import de.hs_hannover.fholz.studentenklatschen.Travel.Travel2;
+import de.hs_hannover.fholz.studentenklatschen.Travel.Travel;
 
 public class Hauptmenue extends AppCompatActivity {
 
@@ -37,7 +37,7 @@ public class Hauptmenue extends AppCompatActivity {
                         break;
 
                     case R.id.action_travel:
-                        Intent intent3 = new Intent (Hauptmenue.this, Travel2.class);
+                        Intent intent3 = new Intent (Hauptmenue.this, Travel.class);
                         startActivity(intent3);
                         break;
 
@@ -78,7 +78,7 @@ public class Hauptmenue extends AppCompatActivity {
         vl.setOnClickListener(
                 new Button.OnClickListener(){
                     public void onClick(View v){
-                        Intent I = new Intent(Hauptmenue.this, Travel2.class);
+                        Intent I = new Intent(Hauptmenue.this, Travel.class);
                         startActivity(I);
                     }
                 }

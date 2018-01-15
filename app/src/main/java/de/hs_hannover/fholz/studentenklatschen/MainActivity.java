@@ -10,9 +10,7 @@ import de.hs_hannover.fholz.studentenklatschen.Login.LoginActivity;
 import de.hs_hannover.fholz.studentenklatschen.MainMenu.GeneratedEnemy;
 import de.hs_hannover.fholz.studentenklatschen.MainMenu.Hauptmenue;
 import de.hs_hannover.fholz.studentenklatschen.Shop.ItemGenerator;
-//import de.hs_hannover.fholz.studentenklatschen.Travel2.SensorTest;
-import de.hs_hannover.fholz.studentenklatschen.Travel.Travel2;
-import de.hs_hannover.fholz.studentenklatschen.Travel.TravelActivity;
+import de.hs_hannover.fholz.studentenklatschen.Travel.Travel;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -78,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         myButton7.setOnClickListener(
                 new Button.OnClickListener(){
                     public void onClick(View v){
-                        Intent I = new Intent(MainActivity.this, TravelActivity.class);
+                        Intent I = new Intent(MainActivity.this, Travel.class);
                         startActivity(I);
                     }
                 }
