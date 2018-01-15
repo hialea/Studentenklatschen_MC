@@ -19,7 +19,6 @@ import com.google.firebase.database.ValueEventListener;
 import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Database.*;
 
 import de.hs_hannover.fholz.studentenklatschen.Datamodel.Item;
-import de.hs_hannover.fholz.studentenklatschen.MainMenu.Fighting;
 import de.hs_hannover.fholz.studentenklatschen.MainMenu.Profil;
 import de.hs_hannover.fholz.studentenklatschen.R;
 import de.hs_hannover.fholz.studentenklatschen.Shop.Shop;

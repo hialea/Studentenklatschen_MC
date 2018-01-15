@@ -40,9 +40,10 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fight);
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        v = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
+
         generateLevel();
         initializeView();
-        v = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
 
         BottomNavigationView bottomNavigationView=(BottomNavigationView)findViewById(R.id.bottom_navigation_menu);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -56,7 +57,7 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
                         break;
 
                     case R.id.action_fight:
-                        Intent intent2 = new Intent (GeneratedEnemy.this, Fighting.class);
+                        Intent intent2 = new Intent (GeneratedEnemy.this, GeneratedEnemy.class);
                         startActivity(intent2);
                         break;
 
@@ -74,6 +75,7 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
             }
         });
 
+        //Listener für Touchaktionen
         swipe.setOnTouchListener(new OnSwipeTouchListener(GeneratedEnemy.this) {
             public void onSwipeRight() {
                 right = true;
@@ -84,16 +86,18 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
         });
 
         task.setText("Follow the instructions in:");
-        countDownPause(3, counter);
+        countDownStart(3, counter);
 
     }
 
+    //Registriert Accelerometer
     @Override
     protected void onStart() {
         super.onStart();
         sensorManager.registerListener(this, sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER), SensorManager.SENSOR_DELAY_GAME);
     }
 
+    //Stoppt Accelerometer
     @Override
     protected void onStop() {
         sensorManager.unregisterListener(this);
@@ -105,6 +109,7 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
 
     }
 
+    //Anweisung, was bei der Änderung des Accelerometers passiert
     @Override
     public void onSensorChanged(SensorEvent sensorEvent) {
 
@@ -116,6 +121,72 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
         maxValues();
     }
 
+    //Erkennung der maximal erreichten Werte des Accelerometers
+    public void maxValues() {
+        if (xAccel > xMax) {
+            xMax = xAccel;
+        }
+        if (xAccel < xMin) {
+            xMin = xAccel;
+        }
+        if (yAccel > yMax) {
+            yMax = yAccel;
+        }
+        if (yAccel < yMin) {
+            yMin = yAccel;
+        }
+        if (zAccel > zMax) {
+            zMax = zAccel;
+        }
+        if (zAccel < zMin) {
+            zMin = zAccel;
+        }
+    }
+
+    //Bereinigung des Accelerometerwerte
+    public void clearValues() {
+        xMax = 0;
+        yMax = 0;
+        xMin= 0;
+        yMin = 0;
+        zMin= 0;
+        zMin = 0;
+        right = false;
+        left = false;
+    }
+
+    //Countdown für den Start der Vorgänge
+    public void countDownStart(int Seconds, final TextView displayTime){
+
+        new CountDownTimer(Seconds* 1000+1000, 1000) {
+
+            public void onTick(long millisUntilFinished) {
+                int seconds = (int) (millisUntilFinished / 1000);
+                displayTime.setText(String.format("%d", seconds));
+            }
+
+            public void onFinish() {
+                rInt();
+                challengetxt();
+                clearValues();
+                countDown(1, counter);
+            }
+        }.start();
+    }
+
+    //Funktion die eine zufällige Zahl erstellt damit die Challenge stimmt werden kann
+    //Überprüfung, dass möglichst keine Challenge zweimal hintereinander auftritt
+    public void rInt() {
+        rchallenge = rn.nextInt(7);
+        if (rchallenge == chosenChallenge) {
+            rchallenge = rn.nextInt(7);
+        }
+        chosenChallenge = rchallenge;
+    }
+
+    //Countdown für den Spieler
+    //Prüft nach Ablauf der Zeit, ob Bedingung der Challenge erfüllt wurde
+    //Prüft ob das Spiel noch weiter geführt werden muss
     public void countDown(int Seconds, final TextView displayTime){
 
         //final MediaPlayer screamWon = MediaPlayer.create(this, R.raw.screamwon);
@@ -135,7 +206,7 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
                     clearValues();
                     countDownEnemy(3);
                 } else {
-                    task.setText(" ");
+                    task.setText(R.string.won);
                     //screamWon.start();
                 }
 
@@ -143,6 +214,8 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
         }.start();
     }
 
+    //Countdown während der generierte Gegner seinen Angriff ausführt
+    //Prüft ob das Spiel noch weiter geführt werden muss
     public void countDownEnemy(int Seconds){
 
         //final MediaPlayer screamLost = MediaPlayer.create(this, R.raw.screamlost);
@@ -160,7 +233,7 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
                     clearValues();
                     countDown(3, counter);
                 } else {
-                    task.setText(" ");
+                    task.setText(R.string.lose);
                     //screamLost.start();
                 }
 
@@ -168,32 +241,7 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
         }.start();
     }
 
-    public void countDownPause(int Seconds, final TextView displayTime){
-
-        new CountDownTimer(Seconds* 1000+1000, 1000) {
-
-            public void onTick(long millisUntilFinished) {
-                int seconds = (int) (millisUntilFinished / 1000);
-                displayTime.setText(String.format("%d", seconds));
-            }
-
-            public void onFinish() {
-                rInt();
-                challengetxt();
-                clearValues();
-                countDown(1, counter);
-            }
-        }.start();
-    }
-
-    public void rInt() {
-        rchallenge = rn.nextInt(7);
-        if (rchallenge == chosenChallenge) {
-            rchallenge = rn.nextInt(7);
-        }
-        chosenChallenge = rchallenge;
-    }
-
+    //Setzt den Text für die Aufgabe
     public void challengetxt() {
         switch (rchallenge) {
             case 0:
@@ -223,6 +271,7 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
         }
     }
 
+    //Ruft die entsprechende Challenge zur Prüfung auf
     public void challenge(int rchallenge) {
         switch (rchallenge) {
             case 0:
@@ -252,6 +301,7 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
         }
     }
 
+    //Challenges
     public void challengeUpDown () {
         if (yMin < -8) {
             strike();
@@ -308,6 +358,7 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
         }
     }
 
+    //Vorgang beim erfolgreichen ausführen einer Challenge
     public void strike() {
         //final MediaPlayer screamStrike = MediaPlayer.create(this, R.raw.screamStrike);
         //screamStrike.start();
@@ -317,10 +368,12 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
         lp.setText(" " + geLifepoints);
     }
 
+    //Generiert das Level des Gegners anhand des eigenen Levels
     public void generateLevel() {
         geLevel = (rn.nextInt(4) + spLevel);
     }
 
+    //Generiert die Attacke des Gegners anhand dessen Level
     public void generateAttack () {
         spDamage = (rn.nextInt(10) + rn.nextInt(geLevel));
         spLifepoints = spLifepoints - spDamage;
@@ -330,6 +383,7 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
         }
     }
 
+    //Initialisierung der Inhalte des Displays
     public void initializeView() {
         counter = (TextView) findViewById(R.id.timecount);
         task = (TextView) findViewById(R.id.challenge);
@@ -338,37 +392,5 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
         ownLp = (TextView) findViewById(R.id.ownLp);
         ownLp.setText(" " + spLifepoints);
         swipe =(TextView) findViewById(R.id.swipe);
-    }
-
-    public void maxValues() {
-        if (xAccel > xMax) {
-            xMax = xAccel;
-        }
-        if (xAccel < xMin) {
-            xMin = xAccel;
-        }
-        if (yAccel > yMax) {
-            yMax = yAccel;
-        }
-        if (yAccel < yMin) {
-            yMin = yAccel;
-        }
-        if (zAccel > zMax) {
-            zMax = zAccel;
-        }
-        if (zAccel < zMin) {
-            zMin = zAccel;
-        }
-    }
-
-    public void clearValues() {
-        xMax = 0;
-        yMax = 0;
-        xMin= 0;
-        yMin = 0;
-        zMin= 0;
-        zMin = 0;
-        right = false;
-        left = false;
     }
 }

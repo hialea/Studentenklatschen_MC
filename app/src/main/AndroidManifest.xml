@@ -41,8 +41,8 @@
         <activity android:name=".MainMenu.Credits" />
         <activity android:name=".MainMenu.AccelTest" />
         <activity android:name=".Shop.Shop" />
-        <activity android:name=".MainMenu.Fighting" />
-        <activity android:name=".MainMenu.GeneratedEnemy" />
+        <activity android:name=".MainMenu.GeneratedEnemy"
+            android:screenOrientation="portrait" />
 
     </application>
 
