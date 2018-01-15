@@ -5,6 +5,7 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.media.MediaPlayer;
 import android.os.CountDownTimer;
 import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
@@ -28,6 +29,10 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
     private boolean right, left, up, down;
     public Vibrator v;
     private int spLevel = 1;
+    MediaPlayer screamLost = MediaPlayer.create(this, R.raw.ScreamLost);
+    MediaPlayer fightsound = MediaPlayer.create(this, R.raw.KampfSound);
+    MediaPlayer screamStrike = MediaPlayer.create(this, R.raw.ScreamStrike);
+    MediaPlayer screamWon = MediaPlayer.create(this, R.raw.ScreamWon);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,7 +106,8 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
                     clearValues();
                     countDownEnemy(3, counter);
                 } else {
-                    task.setText("Gewonnen");
+                    task.setText("You won");
+                    screamWon.start();
                 }
 
             }
@@ -123,7 +129,8 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
                     clearValues();
                     countDown(3, counter);
                 } else {
-                    task.setText("Verloren");
+                    task.setText("You lost");
+                    screamLost.start();
                 }
 
             }
@@ -216,7 +223,7 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
 
     public void challengeUpDown () {
         if (yMin < -8) {
-            treffer();
+            strike();
         } else {
             task.setText(R.string.miss);
         }
@@ -224,7 +231,7 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
 
     public void challengeLeft () {
         if (xMax > 3) {
-            treffer();
+            strike();
         } else {
             task.setText(R.string.miss);
         }
@@ -232,15 +239,15 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
 
     public void challengeRight () {
         if (xMin < -3) {
-            treffer();
+            strike();
         } else {
             task.setText(R.string.miss);
         }
     }
 
     public void challengeShake () {
-        if (xMax > 20 && xMin < -20 && yMax > 20 && yMin < -20 && zMax > 20 && zMin < -20) {
-            treffer();
+        if (xMax > 10 && xMin < -10 && yMax > 10 && yMin < -10 && zMax > 10 && zMin < -10) {
+            strike();
         } else {
             task.setText(R.string.miss);
         }
@@ -248,7 +255,7 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
 
     public void challengeHold () {
         if (xMax > xAccel -2 && xAccel + 2 > xMax && yMax > yAccel -2 && yAccel + 2 > yMax) {
-            treffer();
+            strike();
         } else {
             task.setText(R.string.miss);
         }
@@ -256,7 +263,7 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
 
     public void challengeSwipeLeft () {
         if (left == true) {
-            treffer();
+            strike();
         } else {
             task.setText(R.string.miss);
         }
@@ -264,17 +271,18 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
 
     public void challengeSwipeRight () {
         if (right == true) {
-            treffer();
+            strike();
         } else {
             task.setText(R.string.miss);
         }
     }
 
-    public void treffer () {
+    public void strike() {
         geDamage = (rn.nextInt(10) + 1 + rn.nextInt(spLevel));
         task.setText("Schaden: " + geDamage);
         geLifepoints = geLifepoints - geDamage;
         lp.setText("enemy lifepoints: " + geLifepoints);
+        fightsound.start();
     }
 
     public void generateLevel () {

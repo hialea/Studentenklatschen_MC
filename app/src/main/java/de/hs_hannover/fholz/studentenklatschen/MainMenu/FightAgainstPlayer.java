@@ -1,4 +1,3 @@
-/*
 package de.hs_hannover.fholz.studentenklatschen.MainMenu;
 
 import android.content.Context;
@@ -16,7 +15,7 @@ import java.util.Random;
 
 import de.hs_hannover.fholz.studentenklatschen.R;
 
-public class FightAgainstPlayer implements SensorEventListener {
+/*public class FightAgainstPlayer implements SensorEventListener {
     private TextView counter, task, enemylp, swipe, ownLp;
     private SensorManager sensorManager;
     private float xAccel, yAccel, zAccel = 0.0f;
@@ -30,6 +29,7 @@ public class FightAgainstPlayer implements SensorEventListener {
     private int ownLevel = 1;
     private int enemyLevel = 1;
     boolean sp = true;
+    MediaPlayer mp = MediaPlayer.create(this, R.raw.sound);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
