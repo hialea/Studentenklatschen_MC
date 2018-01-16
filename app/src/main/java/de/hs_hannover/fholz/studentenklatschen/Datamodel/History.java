@@ -8,8 +8,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
-import static de.hs_hannover.fholz.studentenklatschen.Datamodel.History.HistoryType.fight;
-import static de.hs_hannover.fholz.studentenklatschen.Datamodel.History.HistoryType.travel;
 
 /**
  * Created by Franzi on 10.01.2018.
@@ -17,10 +15,12 @@ import static de.hs_hannover.fholz.studentenklatschen.Datamodel.History.HistoryT
 
 public class History {
 
+    public static String fight = "fight";
+    public static String travel = "travel";
+
     public static class HistoryType {
 
-        public static String fight = "Fight";
-        public static String travel = "Travel";
+
         public Profile opponent;
         public boolean won;
         public int exp;
@@ -50,9 +50,9 @@ public class History {
 
     public History(){
 
-        fightSessions = new ArrayList<>();
-        travelSessions = new ArrayList<>();
-        history = new HashMap<>();
+        this.fightSessions = new ArrayList<>();
+        this.travelSessions = new ArrayList<>();
+        this.history = new HashMap<>();
         history.put(fight, fightSessions);
         history.put(travel, fightSessions);
 
