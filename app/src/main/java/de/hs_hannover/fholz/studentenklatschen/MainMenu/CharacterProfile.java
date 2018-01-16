@@ -23,6 +23,9 @@ import de.hs_hannover.fholz.studentenklatschen.Travel.TravelLog;
 import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Database.charRef;
 import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Database.playerRef;
 
+/*In dieser Activity können die Werte des eigenen Charakters eingesehen werden.*/
+
+
 public class CharacterProfile extends AppCompatActivity {
 
     @Override

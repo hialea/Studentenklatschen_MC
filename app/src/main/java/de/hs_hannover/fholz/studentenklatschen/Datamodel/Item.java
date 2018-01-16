@@ -31,10 +31,12 @@ public class Item {
         name = genName(slotName[slot], affix);
     }
 
+    //generiert mit Hilfe eines Affix die Werte des Items basierend auf dem Charakter-Level
     private int genStat(int lvl, Affix affix, int atr){
         return (int)(lvl * Math.random() * affix.factors.get(attributeName[atr]));
     }
 
+    //Der Name des Items wird aus dem Slot und dem Affix generiert
     private String genName(String slot, Affix affix){
         return slot + " " + affix.name;
     }

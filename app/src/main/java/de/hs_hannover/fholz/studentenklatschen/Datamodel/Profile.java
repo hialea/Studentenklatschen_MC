@@ -3,6 +3,8 @@ package de.hs_hannover.fholz.studentenklatschen.Datamodel;
 import android.graphics.Bitmap;
 import android.media.Image;
 
+/*Das Profil enthält alle Daten-Strukturen, die für das Spiel benötigt werden*/
+
 public class Profile {
 
     public String id;

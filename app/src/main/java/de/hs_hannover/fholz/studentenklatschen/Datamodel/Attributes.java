@@ -3,9 +3,15 @@ package de.hs_hannover.fholz.studentenklatschen.Datamodel;
 import java.util.HashMap;
 import java.util.Map;
 
+/*
+Die Attribute definieren die Stärke des Charkters. Die Attribute können durch Items oder Levelaufstief verbessert werden.
+Jede Rolle startet mit anderen Werten.
+*/
+
 
 public class Attributes {
 
+    //Jeder Charakter hat drei Attribut-Arten
     public static final int
         STRENGTH=0,
         DEFENSE=1,
@@ -74,6 +80,7 @@ public class Attributes {
         }
     }
 
+    //das übergeben Attribut wird im Charakter erhöht
     void increaseAttribute(int attribute){
         int attr;
         switch(attribute){

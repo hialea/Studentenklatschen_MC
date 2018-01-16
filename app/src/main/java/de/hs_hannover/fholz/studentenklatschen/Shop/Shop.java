@@ -112,7 +112,7 @@ public class Shop extends AppCompatActivity {
 
     public void initializeView() {
         klatschiTv = (TextView) findViewById(R.id.muenzen);
-        //klatschiTv.setText(klatschis);
+        klatschiTv.setText(String.valueOf(klatschis));
         nameWapon = (TextView) findViewById(R.id.name_wapon);
         nameWapon.setText("Notebook ");
         levelWapon = (TextView) findViewById(R.id.level_wapon);

@@ -27,6 +27,8 @@ public class Affix {
         this.name = name;
     }
 
+    /*Es wird durch eine Zufallszahl Slot und Attribute generiert.
+    Zurückgegeben wird die Eigenschaft/Affix, aus der ein neues Item generiert werden soll*/
     public static Affix genAffix(){
         Random random = new Random();
         int rnd = random.nextInt(4);

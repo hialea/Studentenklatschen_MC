@@ -48,6 +48,7 @@ public class Inventory {
         invContents = new ArrayList<>();
     }
 
+    //überprüft ob genug Platz im Inventar für das aufgehobene Item ist
     public boolean obtainItem(Item item){
         if(invContents.size()<10) {
             invContents.add(item);
@@ -56,6 +57,7 @@ public class Inventory {
         return false;
     }
 
+    //rüstet das Item aus. Das Item aus dem Inventar und aud dem Slot tauschen den Platz
     public boolean equipItem(Item toEquip){
         for(Item content : invContents){
             if(toEquip.name.equals(content.name)){
@@ -69,6 +71,7 @@ public class Inventory {
 
     }
 
+    //überprüft ob das Item exstiert und gelöscht werden kann
     public boolean removeItem(Item toRemove){
 
         for(Item content : invContents){

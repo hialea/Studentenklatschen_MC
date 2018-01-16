@@ -3,8 +3,12 @@ package de.hs_hannover.fholz.studentenklatschen.Datamodel;
 import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Attributes.attributeName;
 import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Inventory.Slots.slotName;
 
+/*Mit dem Charakter bewegt man sich durch die Welt von Studiklatsche.
+Man kann Erfahrungspunkte sammeln und Level aufsteigen. Die gesammelten Items werden im Inventar abgelegt.*/
+
 public class Character {
 
+    //Die vier spielbaren Klassen
     public enum Role{
         SNAPCHAT_TUSSI,
         UEBERFLIEGER,
@@ -36,6 +40,7 @@ public class Character {
 
     }
 
+    //Erfahrungspunkte und Levelaufstieg berechnen
     public boolean gainXP(int xp){
         exp+=xp;
         int xpreq = xpRequired(level);
@@ -47,10 +52,12 @@ public class Character {
         return false;
     }
 
+    //benötigte Punkte bis zum Aufstieg
     private int xpRequired(int level){
         return (int)Math.pow(2, level);
     }
 
+    //berechnet die neuen Attribute nach Anlegen eines Items
     public void updateAttributes(){
         for(int i=0; i<attributeName.length; i++) {
             int newAttr=0;

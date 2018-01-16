@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 import de.hs_hannover.fholz.studentenklatschen.Datamodel.Item;
 import de.hs_hannover.fholz.studentenklatschen.R;
-
+//Hier sollte die Activity zum Anzeigen des Inventar-Inahltes sein
 public class CharacterInventory extends AppCompatActivity {
 
     @Override
