@@ -11,6 +11,7 @@ import com.google.firebase.database.FirebaseDatabase;
 /**
  * Created by Franzi on 08.01.2018.
  */
+//Zugriffswerte auf unsere Firebase Datenbank
 
 public class Database {
     public static final FirebaseAuth mAuth = FirebaseAuth.getInstance();

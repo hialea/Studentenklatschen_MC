@@ -13,6 +13,8 @@ import java.util.TreeMap;
  * Created by Franzi on 10.01.2018.
  */
 
+/*In der History werden vergangene Kämpfe und Reisen aufgezeichnet. HistoryType unterscheidet diese beiden Arten der Aufzeichnung*/
+
 public class History {
 
     public static String fight = "fight";

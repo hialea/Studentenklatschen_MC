@@ -7,6 +7,8 @@ import java.util.Random;
 import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Attributes.*;
 import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Inventory.Slots.slotName;
 
+//Konstruktor für die Erstellung von Items. Items kann der Spieler im Shop kaufen und sich ausrüsten. Die Eigenschaften werden mit Hilfe von Affix generiert.
+
 public class Item {
 
     public String name;

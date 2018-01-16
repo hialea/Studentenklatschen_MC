@@ -10,6 +10,8 @@ import de.hs_hannover.fholz.studentenklatschen.R;
 
 import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Attributes.*;
 
+//Klasse für Item-Eigenschaften mit voreingestellten Werten
+
 public class Affix {
 
     public Map<String, Integer> factors;

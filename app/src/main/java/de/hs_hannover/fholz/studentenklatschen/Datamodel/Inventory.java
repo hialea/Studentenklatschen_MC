@@ -7,8 +7,11 @@ import java.util.Map;
 
 import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Inventory.Slots.*;
 
+/*Im Inventar werden die gesammelten Items des Charakters gespeichert. Es hat eine feste Größe. Aus dem Iventar können die Items ausgerüstet werden*/
+
 public class Inventory {
 
+    //Es gibt vier mögliche Ausrüstungs-Plätze
     public static class Slots{
         public static final String[] slotName =
         {
@@ -44,7 +47,6 @@ public class Inventory {
         };
         invContents = new ArrayList<>();
     }
-
 
     public boolean obtainItem(Item item){
         if(invContents.size()<10) {

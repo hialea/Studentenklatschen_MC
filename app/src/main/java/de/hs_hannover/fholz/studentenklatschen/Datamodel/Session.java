@@ -7,6 +7,8 @@ import de.hs_hannover.fholz.studentenklatschen.MainMenu.Profil;
 /**
  * Created by Franzi on 10.01.2018.
  */
+/*FAIL
+Die Session hält die verschiedenen Multiplayer-Spielräume über die die Spieler während des Kampfes interagieren.*/
 
 public class Session {
 
