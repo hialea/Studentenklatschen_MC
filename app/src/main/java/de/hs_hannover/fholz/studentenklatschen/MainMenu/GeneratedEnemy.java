@@ -19,6 +19,8 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Random;
 
 import de.hs_hannover.fholz.studentenklatschen.Datamodel.Character;
@@ -48,7 +50,8 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         v = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
 
-        if(){
+        if(!playTime()){
+
 
         } else {
             playerRef.child("character").addListenerForSingleValueEvent(new ValueEventListener() {
@@ -83,6 +86,15 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
 
 
     }
+
+    public boolean playTime(){
+
+        Calendar c = Calendar.getInstance();
+        int hour = c.get(Calendar.HOUR);
+        int minute = c.get(Calendar.MINUTE);
+        return true;
+    }
+
 
     //Registriert Accelerometer
     @Override

@@ -1,9 +1,11 @@
 package de.hs_hannover.fholz.studentenklatschen.Travel;
 
+import android.app.NotificationManager;
 import android.content.Intent;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,13 +18,11 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Calendar;
 
 import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Database.*;
 
-import de.hs_hannover.fholz.studentenklatschen.Datamodel.History;
+import de.hs_hannover.fholz.studentenklatschen.Datamodel.Inventory;
 import de.hs_hannover.fholz.studentenklatschen.Datamodel.Item;
 import de.hs_hannover.fholz.studentenklatschen.MainMenu.GeneratedEnemy;
 import de.hs_hannover.fholz.studentenklatschen.MainMenu.Profil;
@@ -34,6 +34,10 @@ public class Travel extends AppCompatActivity {
     TextView timerTextView;
     long startTime = 0;
     int earnedKlatschis = -1;
+    NotificationManager nm;
+    NotificationCompat.Builder notification_k;
+    NotificationCompat.Builder notification_i;
+    final int NID = 2;
 
     Handler timerHandler = new Handler();
     Runnable timerRunnable = new Runnable() {
@@ -58,6 +62,15 @@ public class Travel extends AppCompatActivity {
         setContentView(R.layout.activity_travel);
 
         timerTextView = (TextView) findViewById(R.id.travel_timer_view);
+        notification_k = new NotificationCompat.Builder(this);
+        notification_k.setAutoCancel(true);
+        notification_k.setSmallIcon(R.drawable.ic_shop);
+
+        notification_i = new NotificationCompat.Builder(this);
+        notification_i.setAutoCancel(true);
+        notification_i.setSmallIcon(R.drawable.ic_shop);
+
+        nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 
         BottomNavigationView bottomNavigationView=(BottomNavigationView)findViewById(R.id.bottom_navigation_travel);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -118,28 +131,25 @@ public class Travel extends AppCompatActivity {
                             Log.d("asdfghjklö", String.valueOf(level));
                             Log.d("asdfghjklö", String.valueOf(earnedKlatschis));
                             charRef.child("inventory").child("klatschis").setValue((earnedKlatschis*level)+klatschis);
+                            /*Toast.makeText(Travel.this, "Du hast "+ earnedKlatschis + " erhalten",
+                                    Toast.LENGTH_LONG).show();*/
                             if(earnedKlatschis >= 1){
+                                Inventory inv = null;
                                 Item item = new Item(level);
-
-                                /*RelativeLayout mainLayout = (RelativeLayout)
-                                        findViewById(R.id.layout_travel);
-                                LayoutInflater inflater = (LayoutInflater)
-                                        getSystemService(LAYOUT_INFLATER_SERVICE);
-                                View popupView = inflater.inflate(R.layout.item_window, null);
-
-                                boolean focusable = true;
-                                final PopupWindow popupWindow = new PopupWindow(popupView, 600, 600, focusable);
-
-                                popupWindow.showAtLocation(mainLayout, Gravity.CENTER, 0, 0);
-
-                                popupView.setOnTouchListener(new View.OnTouchListener() {
-                                    @Override
-                                    public boolean onTouch(View v, MotionEvent event) {
-                                        popupWindow.dismiss();
-                                        return true;
-                                    }
-                                });*/
+                                ArrayList<Item> list = (ArrayList<Item>) dataSnapshot.child("inventory").child("invContents").getValue();
+                                if(list == null){
+                                    list = new ArrayList<>();
+                                }
+                                list.add(item);
+                                charRef.child("inventory").child("invContents").setValue(list);
+                                notification_i.setContentTitle(getResources().getString(R.string.notification_titel));
+                                notification_i.setContentText(getResources().getString(R.string.notification_text1)+ " "+ getResources().getString(R.string.notification_text3)+ " "+ item.name+ getResources().getString(R.string.notification_text2));
+                                nm.notify(NID, notification_i.build());
                             }
+                            notification_k.setContentTitle(getResources().getString(R.string.notification_titel));
+                            notification_k.setContentText(getResources().getString(R.string.notification_text1)+" " + earnedKlatschis +" Klatschis "+ getResources().getString(R.string.notification_text2));
+
+                            nm.notify(NID, notification_k.build());
                             earnedKlatschis = -1;
                         }
 

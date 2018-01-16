@@ -111,6 +111,10 @@
     <string name="title_shop">Shop</string>
     <string name="title_travel">Reise</string>
     <string name="title_fight">Kampf</string>
+    <string name="notification_text1">Du hast</string>
+    <string name="notification_text3">das Item</string>
+    <string name="notification_text2">erhalten!</string>
+    <string name="notification_titel">Deine Reise war erfolgreich!</string>
 
 
     //Credits etc.
