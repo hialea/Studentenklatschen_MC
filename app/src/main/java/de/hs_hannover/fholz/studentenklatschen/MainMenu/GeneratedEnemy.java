@@ -12,15 +12,24 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.Random;
 
+import de.hs_hannover.fholz.studentenklatschen.Datamodel.Character;
 import de.hs_hannover.fholz.studentenklatschen.R;
 import de.hs_hannover.fholz.studentenklatschen.Shop.Shop;
+
+import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Database.charRef;
+import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Database.playerRef;
 
 public class GeneratedEnemy extends AppCompatActivity  implements SensorEventListener {
     private TextView counter, task, lp, ownLp, level, ownLevel;
@@ -28,13 +37,13 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
     private SensorManager sensorManager;
     private float xAccel, yAccel, zAccel = 0.0f;
     private float xMax, xMin, yMax, yMin, zMax, zMin;
-    private int spLifepoints = 100;
-    private int geLifepoints = 100;
+    private int spLifepoints;
+    private int geLifepoints;
     Random rn = new Random();
     private int chosenChallenge, rchallenge, geDamage, spDamage, geLevel;
     private boolean right, left;
     public Vibrator v;
-    private int spLevel = 1;
+    private int spLevel, spEXP;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,21 +52,39 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         v = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
 
-        generateLevel();
-        initializeView();
+        if(){
 
-        //Listener für Touchaktionen
-        swipe.setOnTouchListener(new OnSwipeTouchListener(GeneratedEnemy.this) {
-            public void onSwipeRight() {
-                right = true;
-            }
-            public void onSwipeLeft() {
-                left = true;
-            }
-        });
+        } else {
+            playerRef.child("character").addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    spLifepoints = ((Long) dataSnapshot.child("lifepoints").getValue()).intValue();
+                    spLevel = ((Long) dataSnapshot.child("level").getValue()).intValue();
+                    spEXP = ((Long) dataSnapshot.child("exp").getValue()).intValue();
+                }
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
 
-        task.setText(R.string.startIn);
-        countDownStart(5, counter);
+                }
+            });
+
+            generateLevel();
+            initializeView();
+
+            //Listener für Touchaktionen
+            swipe.setOnTouchListener(new OnSwipeTouchListener(GeneratedEnemy.this) {
+                public void onSwipeRight() {
+                    right = true;
+                }
+                public void onSwipeLeft() {
+                    left = true;
+                }
+            });
+
+            task.setText(R.string.startIn);
+            countDownStart(5, counter);
+        }
+
 
     }
 
@@ -168,6 +195,20 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
                     countDownEnemy(1);
                 } else {
                     task.setText(R.string.won);
+                    /*playerRef.child("character").addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            for (DataSnapshot charSnapshot: dataSnapshot.getChildren()) {
+                                Character character = charSnapshot.getValue(Character.class);
+                                if(character.gainXP(spLevel*1)){
+                                }
+                            }
+                        }
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+
+                        }
+                    });*/
                     //screamWon.start();
                 }
 
@@ -353,6 +394,7 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
     //Generiert das Level des Gegners anhand des eigenen Levels
     public void generateLevel() {
         geLevel = (rn.nextInt(4) + spLevel);
+        geLifepoints = 100+(geLevel*10);
     }
 
     //Generiert die Attacke des Gegners anhand dessen Level

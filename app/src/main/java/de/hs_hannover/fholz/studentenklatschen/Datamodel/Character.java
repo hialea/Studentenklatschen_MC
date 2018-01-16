@@ -28,7 +28,7 @@ public class Character {
         this.inventory = new Inventory();
         this.level = 1;
         this.exp = 0;
-        this.lifepoints = 1000;
+        this.lifepoints = 100+(level*10);
         this.history = new History();
     }
 

@@ -23,9 +23,13 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import de.hs_hannover.fholz.studentenklatschen.Datamodel.Profile;
+import de.hs_hannover.fholz.studentenklatschen.Datamodel.Session;
 import de.hs_hannover.fholz.studentenklatschen.QuestCat;
 import de.hs_hannover.fholz.studentenklatschen.R;
 
+import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Database.databaseRef;
+import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Database.mAuth;
+import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Database.player;
 import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Database.playerID;
 import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Database.playerRef;
 
@@ -65,7 +69,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         View create = findViewById(R.id.profil_create_layout);
         create.setVisibility(View.GONE);
-
 
     }
 
