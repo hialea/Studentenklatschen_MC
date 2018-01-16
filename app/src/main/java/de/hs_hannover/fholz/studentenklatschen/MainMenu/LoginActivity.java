@@ -1,12 +1,17 @@
 package de.hs_hannover.fholz.studentenklatschen.MainMenu;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.media.Image;
+import android.net.Uri;
+import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -26,6 +31,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private EditText emailField;
     private EditText passwordField;
+    private EditText profilName;
+    private ImageView imageView;
 
     private FirebaseUser player;
     private FirebaseAuth mAuth;
@@ -40,9 +47,21 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         emailField = (EditText) findViewById(R.id.login_field_email);
         passwordField = (EditText) findViewById(R.id.login_field_password);
+        profilName = (EditText) findViewById(R.id.login_profil_field);
 
         findViewById(R.id.login_signin_button).setOnClickListener(this);
         findViewById(R.id.login_create_button).setOnClickListener(this);
+        findViewById(R.id.login_complete_button).setOnClickListener(this);
+        findViewById(R.id.login_camera_button).setOnClickListener(this);
+
+        imageView = (ImageView) findViewById(R.id.profil_picture);
+
+        View login = findViewById(R.id.login_layout);
+        login.setVisibility(View.VISIBLE);
+
+        View create = findViewById(R.id.profil_create_layout);
+        create.setVisibility(View.GONE);
+
     }
 
     @Override
@@ -70,8 +89,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                 Toast.LENGTH_SHORT).show();
                     } else {
                         playerRef.setValue(new Profile(playerID));
-                        Intent I = new Intent(LoginActivity.this, QuestCat.class);
-                        startActivity(I);
+
+                        View login = findViewById(R.id.login_layout);
+                        login.setVisibility(View.GONE);
+
+                        View create = findViewById(R.id.profil_create_layout);
+                        create.setVisibility(View.VISIBLE);
                     }
                 }
             });
@@ -114,12 +137,29 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Bitmap bitmap = (Bitmap)data.getExtras().get("data");
+        imageView.setImageBitmap(bitmap);
+        playerRef.child("image").setValue(bitmap);
+    }
+
+    @Override
     public void onClick(View v) {
         int i = v.getId();
         if (i == R.id.login_create_button) {
             createAccount(emailField.getText().toString(), passwordField.getText().toString());
         } else if (i == R.id.login_signin_button) {
             signIn(emailField.getText().toString(), passwordField.getText().toString());
+        } else if (i == R.id.login_camera_button) {
+            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            startActivityForResult(intent,0);
+        } else if (i == R.id.login_complete_button) {
+            if(!TextUtils.isEmpty(profilName.getText().toString())){
+                playerRef.child("name").setValue(profilName.getText().toString());
+                Intent I = new Intent(LoginActivity.this, QuestCat.class);
+                startActivity(I);
+            }
         }
     }
 }

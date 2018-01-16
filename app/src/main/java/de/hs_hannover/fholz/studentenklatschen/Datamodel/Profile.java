@@ -1,5 +1,6 @@
 package de.hs_hannover.fholz.studentenklatschen.Datamodel;
 
+import android.graphics.Bitmap;
 import android.media.Image;
 
 public class Profile {
@@ -7,7 +8,7 @@ public class Profile {
     public String id;
     public Character character;
     public String name;
-    public Image image;
+    public Bitmap image;
     public History history;
 
     public Profile(){
