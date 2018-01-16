@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Studiklatsche</string>
+    <string name="app_name">Studentenklatschen</string>
 
     //Questionnaire
     <string name="frage1">Dein Youtube-Feed</string>
@@ -130,7 +130,7 @@
     //Credits etc.
     <string name="credits">Eine App von\n\nFranziska Holz\nPia Kaschel\nHelena Trojanowska\nSvenja Forstner</string>
     <string name="about_title">Über die App</string>
-    <string name="about_text">Unsere App \"Studiklatsche\" soll dir den Hochschulalltag interessanter gestalten und dir besonders als Ersti helfen, neue Leute kennenzulernen.
+    <string name="about_text">Unsere App \"Studiklatschen\" soll dir den Hochschulalltag interessanter gestalten und dir besonders als Ersti helfen, neue Leute kennenzulernen.
                                 \n\nDu kannst dir mit deinen MitstudentInnen spannende Kämpfe liefern, EXP sammeln und Level aufsteigen.
                                 \nAußerdem kannst während der Vorlesungen Punkte sammeln, die du später im Shop für Ausrüstung und Upgrades deiner Waffe einlösen kannst!
                                 \n\nAlso, worauf wartest du noch?
@@ -165,7 +165,7 @@
     <string name="en4c">Item 1</string>
 
     //Login
-    <string name="Login_text">Hey du! Willkommen bei Studiklatsche!
+    <string name="Login_text">Hey du! Willkommen bei Studiklatschen!
                             \nBevor du mit dem Spielen anfängst, musst du erstmal einen Account erstellen.
                             \nBitte gib hier deine Mailadresse und ein 8-stelliges Passwort ein. Damit kannst du dich dann immer wieder in der App einloggen.
                             \nWir wünschen dir ganz viel Spaß mit unserer App!</string>
