@@ -45,28 +45,7 @@ public class QuestCat extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quest_cat);
 
-        Fragefeld = (TextView) findViewById(R.id.Fragefeld);
-        max = (TextView) findViewById(R.id.Max);
-        min = (TextView) findViewById(R.id.Min);
-        weiterFertig = (Button) findViewById(R.id.button);
-        bar = (SeekBar) findViewById(R.id.Regler);
-        rG = (RadioGroup) findViewById(R.id.radioGroup);
-        sN = (RadioButton) findViewById(R.id.rBsn);
-        uF = (RadioButton) findViewById(R.id.rBuf);
-        tP = (RadioButton) findViewById(R.id.rBtp);
-        sT = (RadioButton) findViewById(R.id.rBst);
-
-        bar.setVisibility(View.INVISIBLE);
-        max.setVisibility(View.INVISIBLE);
-        min.setVisibility(View.INVISIBLE);
-        Fragefeld.setText(R.string.frage1);
-        weiterFertig.setText(R.string.weiter);
-        sN.setText(R.string.aw1sn);
-        uF.setText(R.string.aw1uf);
-        tP.setText(R.string.aw1tp);
-        sT.setText(R.string.aw1st);
-
-        bar.setMax(3);
+        initializeView();
 
         bar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -85,10 +64,14 @@ public class QuestCat extends AppCompatActivity {
             }
         });
 
+        //Listener für den Button
+        //Wertet die Antwort des Users aus
+        //Setzt die neue Frage für den User nach der Klickzahl
         weiterFertig.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                //Auswerung der Antworten über die Radiobuttons
                 switch (rG.getCheckedRadioButtonId()) {
                     case R.id.rBsn:
                         countSn++;
@@ -104,6 +87,7 @@ public class QuestCat extends AppCompatActivity {
                         break;
                 }
 
+                //Änderung der Fragen mittels Klicks
                 switch (Klick) {
                     case 1:
                         Fragefeld.setText(R.string.frage2);
@@ -233,6 +217,7 @@ public class QuestCat extends AppCompatActivity {
                         weiterFertig.setText(R.string.fertig);
                         break;
 
+                    //Auswertung des Fragenkatalogs
                     case 12:
                         sliderProgress(sliderProg);
                         bar.setVisibility(v.INVISIBLE);
@@ -279,11 +264,13 @@ public class QuestCat extends AppCompatActivity {
                         startActivity(J);
                 }
 
+                //Check der Radiobuttons wird nach jedem Klick aufgehoben für eine erneute Antwort
                 rG.clearCheck();
             }
         });
     }
 
+    //Auswertung des Sliders
     public void sliderProgress (int i) {
         switch (i) {
             case 0:
@@ -301,8 +288,36 @@ public class QuestCat extends AppCompatActivity {
         }
     }
 
+    //Setzt Slider zurück
     public void clearSlider() {
         bar.setProgress(0);
         sliderProg = 0;
+    }
+
+    public void initializeView() {
+        Fragefeld = (TextView) findViewById(R.id.Fragefeld);
+        max = (TextView) findViewById(R.id.Max);
+        min = (TextView) findViewById(R.id.Min);
+        weiterFertig = (Button) findViewById(R.id.button);
+        bar = (SeekBar) findViewById(R.id.Regler);
+        rG = (RadioGroup) findViewById(R.id.radioGroup);
+        sN = (RadioButton) findViewById(R.id.rBsn);
+        uF = (RadioButton) findViewById(R.id.rBuf);
+        tP = (RadioButton) findViewById(R.id.rBtp);
+        sT = (RadioButton) findViewById(R.id.rBst);
+
+        bar.setVisibility(View.INVISIBLE);
+        max.setVisibility(View.INVISIBLE);
+        min.setVisibility(View.INVISIBLE);
+
+        //Setzen der ersten Frage
+        Fragefeld.setText(R.string.frage1);
+        weiterFertig.setText(R.string.weiter);
+        sN.setText(R.string.aw1sn);
+        uF.setText(R.string.aw1uf);
+        tP.setText(R.string.aw1tp);
+        sT.setText(R.string.aw1st);
+
+        bar.setMax(3);
     }
 }

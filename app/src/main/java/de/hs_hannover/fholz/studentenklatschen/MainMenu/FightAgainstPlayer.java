@@ -42,6 +42,7 @@ public class FightAgainstPlayer extends AppCompatActivity implements SensorEvent
         initializeView();
         v = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
 
+        //Listener für Touchaktionen
         swipe.setOnTouchListener(new OnSwipeTouchListener(FightAgainstPlayer.this) {
             public void onSwipeRight() {
                 right = true;
@@ -56,12 +57,14 @@ public class FightAgainstPlayer extends AppCompatActivity implements SensorEvent
 
     }
 
+    //Registriert Accelerometer
     @Override
     protected void onStart() {
         super.onStart();
         sensorManager.registerListener(this, sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER), SensorManager.SENSOR_DELAY_GAME);
     }
 
+    //Stoppt Accelerometer
     @Override
     protected void onStop() {
         sensorManager.unregisterListener(this);
@@ -73,6 +76,7 @@ public class FightAgainstPlayer extends AppCompatActivity implements SensorEvent
 
     }
 
+    //Anweisung, was bei der Änderung des Accelerometers passiert
     @Override
     public void onSensorChanged(SensorEvent sensorEvent) {
 
@@ -84,6 +88,7 @@ public class FightAgainstPlayer extends AppCompatActivity implements SensorEvent
         maxValues();
     }
 
+    //Erkennung der maximal erreichten Werte des Accelerometers
     public void maxValues() {
         if (xAccel > xMax) {
             xMax = xAccel;
@@ -105,6 +110,7 @@ public class FightAgainstPlayer extends AppCompatActivity implements SensorEvent
         }
     }
 
+    //Bereinigung des Accelerometerwerte
     public void clearValues() {
         xMax = 0;
         yMax = 0;
@@ -116,6 +122,7 @@ public class FightAgainstPlayer extends AppCompatActivity implements SensorEvent
         left = false;
     }
 
+    //Countdown für den Start der Vorgänge
     public void countDownStart(int Seconds, final TextView displayTime){
 
         new CountDownTimer(Seconds* 1000+1000, 1000) {
@@ -138,6 +145,10 @@ public class FightAgainstPlayer extends AppCompatActivity implements SensorEvent
         }.start();
     }
 
+    //Countdown für den Spieler
+    //Prüft nach Ablauf der Zeit, ob Bedingung der Challenge erfüllt wurde
+    //Prüft ob das Spiel noch weiter geführt werden muss
+    //Soll von beiden Spielern gleichzeitig benutzt werden und danach reagieren
     public void countDownSp(int Seconds, final TextView displayTime){
 
         new CountDownTimer(Seconds* 1000+1000, 1000) {
@@ -175,6 +186,8 @@ public class FightAgainstPlayer extends AppCompatActivity implements SensorEvent
         }.start();
     }
 
+    //Funktion die eine zufällige Zahl erstellt damit die Challenge stimmt werden kann
+    //Überprüfung, dass möglichst keine Challenge zweimal hintereinander auftritt
     public void rInt() {
         rchallenge = rn.nextInt(7);
         if (rchallenge == chosenChallenge) {
@@ -183,6 +196,7 @@ public class FightAgainstPlayer extends AppCompatActivity implements SensorEvent
         chosenChallenge = rchallenge;
     }
 
+    //Setzt den Text für die Aufgabe
     public void challengetxt() {
         switch (rchallenge) {
             case 0:
@@ -216,6 +230,7 @@ public class FightAgainstPlayer extends AppCompatActivity implements SensorEvent
         }
     }
 
+    //Ruft die entsprechende Challenge zur Prüfung auf
     public void challenge(int rchallenge, int spLevel, int spLifepoints) {
         switch (rchallenge) {
             case 0:
@@ -245,6 +260,7 @@ public class FightAgainstPlayer extends AppCompatActivity implements SensorEvent
         }
     }
 
+    //Challenges
     public void challengeUpDown (int spLevel, int spLifepoints) {
         if (yMin < -8) {
             strike(spLevel, spLifepoints);
@@ -301,6 +317,7 @@ public class FightAgainstPlayer extends AppCompatActivity implements SensorEvent
         }
     }
 
+    //Vorgang beim erfolgreichen ausführen einer Challenge
     public void strike(int spLevel, int spLifepoints) {
         damage = (rn.nextInt(10) + 1 + rn.nextInt(spLevel));
         if (damage > 0) {
@@ -316,6 +333,7 @@ public class FightAgainstPlayer extends AppCompatActivity implements SensorEvent
         }
     }
 
+    //Initialisierung der Inhalte des Displays
     public void initializeView() {
         counter = (TextView) findViewById(R.id.timecount);
         task = (TextView) findViewById(R.id.challenge);
