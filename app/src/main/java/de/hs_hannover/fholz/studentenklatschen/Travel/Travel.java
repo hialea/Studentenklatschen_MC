@@ -30,6 +30,8 @@ import de.hs_hannover.fholz.studentenklatschen.MainMenu.Profil;
 import de.hs_hannover.fholz.studentenklatschen.R;
 import de.hs_hannover.fholz.studentenklatschen.Shop.Shop;
 
+/*Auf der Reise kann man Spiel-Währung und Items sammeln. Je länger man unterwegs ist, desto größer wird die Belohnung. */
+
 public class Travel extends AppCompatActivity {
 
     TextView timerTextView;
@@ -113,6 +115,7 @@ public class Travel extends AppCompatActivity {
             }
         });
 
+        //Nach Beenden der Reise werden die gesammelten Objekte mit der Datenbank aktualisiert.
         Button travelToggleButton = (Button) findViewById(R.id.travel_go_button);
         travelToggleButton.setText("start");
         travelToggleButton.setOnClickListener(new View.OnClickListener() {
@@ -129,9 +132,6 @@ public class Travel extends AppCompatActivity {
                             int klatschis, level;
                             klatschis = ((Long) dataSnapshot.child("inventory").child("klatschis").getValue()).intValue();
                             level = ((Long) dataSnapshot.child("level").getValue()).intValue();
-                            Log.d("asdfghjklö", String.valueOf(klatschis));
-                            Log.d("asdfghjklö", String.valueOf(level));
-                            Log.d("asdfghjklö", String.valueOf(earnedKlatschis));
                             charRef.child("inventory").child("klatschis").setValue((earnedKlatschis*level)+klatschis);
                             /*Toast.makeText(Travel.this, "Du hast "+ earnedKlatschis + " erhalten",
                                     Toast.LENGTH_LONG).show();*/

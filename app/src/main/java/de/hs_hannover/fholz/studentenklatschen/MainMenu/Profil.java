@@ -23,6 +23,7 @@ import de.hs_hannover.fholz.studentenklatschen.Travel.Travel;
 import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Database.mAuth;
 import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Database.playerRef;
 
+//Im Profil wird Name und Bild angezeigt
 public class Profil extends AppCompatActivity {
 
     public ImageView imageViewP;

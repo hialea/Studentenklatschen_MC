@@ -33,6 +33,9 @@ import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Database.player;
 import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Database.playerID;
 import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Database.playerRef;
 
+/*Bevor man Spielen kann, muss man sich anmelden. Für den Login sind Email und Passwort nötig.
+* Der Login wird über Firebase geregelt*/
+
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final int PERMISSION = 1;
@@ -72,22 +75,24 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     }
 
+    //Wenn man schon angemeldet ist, wird man zum Profil geleitet
     @Override
     public void onStart() {
         super.onStart();
         if(player!=null){
-
             Intent I = new Intent(LoginActivity.this, CharacterProfile.class);
             startActivity(I);
         }
     }
 
+    //Erstellt einen Account und speichert ihn in der Datenbank.
     private void createAccount(String email, String password) {
         if (!validateForm()) {
             Toast.makeText(LoginActivity.this, R.string.auth_failed,
                     Toast.LENGTH_SHORT).show();
             return;
         }
+        //Im Anschluss wird noch das Profil mit Bild und Namen erstellt. Die Kamera-Berechtigung wird erfragt
         mAuth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                 @Override
@@ -112,6 +117,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             });
     }
 
+    //Die App handelt basierend auf der gegebenen Kamera-Berechtigung
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -126,6 +132,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
     }
 
+    //es wird geprüft ob alle Felder richtig aufgefüllt sind
     private boolean validateForm() {
         boolean valid = true;
 
@@ -140,6 +147,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         return valid;
     }
 
+    //bei vorhandenem Account und erfolgreichem Login wird man zum Profil geleitet
     private void signIn(String email, String password) {
         if (!validateForm()) {
             Toast.makeText(LoginActivity.this, R.string.auth_failed,
@@ -155,13 +163,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         Toast.makeText(LoginActivity.this, R.string.auth_failed,
                                 Toast.LENGTH_SHORT).show();
                     } else {
-                        Intent I = new Intent(LoginActivity.this, Profil.class);
+                        Intent I = new Intent(LoginActivity.this, CharacterProfile.class);
                         startActivity(I);
                     }
                 }
             });
     }
 
+    //Das geschossene Bild wird in die Datenbank geladen
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -170,6 +179,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         playerRef.child("image").setValue(bitmap);
     }
 
+    //Nach Erfolgreicher Account-Erstellung wird man zum Fragenkatalog geleitet
     @Override
     public void onClick(View v) {
         int i = v.getId();
@@ -185,7 +195,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 playerRef.child("name").setValue(profilName.getText().toString());
                 Intent I = new Intent(LoginActivity.this, QuestCat.class);
                 startActivity(I);
+                this.onStop();
             }
         }
     }
+
 }
