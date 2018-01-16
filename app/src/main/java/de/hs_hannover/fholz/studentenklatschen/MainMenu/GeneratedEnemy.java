@@ -46,36 +46,6 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
         generateLevel();
         initializeView();
 
-        BottomNavigationView bottomNavigationView=(BottomNavigationView)findViewById(R.id.bottom_navigation_menu);
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId())
-                {
-                    case R.id.action_profil:
-                        Intent intent1 = new Intent (GeneratedEnemy.this, Profil.class);
-                        startActivity(intent1);
-                        break;
-
-                    case R.id.action_fight:
-                        Intent intent2 = new Intent (GeneratedEnemy.this, GeneratedEnemy.class);
-                        startActivity(intent2);
-                        break;
-
-                    case R.id.action_travel:
-                        Intent intent3 = new Intent (GeneratedEnemy.this, GeneratedEnemy.class);
-                        startActivity(intent3);
-                        break;
-
-                    case R.id.action_shop:
-                        Intent intent4 = new Intent (GeneratedEnemy.this, Shop.class);
-                        startActivity(intent4);
-                        break;
-                }
-                return false;
-            }
-        });
-
         //Listener für Touchaktionen
         swipe.setOnTouchListener(new OnSwipeTouchListener(GeneratedEnemy.this) {
             public void onSwipeRight() {
