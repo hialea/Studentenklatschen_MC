@@ -7,16 +7,20 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.CountDownTimer;
 import android.os.Vibrator;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.Random;
 
 import de.hs_hannover.fholz.studentenklatschen.R;
 
-/*public class FightAgainstPlayer implements SensorEventListener {
-    private TextView counter, task, enemylp, swipe, ownLp;
+public class FightAgainstPlayer extends AppCompatActivity implements SensorEventListener {
+
+    private TextView counter, task, enemylp, ownLp, enemylevel, ownlevel;
+    private ImageView swipe;
     private SensorManager sensorManager;
     private float xAccel, yAccel, zAccel = 0.0f;
     private float xMax, xMin, yMax, yMin, zMax, zMin;
@@ -24,12 +28,11 @@ import de.hs_hannover.fholz.studentenklatschen.R;
     private int enemyLifepoints = 100;
     Random rn = new Random();
     private int chosenChallenge, rchallenge, damage;
-    private boolean right, left, up, down;
+    private boolean right, left;
     public Vibrator v;
     private int ownLevel = 1;
     private int enemyLevel = 1;
     boolean sp = true;
-    MediaPlayer mp = MediaPlayer.create(this, R.raw.sound);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,23 +42,17 @@ import de.hs_hannover.fholz.studentenklatschen.R;
         initializeView();
         v = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
 
-        swipe.setOnTouchListener(new OnSwipeTouchListener(GeneratedEnemy.this) {
-            public void onSwipeTop() {
-                up = true;
-            }
+        swipe.setOnTouchListener(new OnSwipeTouchListener(FightAgainstPlayer.this) {
             public void onSwipeRight() {
                 right = true;
             }
             public void onSwipeLeft() {
                 left = true;
             }
-            public void onSwipeBottom() {
-                down = true;
-            }
         });
 
-        task.setText("Follow the instructions in:");
-        countDownPause(3, counter);
+        task.setText(R.string.startIn);
+        countDownStart(5, counter);
 
     }
 
@@ -87,6 +84,60 @@ import de.hs_hannover.fholz.studentenklatschen.R;
         maxValues();
     }
 
+    public void maxValues() {
+        if (xAccel > xMax) {
+            xMax = xAccel;
+        }
+        if (xAccel < xMin) {
+            xMin = xAccel;
+        }
+        if (yAccel > yMax) {
+            yMax = yAccel;
+        }
+        if (yAccel < yMin) {
+            yMin = yAccel;
+        }
+        if (zAccel > zMax) {
+            zMax = zAccel;
+        }
+        if (zAccel < zMin) {
+            zMin = zAccel;
+        }
+    }
+
+    public void clearValues() {
+        xMax = 0;
+        yMax = 0;
+        xMin= 0;
+        yMin = 0;
+        zMin= 0;
+        zMin = 0;
+        right = false;
+        left = false;
+    }
+
+    public void countDownStart(int Seconds, final TextView displayTime){
+
+        new CountDownTimer(Seconds* 1000+1000, 1000) {
+
+            public void onTick(long millisUntilFinished) {
+                int seconds = (int) (millisUntilFinished / 1000);
+                displayTime.setText(String.format("%d", seconds));
+            }
+
+            public void onFinish() {
+                if (sp = true) {
+                    rInt();
+                    challengetxt();
+                    clearValues();
+                    countDownSp(2, counter);
+                } else {
+                    task.setText("Your enemys turn");
+                }
+            }
+        }.start();
+    }
+
     public void countDownSp(int Seconds, final TextView displayTime){
 
         new CountDownTimer(Seconds* 1000+1000, 1000) {
@@ -96,7 +147,7 @@ import de.hs_hannover.fholz.studentenklatschen.R;
                 if (sp = true) {
                     challengetxt();
                 } else {
-                    task.setText("Your enemys turn")
+                    task.setText("Your enemys turn");
                 }
             }
 
@@ -124,38 +175,10 @@ import de.hs_hannover.fholz.studentenklatschen.R;
         }.start();
     }
 
-    public void countDownPause(int Seconds, final TextView displayTime){
-
-        new CountDownTimer(Seconds* 1000+1000, 1000) {
-
-            public void onTick(long millisUntilFinished) {
-                int seconds = (int) (millisUntilFinished / 1000);
-                displayTime.setText(String.format("%d", seconds));
-            }
-
-            public void onFinish() {
-                if (sp = true) {
-                    rInt();
-                    challengetxt();
-                    clearValues();
-                    countDownSp(2, counter);
-                } else {
-                    task.setText("Your enemys turn")
-                }
-            }
-        }.start();
-    }
-
-    public void strike(int spLevel, int spLifepoints) {
-        damage = (rn.nextInt(10) + 1 + rn.nextInt(spLevel));
-        task.setText("Your enemys damage: " + damage);
-        spLifepoints = spLifepoints - damage;
-    }
-
     public void rInt() {
-        rchallenge = rn.nextInt(9);
+        rchallenge = rn.nextInt(7);
         if (rchallenge == chosenChallenge) {
-            rchallenge = rn.nextInt(9);
+            rchallenge = rn.nextInt(7);
         }
         chosenChallenge = rchallenge;
     }
@@ -179,15 +202,13 @@ import de.hs_hannover.fholz.studentenklatschen.R;
                 break;
             case 5:
                 task.setText(R.string.challengeSwipeLeft);
+                swipe.setVisibility(View.VISIBLE);
+                swipe.setImageResource(R.drawable.pfeil_links);
                 break;
             case 6:
                 task.setText(R.string.challengeSwipeRight);
-                break;
-            case 7:
-                task.setText(R.string.challengeSwipeUp);
-                break;
-            case 8:
-                task.setText(R.string.challengeSwipeDown);
+                swipe.setVisibility(View.VISIBLE);
+                swipe.setImageResource(R.drawable.pfeil_rechts);
                 break;
             default:
                 task.setText(R.string.challengeUpsideDown);
@@ -217,12 +238,6 @@ import de.hs_hannover.fholz.studentenklatschen.R;
                 break;
             case 6:
                 challengeSwipeRight(spLevel, spLifepoints);
-                break;
-            case 7:
-                challengeSwipeUp(spLevel, spLifepoints);
-                break;
-            case 8:
-                challengeSwipeDown(spLevel, spLifepoints);
                 break;
             default:
                 challengeUpDown(spLevel, spLifepoints);
@@ -286,19 +301,18 @@ import de.hs_hannover.fholz.studentenklatschen.R;
         }
     }
 
-    public void challengeSwipeUp (int spLevel, int spLifepoints) {
-        if (up == true) {
-            strike(spLevel, spLifepoints);
-        } else {
-            task.setText(R.string.miss);
+    public void strike(int spLevel, int spLifepoints) {
+        damage = (rn.nextInt(10) + 1 + rn.nextInt(spLevel));
+        if (damage > 0) {
+            v.vibrate(100);
         }
-    }
-
-    public void challengeSwipeDown (int spLevel, int spLifepoints) {
-        if (down == true) {
-            strike(spLevel, spLifepoints);
+        task.setText("Your enemys damage: " + damage);
+        spLifepoints = spLifepoints - damage;
+        if (spLifepoints < 0) {
+            spLifepoints = 0;
+            enemylp.setText("LP: " + spLifepoints);
         } else {
-            task.setText(R.string.miss);
+            enemylp.setText("LP: " + spLifepoints);
         }
     }
 
@@ -306,43 +320,15 @@ import de.hs_hannover.fholz.studentenklatschen.R;
         counter = (TextView) findViewById(R.id.timecount);
         task = (TextView) findViewById(R.id.challenge);
         enemylp = (TextView) findViewById(R.id.lp);
-        enemylp.setText("enemy lifepoints: " + enemyLifepoints +  " Level: " + enemyLevel);
+        enemylp.setText("enemy lifepoints: " + enemyLifepoints);
+        enemylevel = (TextView) findViewById(R.id.level);
+        enemylevel.setText("Level: " + enemyLevel);
         ownLp = (TextView) findViewById(R.id.ownLp);
-        ownLp.setText("your lifepoints: " + ownLifepoints + " Level: " + ownLevel);
-        swipe =(TextView) findViewById(R.id.swipe);
+        ownLp.setText("your lifepoints: " + ownLifepoints);
+        ownlevel = (TextView) findViewById(R.id.ownLevel);
+        ownlevel.setText("Level: " + ownLevel);
+        swipe =(ImageView) findViewById(R.id.swipe);
+        swipe.setVisibility(View.INVISIBLE);
     }
 
-    public void maxValues() {
-        if (xAccel > xMax) {
-            xMax = xAccel;
-        }
-        if (xAccel < xMin) {
-            xMin = xAccel;
-        }
-        if (yAccel > yMax) {
-            yMax = yAccel;
-        }
-        if (yAccel < yMin) {
-            yMin = yAccel;
-        }
-        if (zAccel > zMax) {
-            zMax = zAccel;
-        }
-        if (zAccel < zMin) {
-            zMin = zAccel;
-        }
-    }
-
-    public void clearValues() {
-        xMax = 0;
-        yMax = 0;
-        xMin= 0;
-        yMin = 0;
-        zMin= 0;
-        zMin = 0;
-        right = false;
-        left = false;
-        up = false;
-        down = false;
-    }
-}*/
+}

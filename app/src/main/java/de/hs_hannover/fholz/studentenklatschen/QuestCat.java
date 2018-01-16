@@ -240,29 +240,29 @@ public class QuestCat extends AppCompatActivity {
                         if (countSn >= countSt) {
                             if (countSn >= countUf) {
                                 if (countSn >= countTp) {
-                                    Fragefeld.setText("You are a " + R.string.charaSn);
+                                    Fragefeld.setText("You are a Sleepyhead");
                                     charRef.setValue(new Character(Character.Role.SCHNARCHNASE));
                                 } else {
-                                    Fragefeld.setText("You are a " + R.string.charaTp);
+                                    Fragefeld.setText("You are a Blunderer");
                                     charRef.setValue(new Character(Character.Role.TOLLPATSCH));
                                 }
                             } else {
-                                Fragefeld.setText("You are a " + R.string.charaUf);
+                                Fragefeld.setText("You are a Genius");
                                 charRef.setValue(new Character(Character.Role.UEBERFLIEGER));
                             }
                         } else if (countSt >= countTp) {
                             if (countSt >= countUf) {
-                                Fragefeld.setText("You are a " + R.string.charaSt);
+                                Fragefeld.setText("You are a Snapchat Queen");
                                 charRef.setValue(new Character(Character.Role.SNAPCHAT_TUSSI));
                             } else {
-                                Fragefeld.setText("You are a " + R.string.charaUf);
+                                Fragefeld.setText("You are a Genius");
                                 charRef.setValue(new Character(Character.Role.UEBERFLIEGER));
                             }
                         } else if (countTp >= countUf) {
-                            Fragefeld.setText("You are a " + R.string.charaTp);
+                            Fragefeld.setText("You are a Blunderer");
                             charRef.setValue(new Character(Character.Role.TOLLPATSCH));
                         } else {
-                            Fragefeld.setText("You are a " + R.string.charaUf);
+                            Fragefeld.setText("You are a Genius");
                             charRef.setValue(new Character(Character.Role.UEBERFLIEGER));
                         }
                         weiterFertig.setText(R.string.fertig);

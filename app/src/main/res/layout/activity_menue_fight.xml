@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="de.hs_hannover.fholz.studentenklatschen.MainMenu.Kampf">
+    tools:context="de.hs_hannover.fholz.studentenklatschen.MainMenu.MenueFight">
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/bottom_navigation_kampf"
@@ -20,5 +20,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:menu="@menu/bottom_navigation_main" />
+
+    <Button
+        android:id="@+id/search_other_player"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search Other Player"
+        tools:layout_editor_absoluteX="102dp"
+        tools:layout_editor_absoluteY="117dp" />
+
+    <Button
+        android:id="@+id/gererate_enemy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Generate Enemy"
+        tools:layout_editor_absoluteX="120dp"
+        tools:layout_editor_absoluteY="248dp" />
 
 </android.support.constraint.ConstraintLayout>

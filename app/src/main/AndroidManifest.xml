@@ -21,11 +21,14 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity">
-            <!--<intent-filter>
+
+            <!--
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
+            </intent-filter>
+            -->
         </activity>
         <activity android:name=".QuestCat" />
         <activity android:name=".MainMenu.Profil" />
@@ -37,14 +40,15 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainMenu.Kampf" />
+        <activity android:name=".MainMenu.MenueFight" />
         <activity android:name=".MainMenu.About" />
         <activity android:name=".MainMenu.Credits" />
         <activity android:name=".MainMenu.AccelTest" />
         <activity android:name=".Shop.Shop" />
-        <activity android:name=".MainMenu.GeneratedEnemy"
+        <activity
+            android:name=".MainMenu.GeneratedEnemy"
             android:screenOrientation="portrait" />
-
+        <activity android:name=".MainMenu.FightAgainstPlayer"></activity>
     </application>
 
 </manifest>
