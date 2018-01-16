@@ -77,9 +77,9 @@
             android:id="@+id/char_inv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/char_sp"
-            android:layout_marginTop="53dp"
-            android:layout_toEndOf="@+id/char_rolle"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="58dp"
             android:text="inventar" />
 
         <TextView
