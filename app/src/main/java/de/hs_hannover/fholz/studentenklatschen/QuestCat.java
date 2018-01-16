@@ -16,6 +16,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import de.hs_hannover.fholz.studentenklatschen.Datamodel.Character;
+import de.hs_hannover.fholz.studentenklatschen.MainMenu.CharacterProfile;
 import de.hs_hannover.fholz.studentenklatschen.MainMenu.LoginActivity;
 import de.hs_hannover.fholz.studentenklatschen.MainMenu.Profil;
 
@@ -270,11 +271,11 @@ public class QuestCat extends AppCompatActivity {
                         break;
 
                     case 13:
-                        Intent I = new Intent(QuestCat.this, Profil.class);
+                        Intent I = new Intent(QuestCat.this, CharacterProfile.class);
                         startActivity(I);
 
                     default:
-                        Intent J = new Intent(QuestCat.this, Profil.class);
+                        Intent J = new Intent(QuestCat.this, CharacterProfile.class);
                         startActivity(J);
                 }
 
