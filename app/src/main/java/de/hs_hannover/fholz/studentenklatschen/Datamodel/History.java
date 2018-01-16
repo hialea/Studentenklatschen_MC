@@ -44,7 +44,7 @@ public class History {
         }
     }
 
-    public Map<String, ArrayList<HistoryType>> history;
+    public HashMap<String, ArrayList<HistoryType>> history;
     public ArrayList<HistoryType> fightSessions;
     public ArrayList<HistoryType> travelSessions;
 
@@ -54,7 +54,7 @@ public class History {
         this.travelSessions = new ArrayList<>();
         this.history = new HashMap<>();
         history.put(fight, fightSessions);
-        history.put(travel, fightSessions);
+        history.put(travel, travelSessions);
 
     }
 }

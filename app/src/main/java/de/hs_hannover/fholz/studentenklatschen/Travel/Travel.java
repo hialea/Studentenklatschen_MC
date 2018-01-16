@@ -16,6 +16,8 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Calendar;
 
 import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Database.*;
@@ -138,12 +140,6 @@ public class Travel extends AppCompatActivity {
                                     }
                                 });*/
                             }
-                            History history = (History) dataSnapshot.child("history").getValue();
-                            if(history == null){
-                                history = new History();
-                            }
-                            History.HistoryType travel = new History.HistoryType(earnedKlatschis*10, earnedKlatschis, Calendar.getInstance().getTime());
-                            (history.history.get("travel")).add(travel);
                             earnedKlatschis = -1;
                         }
 
