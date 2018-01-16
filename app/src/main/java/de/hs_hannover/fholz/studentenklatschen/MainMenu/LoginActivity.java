@@ -1,11 +1,13 @@
 package de.hs_hannover.fholz.studentenklatschen.MainMenu;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
-import android.media.Image;
-import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -28,6 +30,8 @@ import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Database.playerI
 import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Database.playerRef;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private static final int PERMISSION = 1;
 
     private EditText emailField;
     private EditText passwordField;
@@ -62,6 +66,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         View create = findViewById(R.id.profil_create_layout);
         create.setVisibility(View.GONE);
 
+
     }
 
     @Override
@@ -95,9 +100,27 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                         View create = findViewById(R.id.profil_create_layout);
                         create.setVisibility(View.VISIBLE);
+
+                        if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+                            requestPermissions(new String[]{Manifest.permission.CAMERA}, PERMISSION);
+                        }
                     }
                 }
             });
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if(PERMISSION == 1){
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                Toast.makeText(this, "camera permission granted", Toast.LENGTH_LONG).show();
+                findViewById(R.id.login_camera_button).setVisibility(View.VISIBLE);
+            } else {
+                Toast.makeText(this, "camera permission denied", Toast.LENGTH_LONG).show();
+                findViewById(R.id.login_camera_button).setVisibility(View.GONE);
+            }
+        }
     }
 
     private boolean validateForm() {
