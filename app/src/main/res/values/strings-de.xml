@@ -84,6 +84,14 @@
     <string name="charaUf">Überflieger</string>
     <string name="charaTp">Tollpatsch</string>
     <string name="charaSt">Snapchat Tussi</string>
+    <string name="charlvl">Level</string>
+    <string name="charRole">Rolle</string>
+    <string name="charLife">Lebenspunkte</string>
+    <string name="charExp">Erfahrungspunkte</string>
+    <string name="attStr">Stärke</string>
+    <string name="attDef">Verteidigung</string>
+    <string name="attSp">Spezial</string>
+
 
     <string name="title_activity_login">Login</string>
 
@@ -94,6 +102,8 @@
     <string name="emailpassword_status_fmt">Email User: %1$s (verified: %2$b)</string>
     <string name="signed_in">Signed In</string>
     <string name="signed_out">Signed Out</string>
+
+
 
     //TRAVEL
     <string name="travelDesc">Leg Dein Handy während der Vorlesung oder Übung weg \n und schick deinen Charakter auf Reisen. \n

@@ -24,6 +24,7 @@ import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Database.*;
 
 import de.hs_hannover.fholz.studentenklatschen.Datamodel.Inventory;
 import de.hs_hannover.fholz.studentenklatschen.Datamodel.Item;
+import de.hs_hannover.fholz.studentenklatschen.MainMenu.CharacterProfile;
 import de.hs_hannover.fholz.studentenklatschen.MainMenu.GeneratedEnemy;
 import de.hs_hannover.fholz.studentenklatschen.MainMenu.Profil;
 import de.hs_hannover.fholz.studentenklatschen.R;
@@ -80,7 +81,7 @@ public class Travel extends AppCompatActivity {
                 switch (item.getItemId())
                 {
                     case R.id.action_profil:
-                        Intent intent1 = new Intent (Travel.this, Profil.class);
+                        Intent intent1 = new Intent (Travel.this, CharacterProfile.class);
                         startActivity(intent1);
                         break;
 

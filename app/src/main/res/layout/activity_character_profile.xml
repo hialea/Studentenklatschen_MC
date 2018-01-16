@@ -77,9 +77,9 @@
             android:id="@+id/char_inv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="58dp"
+            android:layout_below="@+id/char_sp"
+            android:layout_marginTop="53dp"
+            android:layout_toEndOf="@+id/char_rolle"
             android:text="inventar" />
 
         <TextView
@@ -108,6 +108,14 @@
             android:layout_below="@+id/char_def"
             android:layout_marginTop="24dp"
             android:text="0" />
+
+        <Button
+            android:id="@+id/char_profil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/char_inv"
+            android:layout_toStartOf="@+id/char_level"
+            android:text="Profil" />
     </RelativeLayout>
 
 

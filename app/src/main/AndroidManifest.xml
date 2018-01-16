@@ -49,7 +49,8 @@
             android:name=".MainMenu.GeneratedEnemy"
             android:screenOrientation="portrait" />
         <activity android:name=".MainMenu.FightAgainstPlayer" />
-        <activity android:name=".MainMenu.CharacterProfile"></activity>
+        <activity android:name=".MainMenu.CharacterProfile" />
+        <activity android:name=".MainMenu.CharacterInventory"></activity>
     </application>
 
 </manifest>

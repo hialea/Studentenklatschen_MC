@@ -13,6 +13,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
 
+import de.hs_hannover.fholz.studentenklatschen.MainMenu.CharacterProfile;
 import de.hs_hannover.fholz.studentenklatschen.MainMenu.GeneratedEnemy;
 import de.hs_hannover.fholz.studentenklatschen.MainMenu.MenueFight;
 import de.hs_hannover.fholz.studentenklatschen.MainMenu.Profil;
@@ -38,7 +39,7 @@ public class Shop extends AppCompatActivity {
                 switch (item.getItemId())
                 {
                     case R.id.action_profil:
-                        Intent intent1 = new Intent (Shop.this, Profil.class);
+                        Intent intent1 = new Intent (Shop.this, CharacterProfile.class);
                         startActivity(intent1);
                         break;
 

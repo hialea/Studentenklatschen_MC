@@ -25,6 +25,7 @@ public class Profil extends AppCompatActivity {
         setContentView(R.layout.activity_profil);
 
         Button signout = (Button) findViewById(R.id.profil_signout_button);
+
         signout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
