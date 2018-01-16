@@ -43,7 +43,7 @@ public class CharacterProfile extends AppCompatActivity {
 
                 charLife.setText("Lifepoints: "+((Long) dataSnapshot.child("lifepoints").getValue()).intValue());
                 charRolle.setText("Role: "+(dataSnapshot.child("role").getValue()).toString());
-                charLevel.setText("Level" + ((Long) dataSnapshot.child("level").getValue()).intValue());
+                charLevel.setText("Level: " + ((Long) dataSnapshot.child("level").getValue()).intValue());
                 charExp.setText("Exp: " + ((Long) dataSnapshot.child("exp").getValue()).intValue());
                 charStr.setText("Strength: " + ((Long) dataSnapshot.child("attributes").child("allAttributes").child("STRENGTH").getValue()).intValue());
                 charDef.setText("Defense: " + ((Long) dataSnapshot.child("attributes").child("allAttributes").child("DEFENSE").getValue()).intValue());
