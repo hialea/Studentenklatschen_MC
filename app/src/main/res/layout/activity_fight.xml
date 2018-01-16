@@ -30,24 +30,16 @@
         android:id="@+id/lp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/swipe"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true" />
+        android:layout_alignParentTop="true"
+        android:text="TextView" />
 
     <TextView
         android:id="@+id/ownLp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/bottom_navigation_menu"
-        android:layout_alignStart="@+id/lp"
-        android:layout_marginBottom="14dp"
+        android:layout_alignParentStart="true"
         android:text="TextView" />
 
     <android.support.design.widget.BottomNavigationView
@@ -64,5 +56,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:menu="@menu/bottom_navigation_fight" />
+
+    <TextView
+        android:id="@+id/level"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/ownLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/ownLp"
+        android:layout_alignStart="@+id/level"
+        android:text="TextView" />
+
+    <ImageView
+        android:id="@+id/swipe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/challenge"
+        android:layout_marginTop="60dp"
+        app:srcCompat="@drawable/pfeil_links" />
 
 </RelativeLayout>

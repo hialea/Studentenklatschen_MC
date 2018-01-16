@@ -6,6 +6,7 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.media.Image;
 import android.media.MediaPlayer;
 import android.os.CountDownTimer;
 import android.os.Vibrator;
@@ -15,6 +16,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.Random;
@@ -23,7 +25,8 @@ import de.hs_hannover.fholz.studentenklatschen.R;
 import de.hs_hannover.fholz.studentenklatschen.Shop.Shop;
 
 public class GeneratedEnemy extends AppCompatActivity  implements SensorEventListener {
-    private TextView counter, task, lp, swipe, ownLp;
+    private TextView counter, task, lp, ownLp, level, ownLevel;
+    private ImageView swipe;
     private SensorManager sensorManager;
     private float xAccel, yAccel, zAccel = 0.0f;
     private float xMax, xMin, yMax, yMin, zMax, zMin;
@@ -85,8 +88,8 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
             }
         });
 
-        task.setText("Follow the instructions in:");
-        countDownStart(3, counter);
+        task.setText(R.string.startIn);
+        countDownStart(5, counter);
 
     }
 
@@ -174,16 +177,6 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
         }.start();
     }
 
-    //Funktion die eine zufällige Zahl erstellt damit die Challenge stimmt werden kann
-    //Überprüfung, dass möglichst keine Challenge zweimal hintereinander auftritt
-    public void rInt() {
-        rchallenge = rn.nextInt(7);
-        if (rchallenge == chosenChallenge) {
-            rchallenge = rn.nextInt(7);
-        }
-        chosenChallenge = rchallenge;
-    }
-
     //Countdown für den Spieler
     //Prüft nach Ablauf der Zeit, ob Bedingung der Challenge erfüllt wurde
     //Prüft ob das Spiel noch weiter geführt werden muss
@@ -204,7 +197,7 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
                 challenge(chosenChallenge);
                 if (geLifepoints > 0) {
                     clearValues();
-                    countDownEnemy(3);
+                    countDownEnemy(1);
                 } else {
                     task.setText(R.string.won);
                     //screamWon.start();
@@ -231,7 +224,7 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
                 generateAttack();
                 if (spLifepoints > 0) {
                     clearValues();
-                    countDown(3, counter);
+                    countDown(1, counter);
                 } else {
                     task.setText(R.string.lose);
                     //screamLost.start();
@@ -239,6 +232,16 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
 
             }
         }.start();
+    }
+
+    //Funktion die eine zufällige Zahl erstellt damit die Challenge stimmt werden kann
+    //Überprüfung, dass möglichst keine Challenge zweimal hintereinander auftritt
+    public void rInt() {
+        rchallenge = rn.nextInt(7);
+        if (rchallenge == chosenChallenge) {
+            rchallenge = rn.nextInt(7);
+        }
+        chosenChallenge = rchallenge;
     }
 
     //Setzt den Text für die Aufgabe
@@ -261,9 +264,13 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
                 break;
             case 5:
                 task.setText(R.string.challengeSwipeLeft);
+                swipe.setVisibility(View.VISIBLE);
+                swipe.setImageResource(R.drawable.pfeil_links);
                 break;
             case 6:
                 task.setText(R.string.challengeSwipeRight);
+                swipe.setVisibility(View.VISIBLE);
+                swipe.setImageResource(R.drawable.pfeil_rechts);
                 break;
             default:
                 task.setText(R.string.challengeUpsideDown);
@@ -343,6 +350,7 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
     }
 
     public void challengeSwipeLeft () {
+        swipe.setVisibility(View.INVISIBLE);
         if (left == true) {
             strike();
         } else {
@@ -351,6 +359,7 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
     }
 
     public void challengeSwipeRight () {
+        swipe.setVisibility(View.INVISIBLE);
         if (right == true) {
             strike();
         } else {
@@ -363,9 +372,13 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
         //final MediaPlayer screamStrike = MediaPlayer.create(this, R.raw.screamStrike);
         //screamStrike.start();
         geDamage = (rn.nextInt(10) + 1 + rn.nextInt(spLevel));
-        task.setText(" " + geDamage);
+        task.setText("Your enemys damage - " + geDamage);
         geLifepoints = geLifepoints - geDamage;
-        lp.setText(" " + geLifepoints);
+        if (geLifepoints < 0) {
+            geLifepoints = 0;
+        } else {
+            lp.setText("LP: " + geLifepoints);
+        }
     }
 
     //Generiert das Level des Gegners anhand des eigenen Levels
@@ -376,10 +389,14 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
     //Generiert die Attacke des Gegners anhand dessen Level
     public void generateAttack () {
         spDamage = (rn.nextInt(10) + rn.nextInt(geLevel));
-        spLifepoints = spLifepoints - spDamage;
-        ownLp.setText(" " + spLifepoints);
         if (spDamage > 0) {
             v.vibrate(100);
+        }
+        spLifepoints = spLifepoints - spDamage;
+        if (spLifepoints < 0) {
+            spLifepoints = 0;
+        } else {
+            ownLp.setText("LP: " + spLifepoints);
         }
     }
 
@@ -388,9 +405,14 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
         counter = (TextView) findViewById(R.id.timecount);
         task = (TextView) findViewById(R.id.challenge);
         lp = (TextView) findViewById(R.id.lp);
-        lp.setText(" " + geLifepoints);
+        lp.setText("LP: " + geLifepoints);
+        level = (TextView) findViewById(R.id.level);
+        level.setText("Level: " + geLevel);
+        ownLevel = (TextView) findViewById(R.id.ownLevel);
+        ownLevel.setText("Level: " + spLevel);
         ownLp = (TextView) findViewById(R.id.ownLp);
-        ownLp.setText(" " + spLifepoints);
-        swipe =(TextView) findViewById(R.id.swipe);
+        ownLp.setText("LP: " + spLifepoints);
+        swipe =(ImageView) findViewById(R.id.swipe);
+        swipe.setVisibility(View.INVISIBLE);
     }
 }

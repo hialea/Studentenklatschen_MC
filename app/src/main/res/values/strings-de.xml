@@ -76,6 +76,8 @@
     <string name="ownLpStr">Deine LP: </string>
     <string name="enemyLevelStr">Level: </string>
     <string name="ownLevelStr">Dein Level: </string>
+    //Neu
+    <string name="startIn">Folge den Anweisungen in </string>
 
     //Charakter
     <string name="charaSn">Schnarchnase</string>
