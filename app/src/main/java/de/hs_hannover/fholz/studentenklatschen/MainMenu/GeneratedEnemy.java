@@ -219,10 +219,10 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
             }
 
             public void onFinish() {
-                rInt();
-                challengetxt();
                 generateAttack();
                 if (spLifepoints > 0) {
+                    rInt();
+                    challengetxt();
                     clearValues();
                     countDown(1, counter);
                 } else {
@@ -369,13 +369,14 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
 
     //Vorgang beim erfolgreichen ausführen einer Challenge
     public void strike() {
-        //final MediaPlayer screamStrike = MediaPlayer.create(this, R.raw.screamStrike);
-        //screamStrike.start();
+        //final MediaPlayer screamstrike = MediaPlayer.create(this, R.raw.screamstrike);
+        //screamstrike.start();
         geDamage = (rn.nextInt(10) + 1 + rn.nextInt(spLevel));
-        task.setText("Your enemys damage - " + geDamage);
+        task.setText("Your enemys damage: - " + geDamage);
         geLifepoints = geLifepoints - geDamage;
         if (geLifepoints < 0) {
             geLifepoints = 0;
+            lp.setText("LP: " + geLifepoints);
         } else {
             lp.setText("LP: " + geLifepoints);
         }
@@ -395,6 +396,7 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
         spLifepoints = spLifepoints - spDamage;
         if (spLifepoints < 0) {
             spLifepoints = 0;
+            ownLp.setText("LP: " + spLifepoints);
         } else {
             ownLp.setText("LP: " + spLifepoints);
         }
