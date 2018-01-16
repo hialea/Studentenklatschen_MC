@@ -5,16 +5,25 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
+import android.widget.TextView;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
 
 import de.hs_hannover.fholz.studentenklatschen.MainMenu.GeneratedEnemy;
 import de.hs_hannover.fholz.studentenklatschen.MainMenu.Profil;
 import de.hs_hannover.fholz.studentenklatschen.R;
 import de.hs_hannover.fholz.studentenklatschen.Travel.Travel;
 
+import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Database.playerRef;
+
 public class Shop extends AppCompatActivity {
 
-
+    private TextView klatschiTv;
+    private int klatschis;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +59,22 @@ public class Shop extends AppCompatActivity {
                 return false;
             }
         });
+
+        klatschiTv = (TextView) findViewById(R.id.muenzen);
+
+        playerRef.child("character").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                klatschis = ((Long) dataSnapshot.child("inventory").child("klatschis").getValue()).intValue();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        klatschiTv.setText(klatschis);
 
 
     }

@@ -1,15 +1,12 @@
 package de.hs_hannover.fholz.studentenklatschen.MainMenu;
 
 import android.content.Context;
-import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.CountDownTimer;
 import android.os.Vibrator;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -26,7 +23,6 @@ import java.util.Random;
 
 import de.hs_hannover.fholz.studentenklatschen.Datamodel.Character;
 import de.hs_hannover.fholz.studentenklatschen.R;
-import de.hs_hannover.fholz.studentenklatschen.Shop.Shop;
 
 import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Database.charRef;
 import static de.hs_hannover.fholz.studentenklatschen.Datamodel.Database.playerRef;
