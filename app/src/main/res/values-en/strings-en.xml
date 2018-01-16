@@ -126,4 +126,10 @@
     <string name="affix3">of the necromancer</string>
     <string name="affix4">of the whippersnapper</string>
 
+    //Login
+    <string name="Login_text">Hey you! Welcome at Studiklatschen!
+                            \nBefore you start playing you need to create an account.
+                            \nPlease fill in your mail address and a password (at least 8 characters), so that you don\'t lose all your progress.
+                            \nHave fun!</string>
+
 </resources>

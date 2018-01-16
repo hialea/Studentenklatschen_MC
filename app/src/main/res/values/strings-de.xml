@@ -150,4 +150,10 @@
     <string name="en4b">Item 1</string>
     <string name="en4c">Item 1</string>
 
+    //Login
+    <string name="Login_text">Hey du! Willkommen bei Studiklatschen!
+                            \nBevor du mit dem Spielen anfängst, musst du erstmal einen Account erstellen.
+                            \nBitte gib hier deine Mailadresse und ein 8-stelliges Passwort ein. Damit kannst du dich dann immer wieder in der App einloggen.
+                            \nWir wünschen dir ganz viel Spaß mit unserer App!</string>
+
 ></resources>
