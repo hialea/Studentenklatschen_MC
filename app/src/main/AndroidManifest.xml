@@ -32,19 +32,17 @@
         </activity>
         <activity android:name=".QuestCat" />
         <activity android:name=".MainMenu.Profil" />
-        <activity android:name=".Travel.Travel" />
+        <activity
+            android:name=".Travel.Travel"
+            android:screenOrientation="portrait" />
         <activity android:name=".Travel.TravelLog" />
         <activity android:name=".Shop.ItemGenerator" />
-        <activity android:name=".MainMenu.Hauptmenue">
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
         <activity android:name=".MainMenu.MenueFight" />
         <activity android:name=".MainMenu.About" />
         <activity android:name=".MainMenu.Credits" />
-        <activity android:name=".MainMenu.AccelTest" />
-        <activity android:name=".Shop.Shop" />
+        <activity
+            android:name=".Shop.Shop"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MainMenu.GeneratedEnemy"
             android:screenOrientation="portrait" />

@@ -14,16 +14,16 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="42dp"
-        android:paddingLeft="@dimen/appbar_padding_top" />
+        android:paddingLeft="@dimen/activity_vertical_margin" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="7dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="8dp"
         android:text="@string/inventory"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="24sp"

@@ -38,6 +38,26 @@ public class Profil extends AppCompatActivity {
         signout = (Button) findViewById(R.id.profil_signout_button);
         cam = (Button) findViewById(R.id.camera_button);
 
+        Button btnabout = (Button)findViewById(R.id.about);
+        btnabout.setOnClickListener(
+                new Button.OnClickListener(){
+                    public void onClick(View v){
+                        Intent I = new Intent(Profil.this, About.class);
+                        startActivity(I);
+                    }
+                }
+        );
+
+        Button btncredits = (Button)findViewById(R.id.credits);
+        btncredits.setOnClickListener(
+                new Button.OnClickListener(){
+                    public void onClick(View v){
+                        Intent I = new Intent(Profil.this, About.class);
+                        startActivity(I);
+                    }
+                }
+        );
+
         cam.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

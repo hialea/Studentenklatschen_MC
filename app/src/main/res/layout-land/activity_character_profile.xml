@@ -7,20 +7,6 @@
     android:background="@color/colorAccent"
     tools:context="de.hs_hannover.fholz.studentenklatschen.MainMenu.CharacterProfile">
 
-    <android.support.design.widget.BottomNavigationView
-        android:id="@+id/bottom_navigation_profil"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="511dp"
-        app:itemBackground="@color/colorPrimary"
-        app:itemIconTint="@drawable/nav_item_color_state"
-        app:itemTextColor="@drawable/nav_item_color_state"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:menu="@menu/bottom_navigation_main" />
-
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -68,9 +54,10 @@
             android:id="@+id/char_level"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/char_rolle"
-            android:layout_below="@+id/char_rolle"
-            android:layout_marginTop="27dp"
+            android:layout_alignBaseline="@+id/char_profil"
+            android:layout_alignBottom="@+id/char_profil"
+            android:layout_marginEnd="109dp"
+            android:layout_toStartOf="@+id/char_inv"
             android:text="level"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="24sp" />
@@ -79,9 +66,9 @@
             android:id="@+id/char_exp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/char_rolle"
+            android:layout_alignBottom="@+id/char_rolle"
             android:layout_alignStart="@+id/char_level"
-            android:layout_below="@+id/char_level"
-            android:layout_marginTop="28dp"
             android:text="exp"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="24sp" />
@@ -90,10 +77,8 @@
             android:id="@+id/char_inv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/char_sp"
-            android:layout_marginStart="14dp"
-            android:layout_marginTop="28dp"
-            android:layout_toEndOf="@+id/char_profil"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/char_exp"
             android:background="@color/colorPrimary"
             android:text="inventar"
             android:textColor="@color/colorPrimaryDark" />
@@ -102,9 +87,9 @@
             android:id="@+id/char_str"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/char_exp"
+            android:layout_alignStart="@+id/char_rolle"
             android:layout_below="@+id/char_exp"
-            android:layout_marginTop="34dp"
+            android:layout_marginTop="45dp"
             android:text="0"
             android:textColor="@color/colorPrimaryDark" />
 
@@ -112,9 +97,10 @@
             android:id="@+id/char_def"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/char_str"
-            android:layout_below="@+id/char_str"
-            android:layout_marginTop="23dp"
+            android:layout_alignBaseline="@+id/char_str"
+            android:layout_alignBottom="@+id/char_str"
+            android:layout_marginStart="93dp"
+            android:layout_toEndOf="@+id/char_life"
             android:text="0"
             android:textColor="@color/colorPrimaryDark" />
 
@@ -122,9 +108,9 @@
             android:id="@+id/char_sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/char_def"
-            android:layout_below="@+id/char_def"
-            android:layout_marginTop="24dp"
+            android:layout_alignBaseline="@+id/char_def"
+            android:layout_alignBottom="@+id/char_def"
+            android:layout_alignStart="@+id/char_exp"
             android:text="0"
             android:textColor="@color/colorPrimaryDark" />
 
@@ -132,12 +118,26 @@
             android:id="@+id/char_profil"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/char_inv"
-            android:layout_alignBottom="@+id/char_inv"
-            android:layout_toEndOf="@+id/char_sp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/char_life"
             android:background="@color/colorPrimary"
             android:text="Profil"
             android:textColor="@color/colorPrimaryDark" />
+
+        <android.support.design.widget.BottomNavigationView
+            android:id="@+id/bottom_navigation_profil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            app:itemBackground="@color/colorPrimary"
+            app:itemIconTint="@drawable/nav_item_color_state"
+            app:itemTextColor="@drawable/nav_item_color_state"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            app:menu="@menu/bottom_navigation_main" />
     </RelativeLayout>
 
 

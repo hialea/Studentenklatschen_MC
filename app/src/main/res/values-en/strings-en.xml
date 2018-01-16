@@ -76,12 +76,15 @@
     <string name="ownLpStr">Your LP: </string>
     <string name="enemyLevelStr">Level: </string>
     <string name="ownLevelStr">Your Level: </string>
+    <string name="startIn">Follow the instructions in </string>
 
     //Charakter
     <string name="charaSn">sleepyhead</string>
     <string name="charaUf">genius</string>
     <string name="charaTp">blunderer</string>
     <string name="charaSt">Snapchat queen</string>
+
+    <string name="inventory">Your inventory</string>
 
     <string name="title_activity_login">Login</string>
 
@@ -111,6 +114,7 @@
     <string name="title_fight">fight</string>
 
     //Credits etc.
+    <string name="credits_title">Credits</string>
     <string name="credits">An app by\n\nFranziska Holz\nPia Kaschel\nHelena Trojanowska\nSvenja Forstner</string>
     <string name="about_title">About the App</string>
     <string name="about_text">Our app \"Studiklatschen\" was designed to make your everyday college life more interesting and enjoyable.
