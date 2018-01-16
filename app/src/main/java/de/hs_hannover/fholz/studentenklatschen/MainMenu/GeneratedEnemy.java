@@ -218,6 +218,7 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
                         }
                     });*/
                     //screamWon.start();
+                    finish();
                 }
 
             }
@@ -245,6 +246,7 @@ public class GeneratedEnemy extends AppCompatActivity  implements SensorEventLis
                 } else {
                     task.setText(R.string.lose);
                     //screamLost.start();
+                    finish();
                 }
 
             }
