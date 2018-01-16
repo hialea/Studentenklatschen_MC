@@ -38,6 +38,7 @@ public class Travel extends AppCompatActivity {
     NotificationCompat.Builder notification_k;
     NotificationCompat.Builder notification_i;
     final int NID = 2;
+    final int NID2 = 1;
 
     Handler timerHandler = new Handler();
     Runnable timerRunnable = new Runnable() {
@@ -143,11 +144,11 @@ public class Travel extends AppCompatActivity {
                                 list.add(item);
                                 charRef.child("inventory").child("invContents").setValue(list);
                                 notification_i.setContentTitle(getResources().getString(R.string.notification_titel));
-                                notification_i.setContentText(getResources().getString(R.string.notification_text1)+ " "+ getResources().getString(R.string.notification_text3)+ " "+ item.name+ getResources().getString(R.string.notification_text2));
-                                nm.notify(NID, notification_i.build());
+                                notification_i.setContentText(getResources().getString(R.string.notification_text1)+ " "+ getResources().getString(R.string.notification_text3)+ " "+ item.name+" "+getResources().getString(R.string.notification_text2));
+                                nm.notify(NID2, notification_i.build());
                             }
                             notification_k.setContentTitle(getResources().getString(R.string.notification_titel));
-                            notification_k.setContentText(getResources().getString(R.string.notification_text1)+" " + earnedKlatschis +" Klatschis "+ getResources().getString(R.string.notification_text2));
+                            notification_k.setContentText(getResources().getString(R.string.notification_text1)+" " + earnedKlatschis +" Klatschi(s) "+ getResources().getString(R.string.notification_text2));
 
                             nm.notify(NID, notification_k.build());
                             earnedKlatschis = -1;

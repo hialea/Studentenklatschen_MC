@@ -1,5 +1,7 @@
 package de.hs_hannover.fholz.studentenklatschen.Datamodel;
 
+import android.content.res.Resources;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
@@ -12,7 +14,7 @@ public class Affix {
 
     public Map<String, Integer> factors;
     public String name;
-    public static String[] affixName = {String.valueOf(R.string.affix1), String.valueOf(R.string.affix2), String.valueOf(R.string.affix3), String.valueOf(R.string.affix4)};
+    public static String[] affixName = {"der Mensafrau", "des Bücherwurms", "vong 1 Lauch", "des Kaffeetrinkers"};
     public static int[][] affixAttribute = {{2,0,0},{0,2,0},{-10,-10,-10},{0,0,2}};
 
     public Affix(String name, int str, int def, int spc){
