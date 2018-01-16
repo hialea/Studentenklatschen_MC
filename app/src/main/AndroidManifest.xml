@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="de.hs_hannover.fholz.studentenklatschen">
 
-    <uses-permission android:name="android.permission.VIBRATE"/>
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -48,7 +48,8 @@
         <activity
             android:name=".MainMenu.GeneratedEnemy"
             android:screenOrientation="portrait" />
-        <activity android:name=".MainMenu.FightAgainstPlayer"></activity>
+        <activity android:name=".MainMenu.FightAgainstPlayer" />
+        <activity android:name=".MainMenu.CharacterProfile"></activity>
     </application>
 
 </manifest>

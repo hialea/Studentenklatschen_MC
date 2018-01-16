@@ -47,7 +47,9 @@
         android:id="@+id/profil_signout_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/toolbar"
+        android:text="logout"
         tools:layout_editor_absoluteX="20dp"
         tools:layout_editor_absoluteY="426dp" />
 
