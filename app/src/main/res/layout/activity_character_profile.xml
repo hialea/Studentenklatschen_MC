@@ -37,6 +37,77 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <TextView
+            android:id="@+id/char_life"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="99dp"
+            android:text="name" />
+
+        <TextView
+            android:id="@+id/char_rolle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/char_life"
+            android:layout_below="@+id/char_life"
+            android:layout_marginTop="28dp"
+            android:text="rolle" />
+
+        <TextView
+            android:id="@+id/char_level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/char_rolle"
+            android:layout_below="@+id/char_rolle"
+            android:layout_marginTop="27dp"
+            android:text="level" />
+
+        <TextView
+            android:id="@+id/char_exp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/char_level"
+            android:layout_below="@+id/char_level"
+            android:layout_marginTop="28dp"
+            android:text="exp" />
+
+        <Button
+            android:id="@+id/char_inv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="58dp"
+            android:text="inventar" />
+
+        <TextView
+            android:id="@+id/char_str"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/char_exp"
+            android:layout_below="@+id/char_exp"
+            android:layout_marginTop="35dp"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/char_def"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/char_str"
+            android:layout_below="@+id/char_str"
+            android:layout_marginTop="23dp"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/char_sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/char_def"
+            android:layout_below="@+id/char_def"
+            android:layout_marginTop="24dp"
+            android:text="0" />
     </RelativeLayout>
 
 

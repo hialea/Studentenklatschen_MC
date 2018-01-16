@@ -77,7 +77,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         super.onStart();
         if(player!=null){
 
-            Intent I = new Intent(LoginActivity.this, Profil.class);
+            Intent I = new Intent(LoginActivity.this, CharacterProfile.class);
             startActivity(I);
         }
     }

@@ -30,7 +30,7 @@
         app:srcCompat="@color/colorPrimaryDark" />
 
     <android.support.design.widget.BottomNavigationView
-        android:id="@+id/bottom_navigation_profil"
+        android:id="@+id/bottom_navigation_profil2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="511dp"
