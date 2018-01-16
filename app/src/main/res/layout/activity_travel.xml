@@ -49,6 +49,7 @@
             android:background="@color/colorPrimary"
             android:text="@string/go"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/colorPrimaryDark"
             android:textSize="24sp" />
 
         <TextView
@@ -69,6 +70,7 @@
             android:layout_marginBottom="59dp"
             android:background="@color/colorPrimary"
             android:text="Log"
+            android:textColor="@color/colorPrimaryDark"
             android:textSize="24sp" />
 
     </RelativeLayout>
